@@ -1,0 +1,317 @@
+\documentclass{article}
+\author{Daniel Monjas Migu\'elez 
+ 		\\ \\ 2 DGIIM Universidad de Granada}
+\title{Ejercicios Matemapli Modelos Matem\'aticos}
+\usepackage{enumitem}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=cyan,
+}
+
+\graphicspath{ {images/} }
+
+\begin{document}
+\maketitle
+
+\newpage
+
+
+
+\textbf{Ejercicio 3:} Una determinada población está estructurada en base a tres grupos diferentes de edad: crías (hasta los 3 años), jóvenes (de 3 a 6 años) y adultos (de 6 a 9 años). Es conocido que las crías no engendran nuevas crías, que cada joven engendra en media 1 cría y cada adulto engendra en media 8 crías. Además, las observaciones arrojan el dato de que la mitad de las crías llegan a jóvenes, en tanto que sólo el 51.1\% de los jóvenes sobrevive.
+
+\begin{enumerate}
+\item Escribe el sistema de ecuaciones en diferencias que describe la evolución de la población así como su formulación matricial. ¿Es la matriz del sistema una matriz de Leslie?¿Es ergódica?.
+
+\item Representa el grafo asociado a dicha matriz. ¿Es la matriz irreducible?
+
+\item Si la población inicial consiste en 10 crías, 8 jóvenes y 12 adultos, ¿cuál será la distribución de la población al cabo de 9 años?
+
+\item ¿Podemos asegurar que la matriz tiene un valor propio dominante? Justifica tu respuesta.
+
+\item Estudia la evolución de la población a largo plazo, indicando la distribución de su priámide de edad.
+
+\item Utilizando las ecuaciones descritas en el primer apartado y mediante sustituciones sucesivas, determina una ecuación en diferencias de orden 3 para el número de crías. ¿Qué relación existe entre el polinomio característico de esta ecuación y el de la matriz del apartado 1?¿Tiene la ecuación un punto de equilibrio?¿Es asintóticamente estable?
+
+\item Resuelva la ecuación y comprueba que se obtienen los mismo resultados que en los apartados 3 y 5.
+\end{enumerate}
+
+\textbf{Solución:} \\
+\textbf{Apartado 1:}
+En primer lugar definiremos los tres estadios posibles de los que dispone la población:
+
+\begin{itemize}
+\item $c_n$=crías en el periodo n
+\item $j_n$=jóvenes en el periodo n
+\item $a_n$=adultos en el periodo n
+\end{itemize}
+
+, en el enunciado se nos proporciona la siguiente información,
+
+\begin{itemize}
+\item $f_c = 0$ donde $f_c$ es la tasa de fertilidad de las crías.
+\item $f_j = 1$ donde $f_j$ es la tasa de fertilidad de los jóvenes.
+\item $f_a = 8$ donde $f_a$ es la tasa de fertilidad de los adultos.
+\item $s_c = 0.5$ donde $s_c$ es la tasa de supervivencia de las crías.
+\item $s_j = 0.511$ donde $s_j$ es la tasa de supervivencia de los jóvenes.
+\item $s_a = 0$ donde $s_a$ es la tasa de supervivencia de los adultos.
+\end{itemize}
+
+, a partir de los datos anteriores podemos definir el siguiente sistema de ecuaciones en diferencias,
+
+\begin{equation*}
+\left\{ \begin{array}{lcc}
+             c_{n+1} = j_n + 8\cdot a_n \\
+             \\ j_{n+1} = 0.5\cdot c_n \\
+             \\ a_{n+1} = 0.511\cdot j_n
+             \end{array}
+   \right.
+\end{equation*}
+
+, cuya matriz asociada es la siguiente,
+
+\begin{equation}
+\begin{pmatrix}
+c_{n+1} \\
+j_{n+1} \\
+a_{n+1}
+\end{pmatrix} 
+=
+\begin{pmatrix}
+0 & 1 & 8 \\
+0.5 & 0 & 0 \\
+0 & 0.511 & 0
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+c_n \\
+j_n \\
+a_n 
+\end{pmatrix}
+\end{equation}
+
+Verifica que todos los miembros de la primera fila son mayores o iguales que cero, y a partir de la segunda fila todo son ceros menos la posición [fila][fila-1] que contiene un coeficiente $s_i$ con $0 < s_i \leq 1$, luego es una matriz de Leslie. \\
+
+Sabiendo que una matriz es ergódica si ella misma o alguna potencia suya tiene todos sus coeficientes positivos. Claramente la expresión matricial obtenida no tiene todos sus coeficientes postivos, luego calcularemos sus potencias, llegando a,
+
+\begin{equation*}
+\begin{pmatrix}
+0 & 1 & 8 \\
+0.5 & 0 & 0 \\
+0 & 0.511 & 0
+\end{pmatrix}
+^5 = 
+\begin{pmatrix}
+2.044 & 8.6059 & 2 \\
+0.125 & 2.044 & 8.176 \\
+0.52224 & 0.12775 & 1.022
+\end{pmatrix}
+\end{equation*}
+
+, cuyos coeficientes son todos postivos luego las matriz es ergódica. \\ 
+
+\textbf{Apartado 2:}
+Una matriz se considera irreducible si su digrafo o grafo dirigido es fuertemente conexo, es decir, si se puede encontrar un camino de ida y uno de vuelta para cada par de nodos i, j con $i \neq j$. Si nos fijamos en el grafo obtenido, tenemos
+
+\begin{itemize}
+\item 1->2, por medio de la arista que los une
+\item 1->3, pasando por dos.
+\item 2->3, por medio de la arista que los une
+\item 2->1, por medio de la arista que los une
+\item 3->1, por medio de la arista que los une
+\item 3->2, pasando por 1.
+\end{itemize}
+
+Luego viendo este análisis tenemos que el grafo obtenido es fuertemenete conexo y por tanto la matriz es irreducible.
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.7\textwidth,scale=1]{grafo_dirigido.png}
+
+\end{figure}
+\\ \\
+
+\textbf{Apartado 3:}
+El ejercicio pregunta por cuál será la distribución de la población al cabo de 9 años. Como en este modelo cada estadío requiere de tres años, entonces se pide la distribución de individuos tras transcurrir 3 estadíos, es decir, $c_3$, $j_3$ y $a_3$, con distribución de tamaños inicial $L=(10,8,12)^T$. Que será el número de individuas en cada estadío para al transcurrir 9 años. Luego llamando A a la expresión matricial obtenida en el apartado 1 realizamos la siguiente operación.
+
+\begin{equation}
+A^3 \cdot L =
+\begin{pmatrix}
+2.044 & 0.5 & 4 \\
+0.25 & 2.044 & 0 \\
+0 & 0.2555 & 2.044
+\end{pmatrix}
+\cdot 
+\begin{pmatrix}
+10 \\
+8 \\
+12 
+\end{pmatrix}
+=
+\begin{pmatrix}
+72.44 \\
+18.852 \\
+26.572 \\
+\end{pmatrix}
+\end{equation}
+
+, redondeando obtenemos 72 crías, 19 jóvenes y 27 adultos. Luego la distribución sería 61.02\% crías, 16.1\% jóvenes y 22.88\% adultos, tras nueve años. \\ \\
+
+\textbf{Apartado 4:} Si el producto de dos elementos consecutivos de la primera fila de una matriz de Leslie es estrictamente positivo, podemos asegurar que tiene un único valor propio real y positivo que es simple y dominante. En la primera fila de la matriz de Leslie obtenida en el apartado uno encontramos, consecutivamente, los coeficientes 1 y 8, cuyo producto es estrictamente positivo, luego podemos asegurar que esta tendrá un único valor propio real y positivo que es simple y dominante. \\ \\
+
+\textbf{Apartado 5:} En primer lugar calcularemos cual es el valor propio dominante que por el apartado anterior sabemos que es real y positivo (llamaremos A a la matriz de Leslie del apartado 1).
+
+\begin{equation*}
+det(A - \lambda I)=det(
+\begin{pmatrix}
+-\lambda & 1 & 8 \\
+0.5 & -\lambda & 0 \\
+0 & 0.511 & -\lambda
+\end{pmatrix}
+)=-\lambda^3+0.5\lambda+2.044
+\end{equation*}
+
+, al igualar a 0 y resolver la ecuación obtenemos los valores propios,
+
+\begin{equation*}
+-\lambda^3+0.5\lambda+2.044 = 0 \Leftrightarrow \lambda = \frac{7}{5} \> ó \> \lambda = -\frac{7}{10}+i\frac{\sqrt{97}}{10} \> ó \> \lambda = -\frac{7}{10}-i\frac{\sqrt{97}}{10}
+\end{equation*}
+
+,luego llegamos a que el valor propio dominante es $\lambda = \frac{7}{5}$. A partir de este valor propio calculamos el subespacio asociado al mismo y el vector generador de este y lo normalizamos.
+
+\begin{equation*}
+V_{\frac{7}{5}}=\{(x,y,z)\in \mathbb{R}^3 : 
+\begin{pmatrix}
+-\frac{7}{5} & 1 & 8 \\
+0.5 & -\frac{7}{5} & 0 \\
+0 & 0.511 & -\frac{7}{5}
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+x \\
+y \\
+z 
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 \\
+0 \\ 
+0
+\end{pmatrix}
+\}
+\end{equation*}
+
+la última fila de la matriz anterior es combinación lineal de la primera y la segunda, luego se puede suprimir llegando a lo siguiente,
+
+\begin{equation*}
+V_{\frac{7}{5}}=\{(x,y,z)\in \mathbb{R}^3: \left\{ \begin{array}{lcc}
+             -\frac{7}{5}x+y+8z=0\\
+             \\ \frac{1}{2}x-\frac{7}{5}y = 0
+             \end{array}
+   \right. \}
+\end{equation*}
+, como se disponen de dos ecuaciones y tres incógnitas se trata de un subespacio de dimensión uno, luego será generado por un vector cuyas coordenadas satisfagan las ecuaciones. Luego una vez más podemos reescribir como,
+
+\begin{equation*}
+V_{\frac{7}{5}}=L(\{(560,200,73)\})
+\end{equation*}
+
+, donde L hace referencia a combinación lineal. Luego $(560,200,73)$ sería una vector propio asociado al valor propio $\lambda =\frac{7}{5}$. Ahora normalizamos este vector usando la norma 1. Obteniendo $v'=(\frac{560}{833},\frac{200}{833},\frac{73}{833}) \approx (0.6723,0.2401,0.0876)$, luego a largo plazo la distribución sería 67.23\%, jóvenes 24.01\% y adultos 8.76\%. Además como el valor propio dominante de esta matriz es mayor que 1 se verifica que la población crece indefinidamente. \\
+
+Por último se inserta una imagen de la pirámide de edad (\ref{pirámide}). 
+\begin{figure}[h]
+\caption{Piramide de Edad Apartado 5}
+\label{pirámide}
+\centering
+\includegraphics[width=0.8\textwidth, scale=1]{piramide.png}
+\end{figure}
+\\ \\
+
+\textbf{Apartado 6:}Despejando el sistema de ecuaciones del primer apartado tenemos que,
+
+\begin{equation*}
+\left\{ \begin{array}{lcc}
+             c_{n+1} = j_n + 8\cdot a_n \\
+             \\ j_{n+1} = 0.5\cdot c_n \Rightarrow j_n = 0.5c_{n-1} \\
+             \\ a_{n+1} = 0.511\cdot j_n = 0.2555\cdot c_{n-1} \Rightarrow a_n = 0.2555\cdot c_{n-2}
+             \end{array}
+   \right.
+\end{equation*}
+
+, sustituyendo en la primera de las ecuaciones tenemos que,
+
+\begin{equation*}
+c_{n+1}=0.5\cdot c_{n-1} + 2.044\cdot c_{n-2}
+\end{equation*}
+
+, que sería una ecuación de orden 3 para el número de crías. \\
+
+Ahora definimos su polinomio característico $P(\lambda)=\lambda^3-0.5\lambda - 2.044$, que es el polinomio caraterístico de la matriz multiplicado por -1, luego tenemos que las soluciones son las mismas. \\
+
+Ahora buscamos un punto de equilibrio para esa ecuación en diferencias.
+
+\begin{equation*}
+x_*-0.5x_*-2.044x_* = 0
+\end{equation*}
+, donde obtenemos el punto fijo x=0. Este punto fijo no puede ser estable, pues hemos visto que el valor dominante de la matriz de Leslie es mayor que 1, por consiguiente la población crecerá ilimitadamente. Como esta ecuación en diferencias estudia el comportamiento de las crías y la población crece ilimitadamente, es claro que p=0 no puede ser asintóticamente estable, pues si lo fuese la población no crecería ilimitadamente. \\ \\
+
+\textbf{Apartado 7:} Como ya comentamos en el apartado anterior el polinomio característico asociado a la ecuación en diferencias es el mismo que el de la matriz de Leslie multiplicado por menos uno, luego conocemos ya las raíces del mismo. A partir de aquí calcularemos el módulo y el ángulo para las raíces complejas,
+
+\begin{equation*}
+|\lambda_1|=|\lambda_2| = \sqrt{(\frac{7}{10})^2 + (\frac{\sqrt{97}}{10})^2}=\frac{\sqrt{146}}{10}
+\end{equation*}
+
+, una vez calculado el módulo, que es el mismo para las dos raíces complejas procedo a calcular el ángulo,
+
+\begin{equation*}
+arctan(\frac{\sqrt{97}/10}{7/10})=arctan(\frac{\sqrt{97}}{7}) \approx 0.3\pi
+\end{equation*}
+
+primero tengo que asegurarme que esté en el segundo cuadrante el ángulo, pues b es positivo y a negativo, luego tiene que tener coseno negativo y seno positivo, luego $\theta = 0.69668\pi$ sería el equivalente. Con esto defino la solución general,
+
+\begin{equation*}
+x_{n+1} = k_0\cdot(\frac{7}{5})^n + (\frac{\sqrt{146}}{10})^n\cdot(k_1\cdot cos(n\theta) + k_2\cdot sen(n\theta))
+\end{equation*}
+
+conocidos $c_0$, $j_0$ y $a_0$, gracias al enunciado del apartado 3, procedemos a calcular $c_1$ y $c_2$ utilizando el sistema de ecuaciones en diferencias del apartado 1 y los resultados obtenidos en el apartado 5, llegando a,
+
+\begin{itemize}
+\item $c_0 = 10$
+\item $c_1 = 8 + 12\cdot8=104$
+\item $c_2 = 37.704$
+\end{itemize}
+
+con esto resolvemos el siguiente sistema de ecuaciones,
+
+\begin{equation*}
+\left\{ \begin{array}{lcc}
+             k_0 + k_1 = 10 \\
+             \\ \frac{7}{5}\cdot k_0 + \frac{\sqrt{146}}{10}\cdot cos(\theta) k_1 + \frac{\sqrt{146}}{10}\cdot sen(\theta) k_2 = 104 \\
+             \\ \frac{49}{25} \cdot k_0 + \frac{146}{100}\cdot cos(2\cdot \theta) k_1 + \frac{146}{100}\cdot cos(2\cdot \theta) k_1 = 37.704
+             \end{array}
+   \right.
+\end{equation*}
+
+,tras resolver el sistema de ecuaciones podemos reescribir la solución general como,
+
+\begin{equation*}
+x_{n+1} = 36.785\cdot(\frac{7}{5})^n + (\frac{\sqrt{146}}{10})^n\cdot(-26.785 \cdot cos(n\theta)+ 34.269\cdot sen(n\theta))
+\end{equation*}
+
+vamos ahora que se verifican los apartados 3 y 5.
+
+Claramente esta ecuación verifica el apartado 3, ya que $x_3 = 72.44$, pues se han tomado los coeficientes de forma que lo cumple. Veamos ahora que también verifica el apartado 5. Viendo que $\frac{7}{5} > 1$, que $\frac{7}{5} > \frac{\sqrt{146}}{10}$ y que el creciemiento de $\frac{\sqrt{146}}{10}^n$ es más lento que el de $\frac{7}{5}^n$, se tendrá que:
+
+\begin{equation*}
+\lim_{n \to \infty} c_n = \infty
+\end{equation*}
+
+luego como ya habíamos dicho en apartados anteriores la población crece ilimitadamente.
+\end{document}

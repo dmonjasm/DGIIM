@@ -1,0 +1,40 @@
+
+
+*******************************************************************************
+Tue Mar 10 19:18:23 2020
+
+
+FIT:    data read from 'salida_graf.dat'
+        format = z
+        #datapoints = 25
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a*x*x*x+b*x*x+c*x+d
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c             d            
+   0 2.6215074166e+20   0.00e+00  1.62e+09    1.000000e+00   1.000000e+00   1.000000e+00   1.000000e+00
+  13 7.3059524482e-02  -2.16e-05  1.62e-04    4.484832e-09  -5.281947e-07   3.245592e-04  -4.406012e-02
+
+After 13 iterations the fit converged.
+final sum of squares of residuals : 0.0730595
+rel. change during last iteration : -2.16398e-10
+
+degrees of freedom    (FIT_NDF)                        : 21
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0589833
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00347902
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 4.48483e-09      +/- 7.891e-11    (1.76%)
+b               = -5.28195e-07     +/- 2.494e-07    (47.22%)
+c               = 0.000324559      +/- 0.0002256    (69.5%)
+d               = -0.0440601       +/- 0.05525      (125.4%)
+
+correlation matrix of the fit parameters:
+                a      b      c      d      
+a               1.000 
+b              -0.987  1.000 
+c               0.926 -0.973  1.000 
+d              -0.719  0.795 -0.898  1.000 

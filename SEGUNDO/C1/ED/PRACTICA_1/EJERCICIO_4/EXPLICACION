@@ -1,0 +1,2 @@
+La eficiencia teorica asocida al mejor caso seria n-i-1 con i=1
+luego O(n)

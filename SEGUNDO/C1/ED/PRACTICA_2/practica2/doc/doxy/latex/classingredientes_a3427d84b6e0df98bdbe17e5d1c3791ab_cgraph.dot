@@ -1,0 +1,11 @@
+digraph "ingredientes::Buscar_tipo"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node4 [label="ingredientes::Buscar_tipo",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="ingrediente::getNombre",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classingrediente.html#a8da227d03af8811627434703922b463a",tooltip="Devuelve el nombre del ingrediente que llama a la función. "];
+  Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="ingrediente::getTipo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classingrediente.html#a03334e887add1dbdc7991de77234ede7",tooltip="Devuelve el tipo de alimento del ingrediente que llama a la función. "];
+}

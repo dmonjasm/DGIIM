@@ -1,0 +1,48 @@
+SEMINARIO 0:
+Utilizamos un servidor rack con tres nodos de computo de tamaño una u (numero de estantes que gasta).
+La placa madre dispone de dos zocalos para modulos de procesamiento, cada uno dispone de tres entradas para memoria RAM (la memoria es direccionable por ambos procesadores).
+Puente Norte:conecta los procesadores con dispositivos rapidos.
+Puente Sur:conecta los procesadores con dispositivos lentos.
+Procesador: dispone de 6 cores físicos, cada uno con una caché de nivel L1 y L2 y luego se dispone de 12MB de caché L3 compartida por todos los cores. Se dispone de un controlador de memoria que controla los accesos a la memoria RAM especificada más arriba. Cuando no se encuentra la dirección buscada en la caché se accede a través del controlador de memoria a la RAM, en otro caso se usará QPI.
+Cada core del procesador puede ejecutar dos threads en paralelo (hyperthreading o multihebras simultáneas).
+
+La opción -X de ssh sirve para poder exportar gráficos desde la máquina destino
+
+En atcgrid:
+
+Para especificar cual es nuestro grupo se usa --account ac.
+Si escribimos $: lscpu nos mostrará información del cpu del nodo front-end
+Por otro lado si escribimos srun -q ac --account ac lscpu nos mostrará las del nodo de cómputo
+Al usar lscpu, el apartado CPUS(s): son los núcleos lógicos.
+Core(s) per socket son los núcleos 4.
+Thread(s) per socket son las hebras de procesamiento.
+El producto de cores por threads nos da el total de cpu(s).
+NUM node0 CPU(s): rango de cores logicos del socket 0
+
+$:lstopo muestra el grafico del nodo front-end.
+$:srun -p ac --account ac lstopo //grafico nodo de cómputo.
+
+orden scp: copia mediante ssh
+sintaxis
+scp e1estudiante18@atcgrid.ugr.es:ejemplo/hola.png ~/ac
+
+Ejercicios del 1-4 del cuaderno
+
+Si se quiere que una directiva omp realiza varias sentencias se deben utilizar llaves
+
+EJ:
+#pragma omp parallel 
+{
+
+}
+
+
+SEMINARIO 1:
+Es necesario comunicar datos entre threads, ya que los datos de un thread T1, pueden requerirse en un thread T2. Para esto hay que sincronizar los datos, evitando así la dependencia de datos.
+
+Con la directiva atomic y la directiva critical se descartan las opciones que pueden generar dependencia de datos. La directiva barrier hace que todos los threads se esperan entre si.
+
+Cuando a una directiva se le añade private(x), lo que se indica es que x, será una variable privada a los threads, no se inicializan antes de entrar a la sección del código sobre la que se aplica la directiva y no se guarda su valor al salir
+
+Ejercicio 6: si sale addsd dependerá de n que es el numero de iteraciones de un bucle
+si sale addpd dependerá saldrá menor, ya que 

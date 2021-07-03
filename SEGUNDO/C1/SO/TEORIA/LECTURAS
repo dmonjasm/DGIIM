@@ -1,0 +1,266 @@
+Lecturas Básicas
+=================
+[Sta2005] W. Stallings, Sistemas Operativos. Aspectos Internos y Principios de Diseño (5/e), Prentice Hall, 2005.
+
+[Sta2006] W. Stallings, Organización y Arquitectura de Computadoras (7/e), Pearson Educación, 2006.
+
+A continuación voy a mostrar los epígrafes y páginas en los que se encuentran los contenidos del tema en la bibliografía básica que sirve como referencia. Podéis estudiar estos contenidos utilizando bibliografía más reciente teniendo en cuenta los títulos de los epígrafes que se indican, ya que solamente cambian las páginas en donde se encuentran.
+
+1. Soporte hardware (HW) al sistema operativo.
+[Sta2005]
+Capítulo 1. Introducción a los computadores 9 --
+Elementos básicos 10 --
+Registros del procesador 11 --
+Ejecución de instrucciones 14 --
+Lecturas Básicas
+=================
+[Sta2005] W. Stallings, Sistemas Operativos. Aspectos Internos y Principios de Diseño (5/e), Prentice Hall, 2005.
+
+[Sta2006] W. Stallings, Organización y Arquitectura de Computadoras (7/e), Pearson Educación, 2006.
+
+A continuación voy a mostrar los epígrafes y páginas en los que se encuentran los contenidos del tema en la bibliografía básica que sirve como referencia. Podéis estudiar estos contenidos utilizando bibliografía más reciente teniendo en cuenta los títulos de los epígrafes que se indican, ya que solamente cambian las páginas en donde se encuentran.
+
+1. Soporte hardware (HW) al sistema operativo.
+[Sta2005]
+Capítulo 1. Introducción a los computadores 9--
+Elementos básicos 10--
+Registros del procesador 11--
+Ejecución de instrucciones 14--
+Interrupciones 17--
+
+Técnicas de comunicación de E/S 34--
+
+Apéndice 1B Control de procedimientos 48--
+
+Las lecturas de [Sta2006] que referencio a continuación son por si algo no queda claro en el libro de sistemas operativos de Stalling.
+[Sta2006]
+Capítulo 3. Perspectiva de alto nivel del funcionamiento y de las interconexiones del computador 57
+Componentes del computador 58
+Funcionamiento del computador 61
+Los ciclos de captación y ejecución 62
+Interrupciones 66
+Funcionamiento de las E/S 73
+Estructuras de interconexioón 75
+
+Capítulo 7. Entrada/salida 207
+Módulos de E/S 214
+E/S programada 217
+E/S mediante interrupciones 221
+Acceso directo a memoria 229
+
+
+2. Estructura del sistema operativo.
+[Sta2005]
+Capítulo 2. Introducción a los sistemas operativos 53--
+Objetivos y funciones de los sistemas operativos 54--
+La evolución de los sistemas operativos 58--
+Principales logros 67--
+Desarrollos que han llevado a los sistemas operativos modernos 79--
+
+Sistemas UNIX tradicionales 91--
+Sistemas UNIX modernos 94--
+Linux 95--
+
+
+3. Arquitecturas monolíticas, microkernel y máquinas virtuales.
+[Sta2005]
+Capítulo 4. Hilos, SMP y micronúcleos 157
+Micronúcleos 176
+
+4. Sistemas operativos de propósito específico.
+[Sta2005]
+SO de tiempo real 463-468
+SO Multiprocesador: páginas 172-175
+SO distribuidos y de red: páginas 596-599
+
+
+Lecturas Complementarias
+==========================
+[Sta2018] W. Stallings, Operating Systems. Internals and design principles (9th ed.). Pearson Education, 2018.
+
+Los mismos epígrafes pero en inglés. En este tema las lecturas no cambian mucho pero en siguientes os aconsejaré algunas específicamente de este libro.Lecturas Básicas
+=================
+[Sta2005] W. Stallings, Sistemas Operativos. Aspectos Internos y Principios de Diseño (5/e), Prentice Hall, 2005.
+
+[Sta2006] W. Stallings, Organización y Arquitectura de Computadoras (7/e), Pearson Educación, 2006.
+
+A continuación voy a mostrar los epígrafes y páginas en los que se encuentran los contenidos del tema en la bibliografía básica que sirve como referencLecturas Básicas
+=================
+[Sta2005] W. Stallings, Sistemas Operativos. Aspectos Internos y Principios de Diseño (5/e), Prentice Hall, 2005.
+
+[Sta2006] W. Stallings, Organización y Arquitectura de Computadoras (7/e), Pearson Educación, 2006.
+
+A continuación voy a mostrar los epígrafes y páginas en los que se encuentran los contenidos del tema en la bibliografía básica que sirve como referencia. Podéis estudiar estos contenidos utilizando bibliografía más reciente teniendo en cuenta los títulos de los epígrafes que se indican, ya que solamente cambian las páginas en donde se encuentran.
+
+1. Soporte hardware (HW) al sistema operativo.
+[Sta2005]
+Capítulo 1. Introducción a los computadores 9
+Elementos básicos 10
+Registros del procesador 11
+Ejecución de instrucciones 14
+Interrupciones 17
+
+Técnicas de comunicación de E/S 34
+
+Apéndice 1B Control de procedimientos 48
+
+Las lecturas de [Sta2006] que referencio a continuación son por si algo no queda claro en el libro de sistemas operativos de Stalling.
+[Sta2006]
+Capítulo 3. Perspectiva de alto nivel del funcionamiento y de las interconexiones del computador 57
+Componentes del computador 58
+Funcionamiento del computador 61
+Los ciclos de captación y ejecución 62
+Interrupciones 66
+Funcionamiento de las E/S 73
+Estructuras de interconexioón 75
+
+Capítulo 7. Entrada/salida 207
+Módulos de E/S 214
+E/S programada 217
+E/S mediante interrupciones 221
+Acceso directo a memoria 229
+
+
+2. Estructura del sistema operativo.
+[Sta2005]
+Capítulo 2. Introducción a los sistemas operativos 53
+Objetivos y funciones de los sistemas operativos 54
+La evolución de los sistemas operativos 58
+Principales logros 67
+Desarrollos que han llevado a los sistemas operativos modernos 79
+
+Sistemas UNIX tradicionales 91
+Sistemas UNIX modernos 94
+Linux 95
+
+
+3. Arquitecturas monolíticas, microkernel y máquinas virtuales.
+[Sta2005]
+Capítulo 4. Hilos, SMP y micronúcleos 157
+Micronúcleos 176
+
+4. Sistemas operativos de propósito específico.
+[Sta2005]
+SO de tiempo real 463-468
+SO Multiprocesador: páginas 172-175
+SO distribuidos y de red: páginas 596-599
+
+
+Lecturas Complementarias
+==========================
+[Sta2018] W. Stallings, Operating Systems. Internals and design principles (9th ed.). Pearson Education, 2018.
+
+Los mismos epígrafes pero en inglés. En este tema las lecturas no cambian mucho pero en siguientes os aconsejaré algunas específicamente de este libro.ia. Podéis estudiar estos contenidos utilizando bibliografía más reciente teniendo en cuenta los títulos de los epígrafes que se indican, ya que solamente cambian las páginas en donde se encuentran.
+
+1. Soporte hardware (HW) al sistema operativo.
+[Sta2005]
+Capítulo 1. Introducción a los computadores 9
+Elementos básicos 10
+Registros del procesador 11
+Ejecución de instrucciones 14
+Interrupciones 17
+
+Técnicas de comunicación de E/S 34
+
+Apéndice 1B Control de procedimientos 48
+
+Las lecturas de [Sta2006] que referencio a continuación son por si algo no queda claro en el libro de sistemas operativos de Stalling.
+[Sta2006]
+Capítulo 3. Perspectiva de alto nivel del funcionamiento y de las interconexiones del computador 57
+Componentes del computador 58
+Funcionamiento del computador 61
+Los ciclos de captación y ejecución 62
+Interrupciones 66
+Funcionamiento de las E/S 73
+Estructuras de interconexioón 75
+
+Capítulo 7. Entrada/salida 207
+Módulos de E/S 214
+E/S programada 217
+E/S mediante interrupciones 221
+Acceso directo a memoria 229
+
+
+2. Estructura del sistema operativo.
+[Sta2005]
+Capítulo 2. Introducción a los sistemas operativos 53
+Objetivos y funciones de los sistemas operativos 54
+La evolución de los sistemas operativos 58
+Principales logros 67
+Desarrollos que han llevado a los sistemas operativos modernos 79
+
+Sistemas UNIX tradicionales 91
+Sistemas UNIX modernos 94
+Linux 95
+
+
+3. Arquitecturas monolíticas, microkernel y máquinas virtuales.
+[Sta2005]
+Capítulo 4. Hilos, SMP y micronúcleos 157
+Micronúcleos 176
+
+4. Sistemas operativos de propósito específico.
+[Sta2005]
+SO de tiempo real 463-468
+SO Multiprocesador: páginas 172-175
+SO distribuidos y de red: páginas 596-599
+
+
+Lecturas Complementarias
+==========================
+[Sta2018] W. Stallings, Operating Systems. Internals and design principles (9th ed.). Pearson Education, 2018.
+
+Los mismos epígrafes pero en inglés. En este tema las lecturas no cambian mucho pero en siguientes os aconsejaré algunas específicamente de este libro.
+Interrupciones 17
+
+Técnicas de comunicación de E/S 34
+
+Apéndice 1B Control de procedimientos 48
+
+Las lecturas de [Sta2006] que referencio a continuación son por si algo no queda claro en el libro de sistemas operativos de Stalling.
+[Sta2006]
+Capítulo 3. Perspectiva de alto nivel del funcionamiento y de las interconexiones del computador 57
+Componentes del computador 58
+Funcionamiento del computador 61
+Los ciclos de captación y ejecución 62
+Interrupciones 66
+Funcionamiento de las E/S 73
+Estructuras de interconexioón 75
+
+Capítulo 7. Entrada/salida 207
+Módulos de E/S 214
+E/S programada 217
+E/S mediante interrupciones 221
+Acceso directo a memoria 229
+
+
+2. Estructura del sistema operativo.
+[Sta2005]
+Capítulo 2. Introducción a los sistemas operativos 53
+Objetivos y funciones de los sistemas operativos 54
+La evolución de los sistemas operativos 58
+Principales logros 67
+Desarrollos que han llevado a los sistemas operativos modernos 79
+
+Sistemas UNIX tradicionales 91
+Sistemas UNIX modernos 94
+Linux 95
+
+
+3. Arquitecturas monolíticas, microkernel y máquinas virtuales.
+[Sta2005]
+Capítulo 4. Hilos, SMP y micronúcleos 157
+Micronúcleos 176
+
+4. Sistemas operativos de propósito específico.
+[Sta2005]
+SO de tiempo real 463-468
+SO Multiprocesador: páginas 172-175
+SO distribuidos y de red: páginas 596-599
+
+
+Lecturas Complementarias
+==========================
+[Sta2018] W. Stallings, Operating Systems. Internals and design principles (9th ed.). Pearson Education, 2018.
+
+Los mismos epígrafes pero en inglés. En este tema las lecturas no cambian mucho pero en siguientes os aconsejaré algunas específicamente de este libro.

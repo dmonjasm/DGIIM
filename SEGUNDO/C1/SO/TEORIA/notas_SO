@@ -1,0 +1,98 @@
+
+INTERRUPCIONES
+
+¿Cómo cargo la CPU con la RSI(rutina de servicio de la interrupción)?
+Figurar 1.10 STALLINGS.
+
+1-.El controlador de dispositivo u otro sistema hardware genera una interrupcion.
+2-.Se termina la ejecución de la instruccion actual.
+3-.El procesador indica el reconocimeinto de la interrupción.
+4-.El procesador apila PSW y PC en la pila de control
+5-.El procesador carga un nuevo valor en el PC(la primera dirección de las instrucciones
+de la interrupción)
+6-.Salva el resto de información de estado del proceso(preferentemente solo la que se va a utilizar)
+7-.Procesa la interrupción
+8-.Restaura la infromación de estado del proceso 
+9-.Restaura los valores antiguos de PSW y PC
+
+La RSI tiene la siguiente forma:
+PUSH -> en la pila kernel de los registros que se van a utilizar.
+POP -> pila kernel
+
+'iret' -> tira de la pila de control de sistema 
+'ret' -> tira de la pila 
+¿Cómo manejo multiples interrupciones?
+
+
+DEFINICIONES:
+Modelos de memoria: interfaz de acceso a memoria que proporiconan los micros
+
+Segmented memory model: los programas ven el espacio de memoria como un grupo
+de espacios independientes llamados segmentos, es decir, consta de dos indentificadores
+el primero para el segmento, y el segundo para la direccion de memoria
+
+Real-address mode memory model: proporcionado por compatibilidad hacia atrás con
+el procesador 8086
+
+#CFFF=dependiente de arquitectura
+
+USER/KERNEL mode:
+Las únicas maneras posibles de entrar en kernel mode son:
+1-.En respuesta a una interrupción solicitada desde un módulo de E/S (controlador)
+el HW apila PSW y PC actuales, activa modo kernel, y carga el PC con el contenido
+del vector correspondinete al dispositivo controlado por el controlador que solicita
+la interrupción
+
+2-.En respuesta a una condición de excepción, como resultado de la ejcución de una 
+instrucción, el HW apila PSW y PC actuales, activa modo kernel, y carga PC Con el 
+contenido del vector correspondiente a la excepción. RSE(rutina de servicio de excepción).
+Habrá servicios recuperables y otros no recuperables.
+
+3-.En respuesta a una llamada al sistema(interrupción software) solicitada explicitamente
+por el programa en ejecución(ej.syscall en IA-32), el HW apila PSW y PC con el contenido 
+del vector corresondiente al gestor general de llamadas.
+
+
+ESTRUCTURA DEL SISTEMA OPERATIVO:
+
+Proceso: concepto que permite onitorizar y controlar sistemáticamente la ejecución de varios
+programas en el procesador. Un proceso debe tener asociados dos elementos: 
+	El programa a ajecutar y,
+	La información para supervisión y control de la ejecución del programa:PCB(Process Control Block)
+	Multiprogramming, Timesharing, CPU scheduling, swapping, virtual memory
+
+
+FUNCIONALIDAD PARA PROCESOS:
+
+Creacion del PCB asociado a un programa que va a ejecutarse. Eliminación del PCB una vez finalizada la
+ejecución.
+Bloqueo (sleep) y desbloqueo (wakeup) de los procesos dependiendo de los eventos por los que debe esperar
+un programa para poder continuar su ejecución 
+Proporcionar mecanismos que posibiliten la comunicación y la sincronización entre procesos.
+
+
+JERARQUIA DE MEMORIA:
+
+1-.Registros
+2-.Caché L1 > Caché L2
+3-.SRAM > DRAM
+4-.Disco duros
+
+FUNCIONALIDAD PARA MEMORIA:
+
+Protección de la región de memoria principal ocupada por el kernel y protección de las regiones de 
+memoria principal ocupadas por los programas
+
+Compartición de parte de las regiones ocupadas por los programas para permitir comuniación entre estos
+
+Gestión automática de la asignación/liberación de la memoria disponible para un programa en cualquier
+nivel de jerarquía de memoria y de forma transparente al programador.
+
+Mantener información sobre la memoria asignada a los procesos, núcleo, etc. y la memoria libre en 
+cualquier nivel de la jerarquía.
+
+Implementar algoritmos para decidir cuanta memoria asignar a cada proceso y cuadno debe ser liberada
+toda la memoria asociada a un proceso manteniendolo en almacenamiento secundario.
+
+LEER TEMA 2 STALLINGS
+

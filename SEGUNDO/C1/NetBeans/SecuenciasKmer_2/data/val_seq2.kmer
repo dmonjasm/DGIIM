@@ -1,0 +1,21 @@
+MP-KMER
+4
+atgcatgc 100
+tctcTAt 100
+tgt 100
+tatdt 100
+
+
+
+SALIDA
+
+Abriendo fichero ../Tests/val_seq2.kmer
+Leyendo 4 Kmers
+Comprimiendo secuencia de Kmers ...
+Ordenando secuencia de kmers ...
+Escribiendo 4 Kmers
+atgca 100
+tctct 100
+tgt__ 100
+tat_t 100
+

@@ -1,0 +1,73 @@
+pseudo código milindri_marcha atrás
+
+if(tamaño del vector resultado > 0) entonces{
+	if(posición_actual != (dimensión_matriz,dimensión_matriz)) entonces{
+		if(posición actual se actual se ha visitado) entonces{
+			resultado.pop_back()
+		
+			if(resultado.size() - 2 >= 0)
+				milindri_marchatras(matriz, tamanio, resultado,resultado[resultado.size()-1],resultado[resultado.size()-2]);
+
+			else
+				milindri_marchatras(matriz, tamanio, resultado,resultado[resultado.size()-1],aux);
+		}
+	}
+
+
+		else{
+			if(al ir hacia al norte no te sales del laberinto y no es la posición anterior) entonces{
+				aumenta el contador de caminos;
+				if(no se ha decidido el nuevo camino){
+					posicion_siguiente = la actual + 1 paso hacia el norte
+					camino = se ha decidido el camino
+				}
+			}
+	
+			if(al ir hacia el sur no te sales del laberinto y no es la posición anterior) entonces{
+				aumenta el contador de caminos;
+				if(no se ha decidido el nuevo camino){
+					posicion_siguiente = la actual + 1 paso hacia el sur;
+					camino = se ha decidido el camino
+				}
+			}
+	
+			if(al ir hacia el este no te sales del laberinto y no es la posición anterior) entonces{
+				aumenta el contador de caminos;
+				if(no se ha decidido el nuevo camino){
+					posicion_siguiente = la actual + 1 paso hacia el este;
+					camino = se ha decidido el camino
+				}
+			}
+
+			if(al ir hacia el oeste no te sales del laberinto y no es la posición anterior) entonces{
+				aumenta el contador de caminos;
+				if(no se ha decidido el nuevo camino){
+					posicion_siguiente = la actual + 1 paso hacia el oeste;
+					camino = se ha decidido el camino
+				}
+			}
+
+			if(desde la posición actual puedes seguir más de un camino){
+				se considera que la casilla se puede volver a visitar
+			}
+
+			if(desde la posicion actual solo hay un camino a seguir){
+				se considera que la casilla no se puede volver a visitar
+			}
+
+			if(se no se ha decidido camino){
+				milindri_marchatras(matriz, tamanio, resultado,pos_actual, posicion_anterior);
+			}
+			
+			else{
+				if(tamaño del vector resultado > 0){
+					milindri_marchatras(matriz, tamanio, resultado,pos_siguiente, posicion_actual);
+				}
+			}
+		}
+	}
+}
+	
+			
+			
+			

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+for i in `seq 1 12`
+do 
+	sbatch -p ac --account ac -n1 --cpus-per-task=$i --wrap "./pmv-secuencia 15000"

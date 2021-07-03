@@ -1,0 +1,317 @@
+1.
+a)
+[root@localhost ~]# adduser --home /home/home-user1 user1
+[root@localhost etc]# cat passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+uucp:x:10:14:uucp:/var/spool/uucp:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+gopher:x:13:30:gopher:/var/gopher:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+saslauth:x:499:499:"Saslauthd user":/var/empty/saslauth:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+mailnull:x:47:47::/var/spool/mqueue:/sbin/nologin
+smmsp:x:51:51::/var/spool/mqueue:/sbin/nologin
+user_adduser:x:503:504::/home/user_adduser:/bin/bash
+user_useradd:x:504:505::/home/user_useradd:/bin/bash
+hola:x:506:507::/home/hola:/bin/bash
+user1:x:507:508::/home/home-user1:/bin/bash
+
+#Se ha creado el usuario como se ha pedido
+
+[root@localhost etc]# cat shadow
+root::18170:0:99999:7:::
+bin:*:14789:0:99999:7:::
+daemon:*:14789:0:99999:7:::
+adm:*:14789:0:99999:7:::
+lp:*:14789:0:99999:7:::
+sync:*:14789:0:99999:7:::
+shutdown:*:14789:0:99999:7:::
+halt:*:14789:0:99999:7:::
+mail:*:14789:0:99999:7:::
+uucp:*:14789:0:99999:7:::
+operator:*:14789:0:99999:7:::
+games:*:14789:0:99999:7:::
+gopher:*:14789:0:99999:7:::
+ftp:*:14789:0:99999:7:::
+nobody:*:14789:0:99999:7:::
+saslauth:!!:14916::::::
+sshd:!!:14916::::::
+mailnull:!!:14916::::::
+smmsp:!!:14916::::::
+user_adduser:!!:16024:0:99999:7:::
+user_useradd:!!:16024:0:99999:7:::
+hola:!!:18190:0:99999:7:::
+user1:!!:18190:0:99999:7:::
+
+En el segundo campo no aparece ninguna contraseña cifrada luego no se ha creado ningún password automaticamente. Al aparecer una exclamación en el campo de la contraseña cifrada indica que la contraseña esta bloqueada. Para asignar el password se utiliza la orden 'passwd <nombre_usuario>'
+
+
+En el archivo /etc/shadow se guardan información respecto al envejecimiento de las cuentas.
+
+Al abrir shadow se mostrará 
+[root@localhost etc]# cat shadow
+root::18170:0:99999:7:::
+root::18170:0:99999:7:::
+bin:*:14789:0:99999:7:::
+[root@localhost etc]# cat shadow
+root::18170:0:99999:7:::
+bin:*:14789:0:99999:7:::
+daemon:*:14789:0:99999:7:::
+adm:*:14789:0:99999:7:::
+lp:*:14789:0:99999:7:::
+sync:*:14789:0:99999:7:::
+shutdown:*:14789:0:99999:7:::
+halt:*:14789:0:99999:7:::
+mail:*:14789:0:99999:7:::
+uucp:*:14789:0:99999:7:::
+operator:*:14789:0:99999:7:::
+games:*:14789:0:99999:7:::
+gopher:*:14789:0:99999:7:::
+ftp:*:14789:0:99999:7:::
+nobody:*:14789:0:99999:7:::
+saslauth:!!:14916::::::
+sshd:!!:14916::::::
+mailnull:!!:14916::::::
+smmsp:!!:14916::::::
+user_adduser:!!:16024:0:99999:7:::
+user_useradd:!!:16024:0:99999:7:::
+hola:!!:18190:0:99999:7:::
+user1:!!:18190:0:7:7:::
+
+Se modifica el campo numero 5, que es el maximum password age y se escribe 7 el numero de dias especificado.
+
+b)
+Sobre los directorios /bin y /sbin que contienen los programas de utilidad fundamentales para cualquier usuario del sistema y para el usuario root respectivamente. Utilizaría la orden de la siguiente manera
+
+lrwxrwxrwx 1 root root       7 Feb  9  2011 clock -> hwclock
+-rwxr-xr-x 1 root root   43956 Jan 27  2011 hwclock
+
+c)daniel@daniel-XPS-15-9570:/etc$ sudo man fstab
+defaults
+                     use  default  options: rw, suid, dev, exec, auto, nouser,
+                     and async.
+
+Como no se encuentra en man fstab ninguna coincidencia con noatime busco en man mount que las opciones usadas en el montaje apareceran en fstab
+
+daniel@daniel-XPS-15-9570:/etc$ man mount
+noatime
+              Do  not  update  inode access times on this filesystem (e.g. for
+              faster access on the news spool to speed up news servers).  This
+              works  for  all  inode  types  (directories  too), so it implies
+              nodiratime.
+
+
+2.a)
+[root@localhost etc]# mknod /dev/loop0 b 7 0
+mknod: `/dev/loop0': File exists
+[root@localhost etc]# dd if=/dev/zero of=/root/archivo_SA20 bs=1k count=25000
+25000+0 records in
+25000+0 records out
+25600000 bytes (26 MB) copied, 13.1646 s, 1.9 MB/s
+[root@localhost etc]# losetup /dev/loop0 /root/archivo_SA20
+[root@localhost etc]# fdisk /dev/loop0
+Device contains neither a valid DOS partition table, nor Sun, SGI or OSF disklabel
+Building a new DOS disklabel with disk identifier 0x21414258.
+Changes will remain in memory only, until you decide to write them.
+After that, of course, the previous content won't be recoverable.
+
+Warning: invalid flag 0x0000 of partition table 4 will be corrected by w(rite)
+
+Command (m for help): m
+Command action
+   a   toggle a bootable flag
+   b   edit bsd disklabel
+   c   toggle the dos compatibility flag
+   d   delete a partition
+   l   list known partition types
+   m   print this menu
+   n   add a new partition
+   o   create a new empty DOS partition table
+   p   print the partition table
+   q   quit without saving changes
+   s   create a new empty Sun disklabel
+   t   change a partition's system id
+   u   change display/entry units
+   v   verify the partition table
+   w   write table to disk and exit
+   x   extra functionality (experts only)
+
+Command (m for help): n
+Command action
+   e   extended
+   p   primary partition (1-4)
+p
+Partition number (1-4, default 1): 
+Using default value 1
+First sector (2048-49999, default 2048): 
+Using default value 2048
+Last sector, +sectors or +size{K,M,G} (2048-49999, default 49999): 
+Using default value 49999
+Command (m for help): w
+The partition table has been altered!
+
+Calling ioctl() to re-read partition table.
+
+WARNING: Re-reading the partition table failed with error 22: Invalid argument.
+The kernel still uses the old table. The new table will be used at
+the next reboot or after you run partprobe(8) or kpartx(8)
+Syncing disks.
+[root@localhost etc]# fdisk -l /dev/loop0
+
+Disk /dev/loop0: 25 MB, 25600000 bytes
+29 heads, 41 sectors/track, 42 cylinders, total 50000 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x21414258
+
+      Device Boot      Start         End      Blocks   Id  System
+/dev/loop0p1            2048       49999       23976   83  Linux
+
+b)
+[root@localhost etc]# mke2fs -t ext3 /dev/loop0
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=1024 (log=0)
+Fragment size=1024 (log=0)
+Stride=0 blocks, Stripe width=0 blocks
+6272 inodes, 25000 blocks
+1250 blocks (5.00%) reserved for the super user
+First data block=1
+Maximum filesystem blocks=25690112
+4 block groups
+8192 blocks per group, 8192 fragments per group
+1568 inodes per group
+Superblock backups stored on blocks: 
+	8193, 24577
+
+Writing inode tables: done                            
+Creating journal (1024 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 32 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+b.a)
+[root@localhost etc]# tune2fs -l /dev/loop0
+
+4 block groups 
+Inode count:              6272
+Inode size:	          128
+Inodes per group:         1568
+Block size:               1024
+Free blocks:              2286
+Blocks per group:         8192
+
+
+
+
+c)
+[root@localhost etc]# mount -o sync,ro /dev/loop0 /mnt
+[ 3381.610000] EXT3-fs: barriers not enabled
+[ 3381.610000] kjournald starting.  Commit interval 5 seconds
+[ 3381.610000] EXT3-fs (loop0): mounted filesystem with writeback data mode
+
+[root@localhost etc]# cat mtab
+LABEL=ROOT / auto rw,noatime 0 0
+proc /proc proc rw 0 0
+sysfs /sys sysfs rw 0 0
+devpts /dev/pts devpts rw,gid=5,mode=620 0 0
+tmpfs /dev/shm tmpfs rw 0 0
+/tmp /tmp tmpfs rw,mode=1777 0 0
+none /proc/sys/fs/binfmt_misc binfmt_misc rw 0 0
+/dev/loop0 /mnt ext3 ro,sync 0 0
+
+
+3.
+a)NI  --  Nice Value
+           The  nice  value  of  the  task.   A negative nice value means
+           higher priority, whereas a positive  nice  value  means  lower
+           priority.   Zero  in this field simply means priority will not
+           be adjusted in determining a task's dispatch-ability.
+
+us: Time spent running non-kernel code.  (user time, including nice time)
+si: Amount of memory swapped in from disk (/s).
+
+ RES  - anything occupying physical memory (es la columna de top que indica la memoria RAM que usa el proceso realmente).
+
+Swap:        0k total,        0k used,        0k free,    44656k cached
+
+RES indica la memoria RAM utilizada por un cierto proceso, mientras que en la fila swap se escribe la memorial swap total, usada y libre. Como no hay ni memoria swap total, ni libre pues el proceso no puede utilizar ninguna emoria swap.
+
+
+b)
+[root@localhost etc]# free
+             total       used       free     shared    buffers     cached
+Mem:       1019660      81920     937740          0      18460      44280
+-/+ buffers/cache:      19180    1000480
+Swap:            0          0          0
+
+c)
+#!/bin/bash
+
+free | head -2| tail -1| cut -f 1,4,5,6
+free | tail -1|cut -f 2
+
+
+d)
+[root@localhost ~]# cat logCron
+5 2 * 3-5 5 `./script &>> ./log`
+
+[root@localhost ~]# crontab logCron
+[root@localhost ~]# crontab -l
+5 2 * 3-5 5 `./script &>> ./log`
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

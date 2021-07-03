@@ -1,0 +1,320 @@
+Test #1: valgrind --leak-check=full ../dist/Debug/GNU-Linux/proyecto -i
+
+ERROR en la llamada
+   kmer [-l f.kmer fa.dna [fn.dna]] [-c f.dna fa.kmer [fn.kmer]]
+
+==============================================================================================
+
+Test #2: valgrind --leak-check=full ../dist/Debug/GNU-Linux/proyecto -l gusano.kmer
+
+ERROR en la llamada
+   kmer [-l f.kmer fa.dna [fn.dna]] [-c f.dna fa.kmer [fn.kmer]]
+
+==============================================================================================
+
+Test #3: valgrind --leak-check=full ../dist/Debug/GNU-Linux/proyecto -c gusano1.dna
+
+ERROR en la llamada
+   kmer [-l f.kmer fa.dna [fn.dna]] [-c f.dna fa.kmer [fn.kmer]]
+
+==============================================================================================
+
+Test #4: valgrind --leak-check=full ../dist/Debug/GNU-Linux/proyecto gusano1.dna -l
+
+ERROR en la llamada
+   kmer [-l f.kmer fa.dna [fn.dna]] [-c f.dna fa.kmer [fn.kmer]]
+
+==============================================================================================
+
+Test #5: valgrind --leak-check=full ../dist/Debug/GNU-Linux/proyecto unknown.dna -c gusano.kmer ebola.kmer humano.kmer raton.kmer pez.kmer
+
+ERROR en la llamada
+   kmer [-l f.kmer fa.dna [fn.dna]] [-c f.dna fa.kmer [fn.kmer]]
+
+==============================================================================================
+
+Test #6: valgrind --leak-check=full ../dist/Debug/GNU-Linux/proyecto -l ebola.kmer noexiste.dna
+
+ERROR. EL FICHERO [ebola.kmer] NO EXISTE O ESTA CORRUPTO
+
+Creando fichero [ebola.kmer] ...
+Abriendo fichero [noexiste.dna] ...
+ERROR. NO SE HA PODIDO LEER EL FICHERO [noexiste.dna]
+ERROR. No se han podido procesar los datos del fichero [noexiste.dna]
+Guardando fichero [ebola.kmer]
+SE HAN ESCRITO CORRECTAMENTE [0] KMERS EN EL FICHERO [ebola.kmer]
+
+==============================================================================================
+
+Test #7: valgrind --leak-check=full ../dist/Debug/GNU-Linux/proyecto -l ebola.kmer noexiste.dna noexiste2.dna noexiste3.dna
+
+SE HAN LEIDO CORRECTAMENTE [0] KMERS DEL FICHERO [ebola.kmer]
+
+Abriendo fichero [noexiste.dna] ...
+ERROR. NO SE HA PODIDO LEER EL FICHERO [noexiste.dna]
+ERROR. No se han podido procesar los datos del fichero [noexiste.dna]
+Abriendo fichero [noexiste2.dna] ...
+ERROR. NO SE HA PODIDO LEER EL FICHERO [noexiste2.dna]
+ERROR. No se han podido procesar los datos del fichero [noexiste2.dna]
+Abriendo fichero [noexiste3.dna] ...
+ERROR. NO SE HA PODIDO LEER EL FICHERO [noexiste3.dna]
+ERROR. No se han podido procesar los datos del fichero [noexiste3.dna]
+Guardando fichero [ebola.kmer]
+SE HAN ESCRITO CORRECTAMENTE [0] KMERS EN EL FICHERO [ebola.kmer]
+
+==============================================================================================
+
+Test #8: valgrind --leak-check=full ../dist/Debug/GNU-Linux/proyecto -l gusano.kmer gusano1.dna
+
+ERROR. EL FICHERO [gusano.kmer] NO EXISTE O ESTA CORRUPTO
+
+Creando fichero [gusano.kmer] ...
+Abriendo fichero [gusano1.dna] ...
+Procesados [9996] Kmers
+Guardando fichero [gusano.kmer]
+SE HAN ESCRITO CORRECTAMENTE [1014] KMERS EN EL FICHERO [gusano.kmer]
+
+==============================================================================================
+
+Test #9: valgrind --leak-check=full ../dist/Debug/GNU-Linux/proyecto -l gusano.kmer gusano2.dna
+
+SE HAN LEIDO CORRECTAMENTE [1014] KMERS DEL FICHERO [gusano.kmer]
+Abriendo fichero [gusano2.dna] ...
+Procesados [9996] Kmers
+Guardando fichero [gusano.kmer]
+SE HAN ESCRITO CORRECTAMENTE [1023] KMERS EN EL FICHERO [gusano.kmer]
+
+==============================================================================================
+
+Test #10: valgrind --leak-check=full ../dist/Debug/GNU-Linux/proyecto -l gusano.kmer gusano1.dna gusano2.dna
+
+ERROR. EL FICHERO [gusano.kmer] NO EXISTE O ESTA CORRUPTO
+
+Creando fichero [gusano.kmer] ...
+Abriendo fichero [gusano1.dna] ...
+Procesados [9996] Kmers
+Abriendo fichero [gusano2.dna] ...
+Procesados [9996] Kmers
+Guardando fichero [gusano.kmer]
+SE HAN ESCRITO CORRECTAMENTE [1023] KMERS EN EL FICHERO [gusano.kmer]
+
+==============================================================================================
+
+Test #11: valgrind --leak-check=full ../dist/Debug/GNU-Linux/proyecto -l ebola.kmer ebona.dna noexiste.dna noexiste2.dna
+
+ERROR. EL FICHERO [ebola.kmer] NO EXISTE O ESTA CORRUPTO
+
+Creando fichero [ebola.kmer] ...
+Abriendo fichero [ebola.dna] ...
+Procesados [9996] Kmers
+Abriendo fichero [noexiste.dna] ...
+ERROR. NO SE HA PODIDO LEER EL FICHERO [noexiste.dna]
+ERROR. No se han podido procesar los datos del fichero [noexiste.dna]
+Abriendo fichero [noexiste2.dna] ...
+ERROR. NO SE HA PODIDO LEER EL FICHERO [noexiste2.dna]
+ERROR. No se han podido procesar los datos del fichero [noexiste2.dna]
+Guardando fichero [ebola.kmer]
+SE HAN ESCRITO CORRECTAMENTE [1014] KMERS EN EL FICHERO [ebola.kmer]
+
+==============================================================================================
+
+Test #12: valgrind --leak-check=full ../dist/Debug/GNU-Linux/proyecto -l pez.kmer noexiste.dna pez1.dna noexiste2.dna noexiste3.dna
+
+ERROR. EL FICHERO [pez.kmer] NO EXISTE O ESTA CORRUPTO
+
+Creando fichero [pez.kmer] ...
+Abriendo fichero [noexiste.dna] ...
+ERROR. NO SE HA PODIDO LEER EL FICHERO [noexiste.dna]
+ERROR. No se han podido procesar los datos del fichero [noexiste.dna]
+Abriendo fichero [pez1.dna] ...
+Procesados [9996] Kmers
+Abriendo fichero [noexiste2.dna] ...
+ERROR. NO SE HA PODIDO LEER EL FICHERO [noexiste2.dna]
+ERROR. No se han podido procesar los datos del fichero [noexiste2.dna]
+Abriendo fichero [noexiste3.dna] ...
+ERROR. NO SE HA PODIDO LEER EL FICHERO [noexiste3.dna]
+ERROR. No se han podido procesar los datos del fichero [noexiste3.dna]
+Guardando fichero [pez.kmer]
+SE HAN ESCRITO CORRECTAMENTE [977] KMERS EN EL FICHERO [pez.kmer]
+
+==============================================================================================
+
+Test #13: valgrind --leak-check=full ../dist/Debug/GNU-Linux/proyecto -l raton.kmer raton1.dna raton2.kmer raton2.dna
+
+ERROR. EL FICHERO [raton.kmer] NO EXISTE O ESTA CORRUPTO
+
+Creando fichero [raton.kmer] ...
+Abriendo fichero [raton1.dna] ...
+Procesados [9996] Kmers
+Abriendo fichero [raton2.kmer] ...
+ERROR. NO SE HA PODIDO LEER EL FICHERO [raton2.kmer]
+ERROR. No se han podido procesar los datos del fichero [raton2.kmer]
+Abriendo fichero [raton2.dna] ...
+Procesados [9996] Kmers
+Guardando fichero [raton.kmer]
+SE HAN ESCRITO CORRECTAMENTE [1017] KMERS EN EL FICHERO [raton.kmer]
+
+==============================================================================================
+
+Test #14: valgrind --leak-check=full ../dist/Debug/GNU-Linux/proyecto -l mosca.kmer mosca1.dna mosca2.dna
+
+ERROR. EL FICHERO [mosca.kmer] NO EXISTE O ESTA CORRUPTO
+
+Creando fichero [mosca.kmer] ...
+Abriendo fichero [mosca1.dna] ...
+Procesados [9996] Kmers
+Abriendo fichero [mosca2.dna] ...
+Procesados [9996] Kmers
+Guardando fichero [mosca.kmer]
+SE HAN ESCRITO CORRECTAMENTE [1024] KMERS EN EL FICHERO [mosca.kmer]
+
+==============================================================================================
+
+Test #15: valgrind --leak-check=full ../dist/Debug/GNU-Linux/proyecto -l humano.kmer humano1.dna humano2.dna
+
+ERROR. EL FICHERO [humano.kmer] NO EXISTE O ESTA CORRUPTO
+
+Creando fichero [humano.kmer] ...
+Abriendo fichero [humano1.dna] ...
+Procesados [9996] Kmers
+Abriendo fichero [humano2.dna] ...
+Procesados [9996] Kmers
+Guardando fichero [humano.kmer]
+SE HAN ESCRITO CORRECTAMENTE [1015] KMERS EN EL FICHERO [humano.kmer]
+
+==============================================================================================
+
+Test #16: valgrind --leak-check=full ../dist/Debug/GNU-Linux/proyecto -c unknown1.dna gusano.kmer humano.kmer raton.kmer mosca.kmer pez.kmer ebola.kmer
+
+Abriendo fichero [unknown1.dna] ...
+Procesados [9996] Kmers
+Obtencion de secuencia de [995] KMERS
+OBTENIENDO DISTANCIAS...
+SE HAN LEIDO CORRECTAMENTE [1023] KMERS DEL FICHERO [gusano.kmer]
+[1. gusano.kmer] = 0.294499
+SE HAN LEIDO CORRECTAMENTE [1015] KMERS DEL FICHERO [humano.kmer]
+[2. humano.kmer] = 0.155501
+SE HAN LEIDO CORRECTAMENTE [1017] KMERS DEL FICHERO [raton.kmer]
+[3. raton.kmer] = 0.179841
+SE HAN LEIDO CORRECTAMENTE [1024] KMERS DEL FICHERO [mosca.kmer]
+[4. mosca.kmer] = 0.253052
+SE HAN LEIDO CORRECTAMENTE [977] KMERS DEL FICHERO [pez.kmer]
+[5. pez.kmer] = 0.244113
+SE HAN LEIDO CORRECTAMENTE [1014] KMERS DEL FICHERO [ebola.kmer]
+[6. ebola.kmer] = 0.224622
+SUGERENCIA >> humano.kmer [0.155501]
+
+================================================================================================================
+
+Test #17: valgrind --leak-check=full ../dist/Debug/GNU-Linux/proyecto -c unknown2.dna gusano.kmer humano.kmer raton.kmer mosca.kmer pez.kmer ebola.kmer
+
+Abriendo fichero [unknown2.dna] ...
+Procesados [9996] Kmers
+Obtencion de secuencia de [926] KMERS
+OBTENIENDO DISTANCIAS...
+SE HAN LEIDO CORRECTAMENTE [1023] KMERS DEL FICHERO [gusano.kmer]
+[1. gusano.kmer] = 0.231334
+SE HAN LEIDO CORRECTAMENTE [1015] KMERS DEL FICHERO [humano.kmer]
+[2. humano.kmer] = 0.231202
+SE HAN LEIDO CORRECTAMENTE [1017] KMERS DEL FICHERO [raton.kmer]
+[3. raton.kmer] = 0.188244
+SE HAN LEIDO CORRECTAMENTE [1024] KMERS DEL FICHERO [mosca.kmer]
+[4. mosca.kmer] = 0.280522
+SE HAN LEIDO CORRECTAMENTE [977] KMERS DEL FICHERO [pez.kmer]
+[5. pez.kmer] = 0.176631
+SE HAN LEIDO CORRECTAMENTE [1014] KMERS DEL FICHERO [ebola.kmer]
+[6. ebola.kmer] = 0.26078
+SUGERENCIA >> pez.kmer [0.176631]
+
+================================================================================================================
+
+Test #18: valgrind --leak-check=full ../dist/Debug/GNU-Linux/proyecto -c unknown3.dna gusano.kmer humano.kmer raton.kmer mosca.kmer pez.kmer ebola.kmer
+
+Abriendo fichero [unknown3.dna] ...
+Procesados [9996] Kmers
+Obtencion de secuencia de [987] KMERS
+OBTENIENDO DISTANCIAS...
+SE HAN LEIDO CORRECTAMENTE [1023] KMERS DEL FICHERO [gusano.kmer]
+[1. gusano.kmer] = 0.181242
+SE HAN LEIDO CORRECTAMENTE [1015] KMERS DEL FICHERO [humano.kmer]
+[2. humano.kmer] = 0.274044
+SE HAN LEIDO CORRECTAMENTE [1017] KMERS DEL FICHERO [raton.kmer]
+[3. raton.kmer] = 0.209257
+SE HAN LEIDO CORRECTAMENTE [1024] KMERS DEL FICHERO [mosca.kmer]
+[4. mosca.kmer] = 0.242148
+SE HAN LEIDO CORRECTAMENTE [977] KMERS DEL FICHERO [pez.kmer]
+[5. pez.kmer] = 0.19221
+SE HAN LEIDO CORRECTAMENTE [1014] KMERS DEL FICHERO [ebola.kmer]
+[6. ebola.kmer] = 0.237085
+SUGERENCIA >> gusano.kmer [0.181242]
+
+================================================================================================================
+
+Test #19: valgrind --leak-check=full ../dist/Debug/GNU-Linux/proyecto -c unknown4.dna gusano.kmer humano.kmer raton.kmer mosca.kmer pez.kmer ebola.kmer
+
+Abriendo fichero [unknown4.dna] ...
+Procesados [9996] Kmers
+Obtencion de secuencia de [1020] KMERS
+OBTENIENDO DISTANCIAS...
+SE HAN LEIDO CORRECTAMENTE [1023] KMERS DEL FICHERO [gusano.kmer]
+[1. gusano.kmer] = 0.223203
+SE HAN LEIDO CORRECTAMENTE [1015] KMERS DEL FICHERO [humano.kmer]
+[2. humano.kmer] = 0.256874
+SE HAN LEIDO CORRECTAMENTE [1017] KMERS DEL FICHERO [raton.kmer]
+[3. raton.kmer] = 0.249375
+SE HAN LEIDO CORRECTAMENTE [1024] KMERS DEL FICHERO [mosca.kmer]
+[4. mosca.kmer] = 0.202835
+SE HAN LEIDO CORRECTAMENTE [977] KMERS DEL FICHERO [pez.kmer]
+[5. pez.kmer] = 0.252896
+SE HAN LEIDO CORRECTAMENTE [1014] KMERS DEL FICHERO [ebola.kmer]
+[6. ebola.kmer] = 0.253318
+SUGERENCIA >> mosca.kmer [0.202835]
+
+
+==============================================================================================
+
+Test #20: valgrind --leak-check=full ../dist/Debug/GNU-Linux/proyecto -c unknown1.dna noexiste.kmer noexiste2.kmer noexiste3.kmer noexiste4.kmer noexiste5.kmer
+
+Abriendo fichero [unknown1.dna] ...
+Procesados [9996] Kmers
+Obtencion de secuencia de [995] KMERS
+OBTENIENDO DISTANCIAS...
+ERROR. EL FICHERO [noexiste.kmer] NO EXISTE O ESTA CORRUPTO
+ERROR. EL FICHERO [noexiste2.kmer] NO EXISTE O ESTA CORRUPTO
+ERROR. EL FICHERO [noexiste3.kmer] NO EXISTE O ESTA CORRUPTO
+ERROR. EL FICHERO [noexiste4.kmer] NO EXISTE O ESTA CORRUPTO
+ERROR. EL FICHERO [noexiste5.kmer] NO EXISTE O ESTA CORRUPTO
+SUGERENCIA >>
+
+==============================================================================================
+
+Test #21: valgrind --leak-check=full ../dist/Debug/GNU-Linux/proyecto -c unknown1.dna noexiste.kmer noexiste2.kmer noexiste3.kmer mosca.kmer gusano.kmer
+
+Abriendo fichero [unknown1.dna] ...
+Procesados [9996] Kmers
+Obtencion de secuencia de [995] KMERS
+OBTENIENDO DISTANCIAS...
+ERROR. EL FICHERO [noexiste.kmer] NO EXISTE O ESTA CORRUPTO
+ERROR. EL FICHERO [noexiste2.kmer] NO EXISTE O ESTA CORRUPTO
+ERROR. EL FICHERO [noexiste3.kmer] NO EXISTE O ESTA CORRUPTO
+SE HAN LEIDO CORRECTAMENTE [1024] KMERS DEL FICHERO [mosca.kmer]
+[4. mosca.kmer] = 0.253052
+SE HAN LEIDO CORRECTAMENTE [1023] KMERS DEL FICHERO [gusano.kmer]
+[5. gusano.kmer] = 0.294499
+SUGERENCIA >> mosca.kmer [0.253052]
+
+==============================================================================================
+
+Test #22: valgrind --leak-check=full ../dist/Debug/GNU-Linux/proyecto -c unknown1.dna ebola.dna mosca1.dna raton.dna humano.dna gusano.dna
+
+Abriendo fichero [unknown1.dna] ...
+Procesados [9996] Kmers
+Obtencion de secuencia de [995] KMERS
+OBTENIENDO DISTANCIAS...
+ERROR. FORMATO DE FICHERO [ebola.dna] NO VALIDO. NO SE HA ENCONTRADO 'MP-KMER'
+ERROR. FORMATO DE FICHERO [mosca1.dna] NO VALIDO. NO SE HA ENCONTRADO 'MP-KMER'
+ERROR. EL FICHERO [raton.dna] NO EXISTE O ESTA CORRUPTO
+ERROR. EL FICHERO [humano.dna] NO EXISTE O ESTA CORRUPTO
+ERROR. EL FICHERO [gusano.dna] NO EXISTE O ESTA CORRUPTO
+SUGERENCIA >>
+==============================================================================================

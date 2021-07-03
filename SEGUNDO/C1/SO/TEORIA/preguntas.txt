@@ -1,0 +1,17 @@
+1.¿El dispatcher forma parte del SO o es simplemente una función del sistema?.(es una función kernel)
+2.¿Cuando hablemos de modelo de memoria de un programa se trata del método en el que el programa y la memoria principal interactúan por medio del SO?
+3.¿En el real mode memory model porque la memoria está limitada a 64KB?El selector no referencia a memoria si no a una tabla de segmentos.
+4.¿Si un proceso padre termina sus hijos teoricamente pasan a ser procesos hijos de /ini, eso se da en todos los SO?(No entra: todos cuelgan de /init)
+5.¿En la transición de Nuevo->Listo/Suspendido, que prioriza, la creación temprana de los procesos o evitar la sobrecarga del SO, que es más eficiente?
+6.¿De qué mecanismos consta el SO para prever que un proceso bloqueado va a salir pronto de su bloqueo?
+7.¿Se puede dar el caso en el que un proceso hijo herede recursos del padre y como consecuencia el padre y el hijo puedan llegar a entrar en conflicto por el recurso?
+8.¿Si se produce una interrupción ya sea E/S o de reloj no habría que cambiar el estado del proceso que estaba ejecutando para permitir la ejecución de la RSI o del dispatcher?, es decir,¿cuando puede
+darse un cambio de modo pero no de estado?
+9.¿La pila núcleo de un hilo se utiliza para aquellas rutinas que se ejecutan en modo kernel?¿Qué se almacena en ella?
+10.En un SO con ULT, ¿por qué una llamada al sistema bloqueante bloquea todos los hilos y no solo aquel que realiza la llamada?(Posible respuesta: no es que se bloqueen los hilos sino que se bloquea el proceso a la espera de l ainterrupción y por tanto todos los hilos permanecen bloqueados hasta que el proceso vuelva a estar en ejecución. Cuando se vuelva al estado en Ejecución el hilo que realizo la llamada continuará su ejecución.)
+11.En la planificación de un proceso cuando en la planificación a largo plazo se refiere a añadir un proceso para ser ejecutado, ¿se refiere a la cola de listo/suspendido?
+12.En el calculo de la penalización de un proceso es T(tiempo de respuesta)/r(ráfaga) o T/M(tiempo de espera)
+13.Una pequeña explicación de memoria virtual(Posible respuesta: se trata de una memoria que es más grande que la RAM y referencia en esta, si algo que direccione una direccion virtual no esta en RAM se toma de memoria secundaria)
+14.¿El planificador a corto plazo es lo mismo que el dispatcher?(No es lo mismo)
+15.¿Que es la sobrecarga del sistema?
+16.¿En un sistema con preemption la llegada de un proceso con mayor prioridad puede expulsar a un proceso en ejecución?

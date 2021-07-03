@@ -1,0 +1,21 @@
+******************************************************************************************************
+SCRIPT CREADO POR: DANIEL PÉREZ RUIZ
+******************************************************************************************************
+
+INSTRUCCIONES:
+    1. Descomprimir en la carpeta /data del proyecto
+    2. Proporcionar permisos al archivo validar.sh >> chmod a+x validar.sh
+    3. Ejecutar: ./validar.sh
+
+NOTA: Asegurarse de que el proyecto esté compilado.
+
+******************************************************************************************************
+
+CONTENIDO:
+    - crearKmer.sh -> Crea los ficheros .kmer a partir de los .dna
+    - clasifyDna.sh -> Clasifica los unknown.dna a partir de las librerías .kmer obtenidas
+    - validar.sh -> Script para probar el rendimiento del programa
+
+USOS ÚTILES:
+    $ ./validar.sh
+    $ ./crearKmer.sh && ./clasifyDna.sh

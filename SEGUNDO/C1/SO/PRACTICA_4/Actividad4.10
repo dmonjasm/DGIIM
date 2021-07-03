@@ -1,0 +1,13 @@
+[root@localhost tmp]# crontab -l
+* * * * * `rm -v /tmp/varios/core* &>> /tmp/listacores`
+
+removed `/tmp/varios/core_1'
+removed `/tmp/varios/core_1'
+removed `/tmp/varios/core_2'
+removed `/tmp/varios/core_3'
+removed `/tmp/varios/core_4'
+removed `/tmp/varios/core_5'
+removed `/tmp/varios/core_6'
+removed `/tmp/varios/core_7'
+rm: cannot remove `/tmp/varios/core*': No such file or directory
+

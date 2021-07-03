@@ -1,0 +1,69 @@
+TABLA 5.
+
+1.Para N≈32, ¿cuántos bits adicionales pueden llegar a necesitarse para almacenar el resultado? Dicho resultado se alcanzaría cuando todos los elementos tomaran el valor máximo sin signo. ¿Cómo se escribe ese valor en hexadecimal? ¿Cuántos acarreos se producen? ¿Cuánto vale la suma (indicarla en hexadecimal)? Comprobarlo usando ddd.
+
+Si hacemos la suma de 0xFFFFFFFF 32 veces nos da que el resultado será 0x1FFFFFFFE0 y si representamos este numero en binario tenemos que se trata del numero 
+0001111111111111111111111111111111100000 que son 40 bits, pero sin embargo al tratarse de un entero sin signo se puede obviar los 0 de la izquierda luego se requerirían de 37 bits para representar el numero. Como estamos trabajando con numeros enteros de 32 bits sin signo se requieren 5 bits adicionales.
+Para ver cuantos acarreos se producen nos fijamos en que el acarreo que da la operación de sumar 32 veces 0xFFFFFFFF es 0x0000001F (fijandose en el valor almacenado en $resultado+4 tras realizar la operación), si pasamos este numero a decimal tenemos que 0x0000001F=31 que es el numero de accareos producidos.
+El valor de la suma ya la hemos especificado antes pero es 0x1FFFFFFFE0.
+
+
+2.Si nos proponemos obtener sólo 1 acarreo con una lista de 32 elementos iguales, el objetivo es que la suma alcance 2^32 (que ya no cabe en 32bits). Cada elemento debe valer por tanto 2^32/32 = 2^32/2? = ?. ¿Cómo se escribe ese valor en hexadecimal? Inicializar los 32 elementos de la lista con ese valor y comprobar cuándo se produce el acarreo.
+
+Cada elementos debe valer 2^32/32=2^32/2^5=2^27=134217728(en decimal)=0x08000000(en hexadecimal)
+El acarreo se produce en la iteración numero 32 del bucle suma, es decir, en la última suma del bucle.
+
+
+3.Por probar valores intermedios: si la lista se inicializara con los valores 0x10000000, 0x20000000, 0x40000000, 0x80000000, repetidos cíclicamente, ¿qué valor tomaría la suma de los 32 elementos? ¿Cuándo se producirían los acarreos? Comprobarlo con ddd.
+
+La suma de los valores de la lista toma el valor 0x780000000=32212254720 en decimal.
+Los acarreos se producen en la iteraciones 5, 10, 14, 19, 23, 27, 31.
+
+
+TABLA 6.
+1.¿Cuál es el máximo entero positivo que puede representarse (escribirlo en hexadecimal)? Si se sumaran los N≈32 elementos de la lista inicializados a ese valor ¿qué resultado se obtendría (en hexadecimal)? ¿Qué valor aproximado tienen el elemento y la suma (indicarlo en múltiplos de potencias de 10)? Comprobarlo usando ddd.
+
+Como tratamos con numeros de 32 bits con signo debemos reservar el primer bit para indicar el signo y el resto de bits para la representación del numero, luego el maximo número que se puede sumar sería
+01111111111111111111111111111111=0x7FFFFFFF (binario|hexadecimal).
+El resultado sería 0x0FFFFFFFe0 en hexadecimal 
+Los valores aproximados del valor en decimal serían:
+valor:2*10^9
+suma:7*10^10 
+
+
+2.Misma pregunta respecto a negativos: menor valor negativo en hexadecimal, suma, valores decimales aprox., usar ddd.
+
+Razonando de la misma manera disponemos de numeros representados con 32 bits, de los cuales el primero se reserva para el signo. El menos numero decimal que se puede escribir con 32 bits teniendo en cuenta el signo estaría compuesto por 32 unos y su representación en hexadecimal sería 0xFFFFFFFF.
+La suma de todos ellos da lugar al mismo numero que la suma del ejercicio anterior cambiando el signo, es decir, 0x1FFFFFFFe0.
+Los valores aproximados del valor en decimal serían:
+valor:-2*10^9
+suma:-7*10^10
+
+
+3.Si nos proponemos obtener sólo 1 acarreo con una lista de 32 elementos positivos iguales, se podría pensar que el objetivo es que la suma alcance 2^31 (que ya no cabe en 32bits como número positivo en complemento a dos). Aparentemente, cada elemento debe valer por tanto 2^31/32 = 2^31/2^5 = ?. ¿Cómo se escribe ese valor en hexadecimal? Inicializar los 32 elementos de la lista con ese valor y comprobar si se produce el acarreo.
+
+Cada elemento debe valer 2^26=0x04000000 es la representación del valor en hexadecimal.
+Si escribimos la lista con 32 veces el valor escrito el resultado que da es 0x80000000 en hexadecimal, que es igual 2^31, y además no se produce acarreo, pero esto se debe a que para la representación del resultado usamos un quad y no un int, por lo que disponemos de 64 bits, luego no se produce acarreo puesto que el programa esta hecho de tal forma para que los 32 bits destinados al acarreo primero contienen el signo del numero y posteriormente se va aumentando el valor de estos bits para ir almacenando el acarreo que se produce solo si una suma excede los 32 bits. Luego realmente el resultado que tenemos es
+0x0000000080000000 que es 2^31 con signo positivo.
+
+
+4.Repetir el ejercicio anterior de forma que sí se produzca acarreo desde los 32bits inferiores a los superiores. ¿Cuál es el valor de elemento requerido? ¿Por qué es incorrecto el razonamiento anterior? Indicar los valores decimales aproximados (múltiplos de potencias de 10) del elemento y de la suma. Comprobarlo usando ddd.
+
+Por lo explicado en en el anterior apartado el resultado de la suma se almacena en 32 bits + 32bits que contienen acarreo y signo, luego el acarreo se produce si se supera 2^32 es decir si se suman 32 veces 2^27. 
+El razonamiento anterior es incorrecto porque no se tiene en cuenta que en cada operacion se extiende el signo del valor que se va a sumar de forma que el numero se representa EDX:EAX donde a EDX se ha extendido el signo del numero que se va a sumar. El adc que se realiza un poco mas abajo tiene esto en cuenta y suma la extensión del signo con el acumulador del acarreo. Es decir que realmente trabajamos con 64 bit, 32 para el signo y el acarreo y otros 32 para representar el numero que se suma, es por eso que el razonamiento anterior no valía, porque operaba solo sobre 31 bits para reservar siempre uno para el signo, y pensaba que al utilizar el bit del signo para representar el numero se produciría acarreo, pero no es asi.
+
+Los valores aproximados en potencias de 10 son:
+valor:1*10^8
+suma:4*10^9
+
+
+5. Respecto a negativos,  ‐2^31 sí cabe en 32bits como número negativo en complemento a dos. Calcular qué valor de elemento se requiere para obtener como suma ‐2^31, y para obtener ‐2^32. Comprobarlo usando ddd.
+
+-2^31/32=-2^31/2^5=-2^26 que si lo expresamos en hexadecimal es 0x84000000 (Funciona comprobado con ddd).
+-2^32/32=-2^32/2^5=-2^27 que si lo expresamos en hexadecimal es 0x88000000 (Funciona comprobado con ddd).
+
+
+6. Por probar valores intermedios: si la lista se inicializara con los valores 0xF0000000, 0xE0000000, 0xE0000000, 0xD0000000, repetidos cíclicamente, ¿qué valor tomaría la suma de los 32 elementos (en hex)? Comprobarlo con ddd.
+
+El valor que toma la suma de los numeros en hexadecimal es 0xFFFFFFFC00000000.
+

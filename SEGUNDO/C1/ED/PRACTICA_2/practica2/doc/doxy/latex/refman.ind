@@ -1,0 +1,66 @@
+\begin{theindex}
+
+  \item {Borrar}
+    \subitem {VD}, \hyperpage{13}
+  \item {borrar}
+    \subitem {ingredientes}, \hyperpage{10}
+  \item {Buscar\+\_\+nombre}
+    \subitem {ingredientes}, \hyperpage{11}
+
+  \indexspace
+
+  \item {ingrediente}, \hyperpage{3}
+    \subitem {ingrediente}, \hyperpage{4}
+    \subitem {operator$<$$<$}, \hyperpage{7}
+    \subitem {operator$>$$>$}, \hyperpage{8}
+    \subitem {operator=}, \hyperpage{5}
+    \subitem {set\+Calorias}, \hyperpage{5}
+    \subitem {set\+Fibra}, \hyperpage{5}
+    \subitem {set\+Grasas}, \hyperpage{6}
+    \subitem {set\+Hc}, \hyperpage{6}
+    \subitem {set\+Nombre}, \hyperpage{7}
+    \subitem {set\+Proteinas}, \hyperpage{7}
+  \item {ingredientes}, \hyperpage{9}
+    \subitem {borrar}, \hyperpage{10}
+    \subitem {Buscar\+\_\+nombre}, \hyperpage{11}
+  \item {Insertar}
+    \subitem {VD}, \hyperpage{13}
+
+  \indexspace
+
+  \item {operator$<$$<$}
+    \subitem {ingrediente}, \hyperpage{7}
+  \item {operator$>$$>$}
+    \subitem {ingrediente}, \hyperpage{8}
+  \item {operator=}
+    \subitem {ingrediente}, \hyperpage{5}
+    \subitem {VD}, \hyperpage{14}
+  \item {operator[]}
+    \subitem {VD}, \hyperpage{15}
+
+  \indexspace
+
+  \item {set\+Calorias}
+    \subitem {ingrediente}, \hyperpage{5}
+  \item {set\+Fibra}
+    \subitem {ingrediente}, \hyperpage{5}
+  \item {set\+Grasas}
+    \subitem {ingrediente}, \hyperpage{6}
+  \item {set\+Hc}
+    \subitem {ingrediente}, \hyperpage{6}
+  \item {set\+Nombre}
+    \subitem {ingrediente}, \hyperpage{7}
+  \item {set\+Proteinas}
+    \subitem {ingrediente}, \hyperpage{7}
+
+  \indexspace
+
+  \item {V\+D$<$ T $>$}, \hyperpage{11}
+  \item {VD}
+    \subitem {Borrar}, \hyperpage{13}
+    \subitem {Insertar}, \hyperpage{13}
+    \subitem {operator=}, \hyperpage{14}
+    \subitem {operator[]}, \hyperpage{15}
+    \subitem {VD}, \hyperpage{12, 13}
+
+\end{theindex}

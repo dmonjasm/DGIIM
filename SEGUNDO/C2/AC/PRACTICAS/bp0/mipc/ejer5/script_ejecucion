@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for((P=65536; P <= 67108864; P=P*2))
+do
+	./SumaVectoresC $P
+done

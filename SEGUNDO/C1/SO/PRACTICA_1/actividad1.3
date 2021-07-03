@@ -1,0 +1,19 @@
+[root@localhost ~]# adduser sergio --uid 1010
+[root@localhost ~]# adduser -d $HOME/jara_mehanquedao6 jara
+[root@localhost etc]# cat passwd
+root::0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+sergio:x:1010:1010:,,,,:/home/sergio:/bin/bash
+jara:x:1011:1011:,,,,:/root/jara_mehanquedao6:/bin/bash
+
+[root@localhost etc]# userdel jara
+[root@localhost etc]# userdel sergio
+
+#Como se puede observar no se ha eliminado el directorio de /root/jara_mehanquedao6

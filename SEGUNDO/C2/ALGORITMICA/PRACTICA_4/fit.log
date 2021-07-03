@@ -1,0 +1,229 @@
+
+
+*******************************************************************************
+Sat May 16 18:35:34 2020
+
+
+FIT:    data read from 'grafica'
+        format = z
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a*x**2*2**x+b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 1.2650231996e+13   0.00e+00  7.95e+05    1.000000e+00   1.000000e+00
+   4 8.3375636443e+02  -5.19e-01  7.95e+01    1.981377e-05   9.999405e-01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 833.756
+rel. change during last iteration : -5.18851e-06
+
+degrees of freedom    (FIT_NDF)                        : 8
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 10.2088
+variance of residuals (reduced chisquare) = WSSR/ndf   : 104.22
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 1.98138e-05      +/- 3.31e-06     (16.71%)
+b               = 0.99994          +/- 3.723        (372.3%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -0.498  1.000 
+
+
+*******************************************************************************
+Sat May 16 18:37:15 2020
+
+
+FIT:    data read from 'grafica'
+        format = z
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: fac(x)
+	fac(x) = (int(x)==0) ? 1.0 : int(x) * fac(int(x)-1.0)
+	[too many nested (or recursive) function definitions (max=20)]
+BREAK: Need via and either parameter list or file
+
+*******************************************************************************
+Sat May 16 18:37:53 2020
+
+
+FIT:    data read from 'grafica'
+        format = z
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: fac(x)
+	fac(x) = (int(x)==0) ? 1.0 : int(x) * fac(int(x)-1.0)
+	[too many nested (or recursive) function definitions (max=20)]
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a            
+   0 7.6390612803e+21   0.00e+00  0.00e+00    1.981377e-05
+BREAK: Singular matrix in Givens()
+
+*******************************************************************************
+Sat May 16 18:38:53 2020
+
+
+FIT:    data read from 'grafica'
+        format = z
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a*x**2*2**x
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 7.6956694556e+02   0.00e+00  1.58e+01    1.983359e-05   9.999405e-01
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Sun May 17 17:11:21 2020
+
+
+FIT:    data read from 'grafica'
+        format = z
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: (x)
+BREAK: Need via and either parameter list or file
+
+*******************************************************************************
+Sun May 17 17:11:26 2020
+
+
+FIT:    data read from 'grafica'
+        format = z
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: (x)
+BREAK: Need via and either parameter list or file
+
+*******************************************************************************
+Sun May 17 17:11:35 2020
+
+
+FIT:    data read from 'grafica'
+        format = z
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x**2*2**x
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a            
+   0 1.2650220790e+13   0.00e+00  1.12e+06    1.000000e+00
+   4 7.6730275025e+02  -1.36e-03  1.12e+02    2.025664e-05
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 767.303
+rel. change during last iteration : -1.35978e-08
+
+degrees of freedom    (FIT_NDF)                        : 9
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 9.23341
+variance of residuals (reduced chisquare) = WSSR/ndf   : 85.2559
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 2.02566e-05      +/- 2.596e-06    (12.82%)
+
+
+*******************************************************************************
+Sun May 17 18:54:00 2020
+
+
+FIT:    data read from 'grafica'
+        format = z
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a*x**2*2**x
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a            
+   0 1.2650220790e+13   0.00e+00  1.12e+06    1.000000e+00
+   4 7.6730275025e+02  -1.36e-03  1.12e+02    2.025664e-05
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 767.303
+rel. change during last iteration : -1.35978e-08
+
+degrees of freedom    (FIT_NDF)                        : 9
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 9.23341
+variance of residuals (reduced chisquare) = WSSR/ndf   : 85.2559
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 2.02566e-05      +/- 2.596e-06    (12.82%)
+
+
+*******************************************************************************
+Sun May 17 18:54:51 2020
+
+
+FIT:    data read from 'grafica'
+        format = z
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a*2**x
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a            
+   0 5.9051532306e+03   0.00e+00  1.21e-01    2.025664e-05
+   3 1.1238807907e+03  -3.51e-03  1.21e-04    3.675217e-03
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 1123.88
+rel. change during last iteration : -3.50889e-08
+
+degrees of freedom    (FIT_NDF)                        : 9
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 11.1748
+variance of residuals (reduced chisquare) = WSSR/ndf   : 124.876
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 0.00367522       +/- 0.0005907    (16.07%)
+
+
+*******************************************************************************
+Sun May 17 18:55:18 2020
+
+
+FIT:    data read from 'grafica'
+        format = z
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a*x*x*2**x
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a            
+   0 1.6899854329e+08   0.00e+00  4.13e+03    3.675217e-03
+   4 7.6730275025e+02  -1.82e-08  4.13e-01    2.025664e-05
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 767.303
+rel. change during last iteration : -1.81649e-13
+
+degrees of freedom    (FIT_NDF)                        : 9
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 9.23341
+variance of residuals (reduced chisquare) = WSSR/ndf   : 85.2559
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 2.02566e-05      +/- 2.596e-06    (12.82%)

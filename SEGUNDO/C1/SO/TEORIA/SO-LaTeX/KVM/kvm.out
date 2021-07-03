@@ -1,0 +1,20 @@
+\BOOKMARK [1][-]{section.1}{Introducci\363n}{}% 1
+\BOOKMARK [1][-]{section.2}{\277Qu\351 es KVM?\277C\363mo se describe dentro del mundo de la virtualizaci\363n?}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{\277Qu\351 es KVM}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{\277C\363mo se describe dentro del mundo de la virtualizaci\363n?}{section.2}% 4
+\BOOKMARK [3][-]{subsubsection.2.2.1}{\277Qu\351 relaci\363n tiene con QEMU?}{subsection.2.2}% 5
+\BOOKMARK [1][-]{section.3}{Principales caracter\355sticas, ventajas e inconvenientes}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{Principales caracter\355sitcas}{section.3}% 7
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Seguridad}{subsection.3.1}% 8
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Almacenamiento}{subsection.3.1}% 9
+\BOOKMARK [3][-]{subsubsection.3.1.3}{Compatibilidad con el hardware}{subsection.3.1}% 10
+\BOOKMARK [3][-]{subsubsection.3.1.4}{Gesti\363n de memoria}{subsection.3.1}% 11
+\BOOKMARK [3][-]{subsubsection.3.1.5}{Migraci\363n en vivo}{subsection.3.1}% 12
+\BOOKMARK [3][-]{subsubsection.3.1.6}{Rendimiento y escalabilidad}{subsection.3.1}% 13
+\BOOKMARK [3][-]{subsubsection.3.1.7}{Latencia m\341s baja y mayor prioritizaci\363n}{subsection.3.1}% 14
+\BOOKMARK [2][-]{subsection.3.2}{Ventajas e inconvenientes que presenta dentro del mundo de la virtualizaci\363n}{section.3}% 15
+\BOOKMARK [1][-]{section.4}{Descripci\363n de la instalaci\363n y funcionamiento}{}% 16
+\BOOKMARK [2][-]{subsection.4.1}{Descripci\363n de la instalaci\363n}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.2}{Funcionamiento}{section.4}% 18
+\BOOKMARK [1][-]{section.5}{Aplicaciones}{}% 19
+\BOOKMARK [1][-]{section.6}{Conclusiones}{}% 20

@@ -1,0 +1,1 @@
+Si la referencia es uno a muchos cada punto de distribución tiene como atributo a una colección de productos, y cada producto un atributo punto de distribución.

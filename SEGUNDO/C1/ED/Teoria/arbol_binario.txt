@@ -1,0 +1,38 @@
+template <class Tbase>
+
+class Arbolbinario{
+	private:	
+		
+		struct nodo{
+			Tbase etiqueta;
+			struct nodo *izqda;
+			struct nodo *drcha;
+			struct nodo *padre;
+		};
+	
+		struct nodo *laraiz;
+
+//FUNCIONES ARBOLES BINARIOS
+
+private:
+	void destruir(nodo * n);
+	void copiar(nodo * dest, nodo * orig);
+	int contar(nodo * n);
+	bool soniguales (nodo*n1, nodo *n2);
+	void escribe_Arbol(ostream & out, nodo * nod) const;
+	void lee_arbol(istream & in, nodo * & nod);
+
+public:
+	typedef struct nodo * nodo;
+	//static const nodo nodo_nulo=0;
+	ArbolBinario();
+	ArbolBinario(const Tbase & e);
+	ArbolBinario(const ArbolBinario<Tbase> & V);
+	~ArbolBinario();
+	ArbolBinario<Tbase> & operator =(const ArbolBinario<Tbase> & V);
+	void Asignarraiz(const Tbase & e);	
+	Nodo raiz() const;
+	Nodo izquierda(const Nodo n) const;
+	Nodo derecha(const Nodo n) const;
+	Nodo padre(const Nodo n) const;
+	Tbse & etiqueta(const Nodo n);

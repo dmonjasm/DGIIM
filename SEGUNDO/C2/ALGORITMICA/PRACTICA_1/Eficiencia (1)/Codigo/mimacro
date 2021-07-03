@@ -1,0 +1,7 @@
+#!/bin/csh
+echo "" >> salida.dat
+@ i=4000
+while ($i <= 100000)
+./quicksort $i >> salida.dat
+@ i+=4000
+end

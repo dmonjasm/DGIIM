@@ -1,0 +1,11 @@
+[root@localhost ~]# ls
+archivo_SA20  archivo_SA30  crontabFile  logCron  paquetes
+[root@localhost ~]# touch archivo.txt
+[root@localhost ~]# touch target_hardLink2.txt
+[root@localhost ~]# ln ./archivo.txt hardLink
+[root@localhost ~]# ln -s ./archivo.txt softLink
+[root@localhost ~]# ls
+archivo.txt   archivo_SA30  hardLink  paquetes  target_hardLink2.txt
+archivo_SA20  crontabFile   logCron   softLink
+[root@localhost ~]# ln ./target_hardLink2.txt hardLink2
+

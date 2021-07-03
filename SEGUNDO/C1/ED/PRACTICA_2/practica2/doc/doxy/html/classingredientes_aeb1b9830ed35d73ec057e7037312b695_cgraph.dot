@@ -1,0 +1,11 @@
+digraph "ingredientes::operator="
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node13 [label="ingredientes::operator=",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node13 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="ingredientes::size",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classingredientes.html#aaf628d0360800484ae277fbb7aa2f81d",tooltip="Devuelve el numero de datos contenidos en el vector dinamico ordenado por nombre. ..."];
+  Node14 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="VD::size",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classVD.html#a411ad026db1c8e0617d9031f1f1017a5",tooltip="Devuelve el numero de datos almacenados en el vector dinamico. "];
+}

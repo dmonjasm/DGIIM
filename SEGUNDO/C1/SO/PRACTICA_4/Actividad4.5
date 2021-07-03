@@ -1,0 +1,49 @@
+nombrearchivo=`date +%Y-%J-%T`
+ps -ef > $nombrearchivo
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 13:35 ?        00:00:00 /sbin/init
+root         2     0  0 13:35 ?        00:00:00 [kthreadd]
+root         3     2  0 13:35 ?        00:00:00 [ksoftirqd/0]
+root         4     2  0 13:35 ?        00:00:00 [kworker/0:0]
+root         5     2  0 13:35 ?        00:00:00 [kworker/u:0]
+root         6     2  0 13:35 ?        00:00:00 [rcu_kthread]
+root         7     2  0 13:35 ?        00:00:00 [watchdog/0]
+root         8     2  0 13:35 ?        00:00:00 [cpuset]
+root         9     2  0 13:35 ?        00:00:00 [khelper]
+root        10     2  0 13:35 ?        00:00:00 [kworker/u:1]
+root       115     2  0 13:35 ?        00:00:00 [sync_supers]
+root       117     2  0 13:35 ?        00:00:00 [bdi-default]
+root       118     2  0 13:35 ?        00:00:00 [kblockd]
+root       134     2  0 13:35 ?        00:00:00 [rpciod]
+root       135     2  0 13:35 ?        00:00:00 [kworker/0:1]
+root       143     2  0 13:35 ?        00:00:00 [khungtaskd]
+root       144     2  0 13:35 ?        00:00:00 [kswapd0]
+root       192     2  0 13:35 ?        00:00:00 [fsnotify_mark]
+root       216     2  0 13:35 ?        00:00:00 [ecryptfs-kthrea]
+root       218     2  0 13:35 ?        00:00:00 [nfsiod]
+root       240     2  0 13:35 ?        00:00:00 [glock_workqueue]
+root       241     2  0 13:35 ?        00:00:00 [delete_workqueu]
+root       246     2  0 13:35 ?        00:00:00 [gfs_recovery]
+root       248     2  0 13:35 ?        00:00:00 [crypto]
+root       263     2  0 13:35 ?        00:00:00 [kthrotld]
+root       961     2  0 13:35 ?        00:00:00 [jbd2/ubda-8]
+root       962     2  0 13:35 ?        00:00:00 [ext4-dio-unwrit]
+root      1059     2  0 13:36 ?        00:00:00 [kauditd]
+root      1103     1  0 13:36 ?        00:00:00 auditd
+root      1121     1  0 13:36 ?        00:00:00 /sbin/rsyslogd -c 4
+root      1146     1  0 13:36 ?        00:00:00 /usr/sbin/sshd
+smmsp     1172     1  0 13:36 ?        00:00:00 sendmail: Queue runner@01:00:00 for /var/spool/clientmqueue
+root      1183     1  0 13:36 ?        00:00:00 crond
+root      1196     1  0 13:36 ?        00:00:00 /usr/sbin/atd
+root      1208     1  0 13:36 ?        00:00:00 login -- root
+root      1209     2  0 13:36 ?        00:00:00 [flush-98:0]
+root      1210  1208  0 13:36 tty0     00:00:00 -bash
+root      1400  1196  0 14:03 ?        00:00:00 /usr/sbin/atd
+root      1401  1400  0 14:04 ?        00:00:00 sh
+root      1402  1401  0 14:04 ?        00:00:00 /bin/bash
+root      1403  1402  0 14:04 ?        00:00:00 /bin/bash
+root      1405  1403  0 14:04 ?        00:00:00 ps -ef
+Mi pid = 1403
+
+PPID:1403 (/bin/bash)
+

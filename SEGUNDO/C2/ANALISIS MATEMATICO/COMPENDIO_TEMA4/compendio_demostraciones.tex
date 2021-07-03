@@ -1,0 +1,945 @@
+\documentclass{article}
+\author{Daniel Monjas Migu\'elez 
+ 		\\ \\ 2 DGIIM Universidad de Granada}
+\title{COMPENDIO ENUNCIADOS TEMA 4}
+\usepackage{enumitem}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=cyan,
+}
+
+\graphicspath{ {images/} }
+
+\newtheorem{theorem}{Teorema}
+\newtheorem{corollary}{Corolario}
+\newtheorem{lemma}{Lema}
+\newtheorem{definition}{Definición}
+\newtheorem{remark}{Remark}
+\newtheorem{demostration}{Demostración}
+
+\begin{document}
+\maketitle
+
+\newpage
+
+\section{Funciones Medibles Lebesgue}
+\begin{definition}
+Sea $E$ un conjunto medible en $\mathbb{R}^n$. Sea $f$ una función real definida en $E$, que es, $-\infty \leq f(x) \leq +\infty$, $x \in E$. Entonces, $f$ es llamada función medible Lebesgue en $E$, o simplemente función medible, si para todo $a$ finito, el conjunto
+\begin{equation}
+\{x \in E : f(x) > a\}
+\end{equation}
+
+es un subconjunto medible de $\mathbb{R}^n$.
+\end{definition}
+
+\subsection{Propiedades elementales de las funciones medibles}
+
+\begin{theorem}
+Sea $f$ una funcion real definida en un conjunto medible $E$. Entonces $E$ es medible si y sólo si cualquiera de las siguientes afirmaciones se cumple para cualquier a finito:
+
+\begin{enumerate}[label=(\roman*)]
+
+\item $\{f \geq a\}$ \textit{es medible}
+\item $\{f < a\}$ \textit{es medible}
+\item $\{f \leq a\}$ \textit{es medible}
+
+\end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+Sea $f$ una función definida en un conjunto medible $E$. Si $f$ es medible, entonces $\{f > -\infty\}$, $\{f < +\infty\}$ , $\{a \leq f \leq b\}$, $\{f = a\}$, etc., son todos medibles. Además, para cualquier $f$, si bien $\{f = +\infty\}$ o $\{f = -\infty\}$ es medible, entonces $f$ es medible si $\{a < f < +\infty\}$ es medible para todo $a$ finito.
+\end{corollary}
+
+\begin{theorem}
+Sea $f$ una función definida en un conjunto medible $E$. Si $f$ es medible, entonces para cada conjunto abierto $G$ en $\mathbb{R}^{1}$, la imagen inversa $f^{-1}(G)$ es un subconjunto medible de $\mathbb{R}^n$ y ya sea $\{f = +\infty\}$ o $\{f = -\infty\}$ es medible.
+\end{theorem}
+
+\begin{theorem}
+Sea $A$ un subconjunto denso de $\mathbb{R}^1$. Entonces $f$ es medible si $\{f > a\}$ es medible para todo $a \in A$.
+\end{theorem}
+
+\begin{definition}
+Una propiedad se dice que se verifica casi por doquier en $E$, si se verifica en $E$ excepto en algún subocnjutno de $E$ cuya medida sea 0.
+\end{definition}
+
+\begin{theorem}
+Si $f$ es medible y si $g = f$ casi por doquier, entonces $g$ es medible y $\lambda(\{g > a\}) = \lambda(\{f > a\})$
+\end{theorem}
+
+\begin{theorem}
+Sea $\phi$ continua en $\mathbb{R}^1$ y sea $f$ finita por doquier en E, tal que, en particular, $\phi(f)$ es definida casi por doquier. Entonces $\phi(f)$ es medible si $f$ lo es.
+\end{theorem}
+
+\begin{remark}
+Los casos que surgen más frecuentemente son $\phi(t) = |t|$, $|t|^p*(p > 0)$, $e^{ct}$, etc. Además,
+
+\begin{equation}
+|f|, |f|^p(p>0), e^{cf}
+\end{equation}
+
+son medibles si f es medible (incluso si no asumimos que f es finita casi por doquier, como se ve facilmente). Otro caso especial que merece mención es que 
+
+\begin{equation}
+f^+ = max\{f,0\}, \> f^-=-min\{f,0\}
+\end{equation}
+
+Es suficiente para observar que las funciones $x^+$ y $x^-$ son continuas.
+\end{remark}
+
+\begin{demostration}
+Asumamos que f es finita en todo $E$. Usaremos el hecho de que |·| es continua, y sabemos que la inversa de un conjunto abierto por una función continua es un conjunto abierto. Por el Teorema 2 se tiene que para todo conjunto abierto G en $\mathbb{R}$, $\{x : |(f(x))| \in G\}$ es medible. Como sea, $\{x : |(f(x))| \in G\} = f^-1(|(G)|^{-1})$, y como $|G|^{-1}$ es un conjunto abierto, y f es medible, $f^-1(|G|^-1)$ es medible por el Teorema 2.
+\end{demostration}
+
+\begin{theorem}
+Si $f$ y $g$ son medibles, entonces $\{f > g\}$ es medible.
+\end{theorem}
+
+\begin{demostration}
+Sea $\{r_k\}$ los números racionales. Entonces, por la densidad de los racionales, la definición de función medible, y el Teorema 1 de este compendio, sabemos que:
+
+\begin{equation}
+\{f > r_k\} \> y \> \{g < r_k\}
+\end{equation}
+
+son subconjuntos medibles para todo $r_k \in \{r_k\}$, pues cada $r_k$ es un racional. Finalmente si escribimos el conjunto $\{f > g\}$ como unión numerable de conjuntos, pues la unión numerable de conjuntos medibles, es también un conjunto medible, se obtiene lo buscado. Entonces:
+
+\begin{equation}
+\{f > g\} = \cup_k \{f > r_k > g\} = \cup_k (\{f > r_k\} \cap \{g < r_k\})
+\end{equation}
+
+Como la intersección de dos conjuntos medibles es medible y la unión numerable de conjuntos medibles también es medible, queda demostrado el teorema.
+\end{demostration}
+
+\begin{theorem}
+Si $f$ es medible y $\mu$ es cualquier número real, entonces $f + \mu$ y $\mu*f$ son medibles.
+\end{theorem}
+
+\begin{demostration}
+Sabemos que al ser $f$ medible se verifica que $\{f > a\}$ para todo a finito. También se cumple que $a - \mu$ es un número real finito para todo $a$ y $\mu$ finitos, y además todo número real finito, llamese $b \in \mathbb{R}$, se puede escribir como $b= a - \mu$. Finalmente llegamos a que $\{f + \mu > a\} = \{f > a - \mu = b \}$, que al ser $a - \mu = b$ finito, con $b \in \mathbb{R}$, se tendrá que $f + \mu$ verifica la definición de función medible. Luego queda demostrado que $\mu + f$ es una función medible.\\
+
+Para el caso del producto diferenciaremos entre si $\mu > 0$, $\mu < 0$ y $\mu = 0$.
+
+\begin{itemize}
+\item Si $\mu > 0$ se tiene que $\{f*\mu > a\}$ para todo a finito. Sabemos que como $\mu$ es distinto de 0, $\frac{a}{\mu}$, será un número real finito por ser $a$ y $\mu$ numeros reales finitos. Además, todo número real finito $b \in \mathbb{R}$ se puede escribir como $b = \frac{a}{\mu}$, entonces, $\{f*\mu > a\} = \{f > \frac{a}{\mu}\}$, lo que implica que, $f*\mu$ es medible para $\mu > 0$.
+
+\item Si $mu < 0$ la demostración es análoga a la anterior. Sabemos que $\frac{a}{mu}$ es un real finito, y que todo $b \in \mathbb{R}$ se puede escribir como $ b = \frac{a}{\mu}$, para algún $a$ y algún $\mu$. Finalmente, $\{f*\mu > a\}=\{f < \frac{a}{\mu} \}$ (el símbolo se invierte por ser $\mu$ un real negativo), obteniendo que se verifica la definición de función medible por el Teorema 1 (ii). 
+
+\item Finalmente queda el caso en que $\mu = 0$ se pueden dar dos casos. El primero es que $\mu*f \geq a$, luego los conjuntos $\{f*\mu \geq a\}$ serán E, y por tanto serán medibles por el Teorema 1 (i). El otro caso es que $\mu*f < a$, luego el conjunto $\{f*\mu > a\}$, tendrá como único elemento el vacío, y por consiguiente será medible con medida 0.
+\end{itemize}
+
+Con esto queda demostrado que para todo $\mu \in \mathbb{R}$, $\mu*f$ es medible.
+\end{demostration}
+
+\begin{theorem}
+Si $f$ y $g$ son medibles, también lo es $f + g$.
+\end{theorem}
+
+\begin{demostration}
+Por el teorema 7 tenemos que $a - g$, con a cualquier real, es medible. Ahora sabemos que $f + g$ es medible si $\{f + g > a\}$, para todo a finito. Por último, tenemos que $\{f + g > a\} = \{f > a - g\}$, que por el teorema 6 sabemos que es medible, y por tanto $f + g$ es una función medible.
+\end{demostration}
+
+\begin{theorem}
+Si $f$ y $g$ son medibles, también lo es $f*g$. Si $g \neq 0$ casi por doquier, entonces $f/g$ es medible.
+\end{theorem}
+
+\begin{demostration}
+Por el Teorema 5 y el Remark que lo sigue, $f^2(=|f|^2)$ es medible si f lo es. Por lo tanto, si f y g son medibles y finitas, la formula $f*g=[(f+g)^2 - (f-g)^2]/4$ implica que fg es medible. Ahora nos queda ver en el caso en el que no sean finitas es decir cuando fg es 0, $+\infty$ ó $-\infty$.
+
+Veamos el caso en el que $fg=0$. Denotemos $B_1$ al conjunto en el que f,g toman valores infinitos, entonces se tiene que:
+
+\begin{equation}
+\begin{split}
+B_1=\{x: f(x)=0 \> y \> g(x)=0\} \cup \{x: f(x)=0 \> y \> g(x)=+\infty\} \\
+\cup \{x: f(x)=0 \> y \> g(x)=-\infty\} \cup \{x: f(x)=+\infty \> y \> g(x)=0\} \\
+\cup \{x: f(x)=-\infty \> y \> g(x)=0\}
+\end{split}
+\end{equation}
+
+Para el caso $fg=+\infty$, denotamos el conjunto $B_2$ tal que:
+
+\begin{equation}
+\begin{split}
+B_2=\{x: f(x)>0 \> y \> g(x)=+\infty\} \cup \{x: f(x)<0 \> y \> g(x)=-\infty\} \\
+\cup \{x: f(x)=+\infty \> y \> g(x)>0 \} \cup \{x: f(x)=-\infty \> y \> g(x)<0\}
+\end{split}
+\end{equation}
+
+Por último, sea el caso $fg=-\infty$, denotamos el conjuntos $B_3$ tal que:
+
+\begin{equation}
+\begin{split}
+B_3=\{x:f(x) > 0 \> y \> g(x)=-\infty\} \cup \{x: f(x) < 0 \> y \> g(x) = +\infty\} \\
+\cup \{x:f(x)=+\infty \> y \> g(x) < 0\} \cup \{x: f(x)=-\infty \> y \> g(x)>0\}
+\end{split}
+\end{equation}
+
+Para la última parte del teorema tomaremos el conjunto $B=\{x: 0 < |g(x)| < \infty\}$, en este conjunto se ingnoran los x tal que $g(x)=0$, ya que el conjunto de estas x tiene medida 0. Solamente tendremos que precisar que 1/g es medible sobre el conjunto B.
+
+\begin{equation}
+\begin{split}
+C=\{x \in B: 1/g(x) > a\}= \{x \in B: g(x) > 0\} \cap \{x \in B: a*g(x) < 1\} \cup \\
+\{x \in B: g(x) < 0\} \cap \{x \in B: a*g(x) > 1\}
+\end{split}
+\end{equation}
+
+Donde se puede ver que C, es unión e intersección numerable de conjuntos medibles (a*g(x) medible por el Teorema 7), por consiguiente 1/g es una función medible, y por la primera parte de este mismo teorema f*1/g=f/g es medible. El caso de $\frac{1}{g(x)} = \pm \infty$, se tiene que $\{x: g(x)=\pm \infty\} = \{x: 1/g(x)=\pm \infty\}$, y por consiguiente al ser el primero un conjunto medible también lo es el segundo y por la primera parte del teorema en este caso también $\frac{f}{g}$ es una función medible.
+\end{demostration}
+
+\begin{corollary}
+Una combinación lineal finita $\mu_1*f_1+\ldots+\mu_n*f_N$ de funciones medibles $f_1,\ldots,f_N$ es medible supuesto que está bien definida. Así, la clase de funciones medibles en un conjunto $E$ que son finitas casi por doquier en $E$ forman un espacio vectorial; aquí, identificamos funciones medibles que son iguales casi por doquier.
+\end{corollary}
+
+\begin{theorem}
+Si $\{f_k(x)\}_{k=1}^{\infty}$ es una secuencia de funciones medibles, entonces $\sup_kf_k(x)$ y $\inf_kf_k(x)$ son medibles.
+\end{theorem}
+
+\begin{definition}
+Veamos que si $f_1,\ldots,f_N$ son medibles, entonces también lo son $max_kf_k$ y $min_kf_k$. En particular, si $f$ es medible, también lo son $f^+=max\{f,0\}$ y $f^-=-min\{f,0\}$, un hecho que se ya se ha observado como consecuencia del teorema 5.
+\end{definition}
+
+\begin{theorem}
+Si $\{f_k\}$ es una secuencia de funciones medibles, entonces $\lim_{k \to \infty} \sup f_k$ y $\lim_{k \to \infty} \inf f_k$ son medibles. En particular, si $\lim_{k \to \infty} f_k$ existe casi por doquier, es medible.
+\end{theorem}
+
+\begin{theorem}
+
+
+\begin{enumerate}[label=(\roman*)]
+
+\item Toda función $f$ puede ser escrita como el límite de una sucesión $\{f_k \}$ de funciones simples.
+\item Si $f \geq 0$, la sucesión puede ser elegida para crecer hasta $f$, que es, elegida de forma que $f_k \leq f_{k+1}$ para todo k.
+\item Si la función $f$ es medible en \textbf{(i)} o en \textbf{(ii)}, entonces $f_k$ puede ser elegida para ser medible.
+
+\end{enumerate}
+\end{theorem}
+
+\subsection{Funciones semicontinuas}
+
+\begin{theorem}
+\begin{enumerate}[label=(\roman*)]
+
+\item Una función $f$ es semicontinua superiormente relativa a $E$ si y sólo si $\{x \in E : f(x) \geq a\}$ es relativamente cerrada (equivalentemente, $\{x \in E : f(x) < a\}$ es relativamente abierta) para todo $a$ finito.
+\item Una funcion $f$ es semicontinua inferiormente relativa a $E$ si y sólo si $\{x \in E : f(x) \leq a\}$ es relativamente cerrada (equivalentemente, $\{x \in E : f(x) > a\}$ es relativamente abierta) para todo $a$ finito.
+\end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+Una función finita $f$ es continua relativa a $E$ si y sólo si todos los conjuntos de la forma $\{x \in E : f(x) \geq a \}$ y $\{x \in E : f(x) \leq a\}$ son relativamente cerrados (o, equivalentemente, todo $\{x \in E : f(x) > a\}$ y $\{x \in E : f(x) < a\}$ son relativamente abiertos) para $a$ finito.
+\end{corollary}
+
+\begin{corollary}
+Sea $E$ medible, y sea $f$ una función definida en $E$. Si $f$ es semicontinua superiormente (semicontinua inferiormente, continua) relativa a $E$, entonces $f$ es medible.
+\end{corollary}
+
+\subsection{Propiedades de funciones medibles y Teoremas de Egorov y Lusin}
+
+\begin{definition}
+Sea $f$ definida en $E$, y sea $x_0$ un punto límite de $E$ que está en $E$. Entonces $f$ es denominada simicontinua superiormente en $x_0$ si
+
+\begin{equation}
+\lim_{x \to x_0: x \in E} \sup f(x) \leq f(x_0)
+\end{equation}
+
+Análogamente, se dirá que $f$ es semicontinua inferiormente en $x_0$, si
+
+\begin{equation}
+\lim_{x \to x_0: x \in E} \inf f(x) \geq f(x_0)
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Teorema de Egorov]
+Supóngase que $\{f_k\}$ es una sucesión de funciones medibles que converge casi por doquier en un conjunto $E$ de medida finita a un limte finito $f$. Entonces dado $\epsilon > 0$, hay un subconjunto cerrado F de E tal que $\lambda(E-F) < \epsilon$ y $\{f_k\}$ converge uniformemente a $f$ en $F$.
+\end{theorem}
+
+\begin{lemma}
+Bajo las mismas hipótesis que el teorema de Egorov, dado $\epsilon > 0$, $\eta > 0$, hay un $F$ subconjunto cerrado de $E$ y un entero $K$ tal que $\lambda(E-F) < \eta$ y $\lambda(f(x) - f_k(x)) < \epsilon$ para $x \in F$ y $k > K$
+\end{lemma}
+
+\begin{definition}
+Una función $f$ definida en un conjunto medible $E$ tiene propiedad $\mathscr{C}$ en $E$ si dado $\epsilon > 0$, hay un subconjunto cerrado $F \subset E$ que
+
+\begin{enumerate}[label=(\roman*)]
+\item $\lambda(E-F) < \epsilon$
+\item $f$ es continua relativa a F
+\end{enumerate}
+
+Donde \textbf{(ii)} significa que si $x_0$ y $\{x_k\}$ pertenecen a $F$ y $x_k \rightarrow x_0$, entonces $f(x_0)$ es finito y $f(x_k) \rightarrow f(x_0)$. Si $F$ está acotado (y, por tanto, compacto), \textbf{(ii)} implica que la restricción de $f$ a $F$ es uniformemente continua.
+\end{definition}
+
+\begin{lemma}
+\label{lema:ejercicio}
+Una función medible simple tiene propiedad $\mathscr{C}$
+\end{lemma}
+
+\begin{theorem}[Teorema de Lusin]
+Sea $f$ finita en un conjunto medible $E$. Entonces $f$ es medible si y sólo si tiene propiedad $\mathscr{C}$ en $E$.
+\end{theorem}
+
+\subsection{Convergencia en medida}
+\begin{definition}
+Sean $f$ y $\{f_k\}$ funciones medibles que son definidas y finitas casi por doquier en un conjunto $E$. Entonces $\{f_k\}$ se dice convergente en medida a $f$ en $E$ si para todo $\epsilon > 0$, 
+
+\begin{equation}
+\lim_{k \to \infty} \lambda(\{x \in E: |f(x) - f_k(x)| > \epsilon\}) = 0
+\end{equation}
+
+\textbf{Notación:} Usaremos la siguiente notación para indicar convergencia en medida 
+\begin{equation}
+f_k \xrightarrow{m} f
+\end{equation}
+
+\end{definition}
+
+\begin{theorem}
+Sean $f$ y $f_k$, $k=1,2, \ldots,$ medibles y finitas casi por doquier en E. Si $f_k \rightarrow f$ casi por doquier en $E$ y $\lambda(E) < +\infty$, entonces $f_k \xrightarrow{m} f$ en $E$ ($f_k$ converge en medida a $f$).
+\end{theorem}
+
+\begin{theorem}
+Si $f_k \xrightarrow{m} f$ en $E$, hay una subsucesión $f_{k_j}$ tal que $f_{k_j} \rightarrow f$ casi por doquier en $E$.
+\end{theorem}
+
+\begin{theorem}
+Una condición necesaria y suficiente para que $\{f_k\}$ converja en medida en $E$ es que para cada $\epsilon > 0$, 
+\begin{equation}
+\lim_{k,I \to \infty} \lambda(\{x \in E : |f_k(x) - f_I(x)| > \epsilon \}) = 0
+\end{equation}
+\end{theorem}
+
+\section{La integral de Lebesgue}
+\subsection{Definición de integral de una función no negativa}
+\begin{definition}
+Sea una función no negativa f, $0 \leq f \leq +\infty$, definido en una conjunto medible E de $\mathbb{R}^n$. Sea 
+
+\begin{equation*}
+\begin{split}
+\Gamma(f, E) = \{(x,f(x)) \in \mathbb{R}^{n+1}: x \in E, f(x) < +\infty\} \\
+R(f,E)= \{(x,y) \in \mathbb{R}^{n+1}: x\in E, 0 \leq y \leq f(x) \> si \> f(x) < +\infty\}
+\end{split}
+\end{equation*}
+
+$\Gamma(f,E)$ es llamado gráfica de f sobre E y $R(f,E)$ la región por debajo de f sobre E. 
+
+Si $R(f,E)$ es medible, su medida $\lambda(R(f,E))$ es llamada la integral de Lebesgue sobre E, y se escribe 
+
+\begin{equation}
+\lambda(R(f,E)) = \int_E f(x) dx
+\end{equation}
+\end{definition}
+
+\begin{theorem}
+Sea $f$ una función no negativa definida en un conjunto medible E. Entonces $\int_E f$ existe si y sólo si $f$ es medible
+\end{theorem}
+
+\begin{lemma}
+Sea E un subconjutno de $\mathbb{R}^n$, $0 \leq a \leq +\infty$, y definimos $E_a = \{(x,y): x \in E, 0 \leq y \leq a\}$ para un $a$ y $E_\infty = \{(x,y): x\in E, 0 \leq y < +\infty\}$. Si E es medible, entonces $E_a$ es medible y $\lambda(E_a) = a*\lambda(E)$.
+\end{lemma}
+
+\begin{lemma}
+Si f es una función medible no negativa en E, $0 \leq \lambda(E) \leq +\infty$, entonces $\Gamma(f,E)$ tiene medida cero.
+\end{lemma}
+
+\begin{corollary}
+Si f es un función medible no negativa, tomando valores constante $a_1, a_2, \ldots$ (possibly $+\infty$) en conjuntos disjuntos $E_1,E_2,\ldots,$ respectivamente, y si $E =\cup E_j$, entonces
+
+\begin{equation}
+\int_E f = \sum_j a_j\lambda(E_j)
+\end{equation}
+\end{corollary}
+
+\subsection{Propiedades de la integral}
+\begin{theorem}
+\begin{enumerate}[label=(\roman*)]
+\item Si $f$ y $g$ son medible y si $0 \leq g \leq f$ en E, entonces $\int_E g \leq \int_E f$. En particular, $\int_E(\inf f) \leq \int_E f$.
+
+\item Si $f$ es no negativa y medible en $E$ y si $\int_E f$ es finita, entonces $f < +\infty$ casi por doquier en $E$.
+
+\item Sean $E_1$ y $E_2$ medibles y $E_1 \subset E_2$. Si $f$ es no negativa y medible en $E_2$, entonces $\int_{E_1} f \leq \int_{E_2} f$.
+
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Teorema de convergencia monótona para funciones no negativas]
+Si $\{f_k\}$ es una sucesión de funciones medibles no negativas tal que $f_k \nearrow f$ en E, entonces
+
+\begin{equation*}
+\int_E f_k \rightarrow \int_E f
+\end{equation*}
+
+\end{theorem}
+
+\begin{theorem}
+Suponga que $f$ es no negativa y medible en E y que E es la unión disjunta de conjuntos medibles $E_j$, $E = \cup E_j$. Entonces
+
+\begin{equation*}
+\int_E f = \sum \int_{E_j} f
+\end{equation*}
+
+\end{theorem}
+
+\begin{theorem}
+Sea f no negativa y medible en E. Entonces
+
+\begin{equation*}
+\int_E f = \sup \sum_j [\inf_{x \in E_j} f(x)] \lambda(E_j)
+\end{equation*}
+
+donde el supremo es tomado entre todas las descomposiciones $E = \cup_j E_j$ de E como unión de un número finito de conjuntos medibles disjuntos $E_j$
+\end{theorem}
+
+\begin{theorem}
+Sea f no negativa en E. Si $\lambda(E) = 0$, entonces $\int_E f = 0$.
+\end{theorem}
+
+\begin{theorem}
+Si f y g son no negativas y medibles en E y si $g \leq f$ c.p.d en E, entonces $\int_E g \leq \int_E f$. 
+
+En particular, si f y g son no negativas y medibles en E y si $f = g$ c.p.d en E, entonces $\int_E f = \int_E g$
+\end{theorem}
+
+\begin{theorem}
+Sea f no negativa y medible en E. Entonces $\int_E f = 0$ si y sólo si $f = 0$ c.p.d en E.
+\end{theorem}
+
+\begin{corollary}[Desigualdad de Tchebyshev]
+Sea f medible y no negativa en E. Si $\alpha > 0$, entonces 
+
+\begin{equation*}
+\lambda(\{x \in E: f(x) > \alpha\}) \leq \frac{1}{\alpha} \int_E f
+\end{equation*}
+
+\end{corollary}
+
+\begin{theorem}
+Si f es no negativa y medible, y si c es cualquier constante no negativa, entonces 
+
+\begin{equation*}
+\int_E cf = c\int_E f
+\end{equation*}
+\end{theorem}
+
+\begin{theorem}
+Si f y g son no negativas y medibles, entonces
+
+\begin{equation*}
+\int_E (f+g) = \int_E f + \int_E g
+\end{equation*}
+
+\end{theorem}
+
+\begin{corollary}
+Suponga que f y $\phi$ son medibles en E, $0 \leq f \leq \phi$, y $\int_E f$ es finita. Entonces
+
+\begin{equation*}
+\int_E(\phi - f) = \int_E \phi - \int_E f
+\end{equation*}
+\end{corollary}
+
+\begin{theorem}
+Si $f_k, \> k=1,2,\ldots$, son no negativas y medibles, entonces 
+
+\begin{equation*}
+\int_E (\sum_{k=1}^{\infty} f_k) = \sum_{k=1}^\infty \int_E f_k
+\end{equation*}
+\end{theorem}
+
+\begin{theorem}[Lema de Fatou]
+Si $\{f_k\}$ es una sucesión de funciones medibles no negativas en E, entonces
+
+\begin{equation*}
+\int_E (\lim_{k \to \infty} \inf f_k) \leq \lim_{k \to \infty} \inf \int_E f_k
+\end{equation*}
+\end{theorem}
+
+\begin{corollary}
+Sea $f_k,\> k=1,2,\ldots$, medible y no negativa en E, y sea $f_k \rightarrow f$ c.p.d. Si $\int_E f_k \leq M$ para todo k, entonces $\int_E f \leq M$.
+\end{corollary}
+\begin{theorem}[Convergencia Dominada de Lebesgue para funciones no negativas]
+Sea $\{f_k\}$ un sucesión de funciones medibles no negativas en E tal que $f_k \rightarrow f$ c.p.d en E. Si existe una función medible $\phi$ tal que $f_k \leq \phi$ c.p.d para todo k y si $\int_E \phi$ es finita, entonces
+
+\begin{equation*}
+\int_E f_k \rightarrow \int_E f
+\end{equation*}
+
+\end{theorem}
+
+\subsection{La integral de una Función Medible Arbitraria f}
+
+\begin{definition}
+Sea f cualquier función medible definida en un conjunto E. Entonces $f = f^+ - f^-$ (por resultados anteriores $f^+ \> y \> f^-$ son medibles. Además, las integrales $\int_E f^+(x) dx$ y $\int_E f^-(x) dx$ existe y son no negativas, posiblemente con valor $+\infty$. Dado que al menos una de estas integrales sea finita, definimos
+
+\begin{equation*}
+\int_E f(x) dx= \int_E f^+(x) dx - \int_E f^-(x)dx
+\end{equation*}
+
+y digamos que la integral $\int_E f(x) dx$ existe. Si $\int_E f$ existe, por supuesto, $-\infty \leq \int_E f \leq +\infty$. Si $\int_E$ existe y es finita, deciemos que f es Lebesgue integrable, o simplemente ingrable, en E y escribimos $f \in L(E)$. Además,
+
+\begin{equation*}
+L(E) = \{ f: \int_E f \> es \> finita\}
+\end{equation*}
+\end{definition}
+
+\begin{theorem}
+Sea f medible en E. Entonces f es integrable sobre E si y sólo si $|f|$ lo es.
+\end{theorem}
+
+\begin{theorem}
+Si $f \in L(E)$, entonces f es finita c.p.d en E.
+\end{theorem}
+
+\begin{theorem}
+\begin{enumerate}[label=(\roman*)]
+\item Si ambas $\int_E f$ y $\int_E g$ existen y si $f \leq g$ c.p.d en E, entonces $\int_E f \leq \int_E g$. También, si f y g son funciones con $f = g$ c.p.d en E y si $\int_E f$ existe, entonces $\int_E g$ existe y $\int_E f = \int_E g$.
+
+\item Si $\int_{E_2} f$ existe y $E_1$ es un subconjunto medible de $E_2$, entonces $\int_{E_1} f$ existe.
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+Si $\int_E f$ existe y $E = \cup_k E_k$ es la unión numerable de conjuntos medibles disjuntos $E_k$, entonces
+
+\begin{equation*}
+\int_E f = \sum_k \int_{E_k} f
+\end{equation*}
+\end{theorem}
+
+\begin{theorem}
+Si $\lambda(E)=0$ o si $f = 0$ c.p.d en E, entonces $\int_E f = 0$.
+\end{theorem}
+
+\begin{lemma}
+Si $\int_E f$ está definida, entonces también lo está $\int_E (-f) = -\int_E f$.
+\end{lemma}
+
+\begin{theorem}
+Si $\int_E f$ existe y c es cualquier constante real, entonces $\int_E (cf)$ existe y 
+
+\begin{equation*}
+\int_E (cf) = c\int_E f.
+\end{equation*}
+\end{theorem}
+
+\begin{theorem}
+Si $f,g \in L(E)$, entonces $f+g \in L(E)$ y
+
+\begin{equation*}
+\int_E(f+g) = \int_E f + \int_E g.
+\end{equation*}
+
+\end{theorem}
+
+\begin{corollary}
+Sean f y $\phi$ medible en E, $f \geq \phi$ c.p.d, y $\phi \in L(E)$. Entonces, 
+
+\begin{equation*}
+\int_E(f - \phi) = \int_E f - \int_E \phi
+\end{equation*}
+\end{corollary}
+
+\begin{theorem}
+Si $f \in L(E)$, ge es medible en E, y existe una constante finita M tal que $|g| \leq M$ c.p.d en E, entonces $fg \in L(E)$ y $\int_E|fg| \leq M \int_E |f|$.
+\end{theorem}
+
+\begin{corollary}
+Si $f \in L(E)$, $f \geq 0$ c.p.d, y existen constantes finita $\alpha$ y $\beta$ tal que $\alpha \leq g \leq \beta$ c.p.d en E, entonces
+
+\begin{equation*}
+\alpha \int_E f \leq \int_E fg \leq \beta \int_E f
+\end{equation*}
+\end{corollary}
+
+\begin{theorem}[Teorema de Convergencia Monotona]
+
+Sea $\{f_k\}$ una sucesión de funciones medibles en E:
+
+\begin{enumerate}[label=(\roman*)]
+\item Si $f_k \nearrow$ f c.p.d en E y existe $\phi \in L(E)$ tal que $f_k \geq \phi$ c.p.d en E para todo k, entonces $\int_E f_k \rightarrow \int_E f$.
+
+\item Si $f_k \searrow f$ c.p.d en E y existe $\phi \in L(E)$ tal que $f_k \leq \phi$ c.p.d para todo k, entonces $\int_E f_k \rightarrow \int_E f$.
+
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Teorema de Convergencia Uniforme]
+Sea $f_k \in L(E) \> para \> k=1,2,\ldots$, y sea $\{f_k\}$ convergente uniformemente a f en E, $\lambda(E) < \infty$. Entonces $f \in L(E)$ y $\int_E f_k \rightarrow \int_E f$.
+\end{theorem}
+
+\begin{lemma}[Lema de Fatou]
+Sea $\{f_k\}$ una sucesión de funciones medibles en E. Si existe $\phi \in L(E)$ tal que $f_k \geq \phi$ c.p.d en E para todo k, entonces
+
+\begin{equation*}
+\int_E(\lim_{k \to \infty} \inf f_k) \leq \lim_{k \to -\infty} \inf \int_E f_k
+\end{equation*}
+\end{lemma}
+
+\begin{corollary}
+Sea $\{f_k\}$ una sucesión de funciones medibles en E. Si existe $\phi \in L(E)$ tal que $f_k \leq \phi$ c.p.d en E para todo k, entonces
+
+\begin{equation*}
+\int_E (\lim_{k \to \infty} \sup f_k) \geq \lim_{k \to \infty} \sup \int_E f_k
+\end{equation*}
+\end{corollary}
+
+\begin{theorem}[Teorema de Lebesgue de Convergencia Dominada]
+Sea $\{f_k\}$ una sucesión de funciones medibles en E tal que $f_k \rightarrow f$ c.p.d en E. Si existe $\phi \in L(E)$ tal que $|f_k| \leq \phi$ c.p.d en E para todo k, entonces $\int_E f_k \rightarrow \int_E f$.
+\end{theorem}
+
+\begin{corollary}[Teorema de Convergencia Acotada]
+Sea $\{f_k\}$ una sucesión de funciones medibles en E tal que $f_k \rightarrow f$ c.p.d en E. Si $\lambda(E) < +\infty$ y hay una constante M finita tal que $|f_k| \leq M$ c.p.d, entonces $\int_E f_k \rightarrow \int_E f$.
+\end{corollary}
+
+\subsubsection{Integral de Lebesgue vs. Integral de Riemann}
+Toda integral de Riemann es integrable en el sentido de Lebesgue y ,es más, el valor es el mismo. La ventaja de la integral de Lebesgue es que se podrán integrar más funciones.
+
+\begin{theorem}
+Sea $f: [a,b] \rightarrow \mathbb{R}$ acotada. Si f es integrable-Riemann entonces, f es integrable-Lebesgue. En tal caso $(L)\int_{[a,b]}f=(R)\int_a^b f$.
+\end{theorem}
+
+\begin{theorem}[Integrales "impropias" de Riemann]
+\textbf{a)} Sea $f: (a,b] \rightarrow \mathbb{R}_0^+$, tal que es integrable Riemann (y acotada) sobre cualquier intervalo de la forma $[a+\epsilon, b], (\epsilon > 0)$. LLamamos $I=\lim_{\epsilon \to \infty} (R)\int_{a+\epsilon}^b f$. 
+
+\textbf{(Observación: $0\leq I \leq \infty$)} \\
+
+Entonces f es medible (según Lebesgue),y existe $\int_E f$ con $(L)\int_a^b = I$ \\
+
+\textbf{b)} Sea $f: [a,+\infty) \rightarrow \mathbb{R}_0^+$ tal que es integrable-Riemann (y acotada) sobre cualquier intervalo de la forma $[a,M]$ (M > a). Llamamos $I=\lim_{M \to +\infty} (R)\int_a^M f$ ($0 \leq I \leq +\infty$).
+
+Entonces f es medible (Lebesgue), y existe $\int_E f$ con $(L)\int_{[a,b]} f = I$.
+\end{theorem}
+
+\textbf{Observación}: Si f cambia de signo, podria ser impropiamente integrable-Riemann, y no Lebsegue. \\
+
+\textbf{Ejemplo}: Sea $f:[1,+\infty) \rightarrow \mathbb{R}$, con $f(x) = \frac{sen(x)}{x}$. 
+Existe $I = \lim_{M \to +\infty} (R)\int_1^M f(x) dx$. Esta función f es imporpiamente integrable-Riemann, pero no es integrable para Lebesgue, ya que $\int_E |f|$ no es menor que infinito, luego la integral de f no existe pues, $\int_E f^+ = \infty$ y $\int_E f^-= \infty$
+
+\begin{theorem}
+Sea $f: [a,b] \rightarrow \mathbb{R}$ acotada. f es integrable-Riemann, si y sólo si, f es continua c.p.d en $[a,b]$. 
+\end{theorem}
+
+\begin{theorem}[Teorema de la Convergencia Absoluta]
+Sea $E \subset \mathbb{R}^N$ medible, $f_n:E \rightarrow [-\infty, + \infty]$ integrables $\forall n \> \in \> \mathbb{N}$ tales que 
+
+\begin{equation*}
+\sum_{n=1}^\infty \int_E |f_n| < \infty
+\end{equation*}
+
+Entonces la serie $\sum_{n \geq 1} f_n$ converge absolutamente c.p.d en E. (Es decir, $\sum_{n\geq 1} |f_n(x)|$ converge c.p.d)  y, llamando $F= \sum_{n=1}^\infty f_n$, se tiene que $F \in L(E)$, con $\int_E |F - \sum_{n=1}^\infty f_n| \rightarrow 0$, en consecuencia $\int_E \sum_{n=1}^\infty f_n = \sum_{n=1}^\infty \int_E f_n$.\\
+\end{theorem}
+
+\textbf{Ejemplo:} Probar que $\int_0^1 \frac{sen(x)}{x} dx = \sum_{n=0}^\infty \frac{(-1)^n}{(2n+1)!}*\frac{1}{2n+1} < \infty$. Usando el desarrollo de Taylor de la función seno: 
+
+\begin{equation*}
+sen x = \sum_{n=0}^\infty \frac{(-1)*x^{2n+1}}{(2n+1)!}=x\sum_{n=0}^\infty \frac{(-1)^n*x^{2n}}{(2n+1)!} \>; \> \frac{sen(x)}{x}=\sum_{n=0}^\infty \frac{(-1)^n*x^{2n}}{(2n+1)!}
+\end{equation*}
+
+\begin{equation*}
+\int_0^1 \frac{sen x}{x} dx = \int_0^1 \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n+1)!} \xrightarrow{??} \sum_{n=0}^\infty \int_0^1 \frac{(-1)^n*x^{2n}}{(2n+1)!}dx
+\end{equation*}
+
+\textbf{Ejemplo:} Probar que $\int_0^1 e^{x^2} dx = \sum_{n=0}^\infty \frac{1}{n!(2n+1)} < \infty$.(Con el criterio de cociente se puede comprobar que la serie es convergente)(Escribir en forma de serie de potencias la función elevada al cuadrado).Sale con el Teorema de la convergencia monótona para funciones no negativas.
+
+\subsubsection{Integrales dependientes de un parámetro}
+Consideremos familias de funciones en L(E) dependientes de un parámetro. Sea $I \subset \mathbb{R}$ intervalo: \\
+
+$I \longrightarrow L(E)$
+
+$t \longmapsto f_t: E \rightarrow [-\infty,+\infty]$
+
+$\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>	x \longmapsto f_t(x)$
+
+Otra forma de notarlo sería $f_t(x)=f(t,x)$. $f_t$ se denota $f(t,\cdot) \in L(E)$, con esto nos referimos a t quieta y x moviéndose. Otro tipo de denotar sería $f(\cdot, x)$ significa x fijo y t variable. \\
+
+Podemos calcular, para cada $t \in I$ ¿$\int_E f_t$= ($\in \mathbb{R}$)
+
+$\varphi: I \longrightarrow \mathbb{R}$
+
+$\>\>\>\>\>\>\> t \longmapsto \varphi(t)=\int_E f_t(x) dx = \int_E f(t,x) dx$ \\
+
+Estudiaremos bajo qué condiciones $\varphi$ es continua o derivable(esto implica continuidad). \\
+
+\begin{theorem}[Límites en integrales dependientes de un parámetro]
+Sea $E \subset \mathbb{R}^N$ medible, $I \subset \mathbb{R}$ intervalo, $\alpha \in I' (acumulación)$. 
+
+Sea $f:IxE \rightarrow [-\infty, + \infty]$, supongamos que:
+
+\begin{enumerate}[label=(\roman*)]
+\item $\forall t \in I$ la función $f(t,\cdot) \in L(E)$
+
+\item $\forall x \in E$ la función $f(\cdot,x)$ tiene límite ($t \to \alpha$)
+
+\item $\exists \phi \in L(E): |f(t,x)| \leq \phi(x)$ c.p.d en E, $\forall t \in I$.
+
+\end{enumerate}
+
+Entonces la función $\varphi: I \rightarrow \mathbb{R}$, $\varphi(t) = \int_E f(t,x)\>dx = \int_E f(t,\cdot)$, tiene límite para $t \to \alpha$.
+
+\begin{equation*}
+\lim_{t \to \alpha} \varphi(t) = (\lim_{t \to \alpha} \int_E f(t,x)\>dx)=\int_E \lim_{t \to \alpha} f(t,x)\>dx
+\end{equation*}
+
+\textbf{Idea de la dem:} Sea $t_n \to \alpha$ con $t_n \in I \backslash \{\alpha\}$. \\
+
+$f_n = f(t_n,\cdot)$ y aplicar T.C.D.
+\end{theorem}
+
+\begin{theorem}[Continuidad de integrales dependientes de un parámetro]
+Sea $E\subset \mathbb{R}^N$ medible, $I \subset \mathbb{R}$ intervalo, $\alpha \in I$.
+Sea $f: IxE \rightarrow [-\infty, + \infty]$, supongamos que:
+
+\begin{enumerate}[label=(\roman*)]
+\item $\forall t \in I$, la función $f(t,\cdot) \in L(E)$
+\item $\forall x \in E$, la función $f(\cdot, x)$ es continua en $\alpha$.
+\item $\exists \phi \in L(E): |f(t,x)| \leq \phi(x)$ c.p.d en E, $\forall t \in I$. 
+\end{enumerate}
+
+Entonces la función $\varphi: I \rightarrow \mathbb{R}$, $\varphi(t) = \int_E f(t,\cdot) = \int_E f(t,x) dx$ es continua en $\alpha$.
+\end{theorem}
+
+\begin{theorem}[Derivabilidad de integrales dependientes de un parámetro]
+Sea $E \subset \mathbb{R}^N$ medible, $I \subset \mathbb{R}$ intervalo, sea $f:IxE \rightarrow [-\infty, +\infty]$, supongamos que:
+
+\begin{enumerate}[label=(\roman*)]
+\item $\forall t \in I$, la función $f(t,\cdot) \in L(E)$.
+\item $\forall x \in E$, la función $f(\cdot,x)$ es derivable en I.
+\item $\exists \phi \in L(E): |\frac{\partial f(t,x)}{\partial t}|\leq \phi(x)$ c.p.d en E, $\forall t \in I$.
+
+\end{enumerate}
+
+Entonces la función $\varphi: I \rightarrow \mathbb{R}$, $\varphi(t) = \int_E f(t,\cdot) = \int_E f(t,x) \> dx$, es derivable en $\alpha$, con 
+
+\begin{equation}
+\varphi'(\alpha) = \int_E \frac{\partial f}{\partial t}(\alpha,x) \> dx
+\end{equation}
+
+\end{theorem}
+
+\textbf{Ejemplo:} La "función Gamma" de Euler.
+
+$\Gamma: ]0,+\infty[ \rightarrow \mathbb{R}$, $\Gamma(t) = \int_0^{+\infty} f(t,\cdot) = \int_0^{+\infty} x^{t-1}\cdot e^{-x}dx$ \\
+
+$f:]0,+\infty[x]0,+\infty[ \longrightarrow \mathbb{R}$ , $f(t,x) = x^{t-1}e^{-x}$. \\
+
+
+\textbf{Ejemplo:} Sea $\{r_n\}$ una numeración de $Q \cap [0,1] = \{r_n: n \in \mathbb{N}\}$ ($r_n \neq r_m \>\> \forall n \neq m$.
+
+Sea $\{a_n\}$ tal que $\sum_{n=1}^\infty |a_n| < \infty$ ($\leftrightarrow \sum_{n\geq 1} a_n$ absolutamente convergente).
+
+\section{Cálculo de integrales y estudio de integrabilidad}
+\subsubsection{Integrales simples (dimensión N=1)}
+\begin{definition}
+Sea $I \subset \mathbb{R}$, $f: I \rightarrow \mathbb{R}$ diremos que "f es localmente acotada" si está acotada en todo intervalo compacto contenido en I.
+
+Diremos que "f es localmente integrable" si es integrable en todo intervalo compacto contenido en I.
+\end{definition}
+
+\textbf{Ejemplos:} $I = ]\alpha, \beta[$, $-\infty \geq \alpha \geq \beta \geq +\infty$, si $f:I \rightarrow \mathbb{R}$ continua, entonces f es localmente acotada (por Weierstrass).
+
+f continua $\Rightarrow$ medible y $J \subset I$, $f_{|J}$ acotada y $\lambda(J)=long(J) < \infty$, entonces $f_{|J}$ integrable $\Rightarrow$ f es localmente integrable. \\
+
+Para estudiar integrales (calcular $\int_J f$) (ó integrabilidad) de una función "continua a trozos". Calcularesmo (ó acotaremos) las integrales en cada "trozo"(Riemann). En cada "trozo":
+
+\begin{itemize}
+\item Regla de Barrow
+\item Integración "por partes"
+\item Cambios de variable
+\end{itemize}
+
+\textbf{Ejemplo:} Sea $f: \mathbb{R}^+ \rightarrow \mathbb{R}$, $f(x)=x^p$ ($p \in \mathbb{R}$ fijo)
+\begin{itemize}
+\item ¿Es f localmente integrable?
+\item ¿Es f integrable en ]0,1[?
+\item ¿Es integrable en [1,$+\infty$[?
+\item ¿Es f integrable en $\mathbb{R}^+$?
+\end{itemize}
+
+\begin{enumerate}
+\item Si J es un intervalo compacto de la forma $J=[a,b] \subset \mathbb{R}^+$ con $0<a<b<+\infty$ 
+
+$f_{|J}$ es continua $\Rightarrow$ acotada $\Rightarrow$ integrable (sí, es localmente integrable)
+
+\item ¿$\int_{]0,1]} f < \infty$? $\Leftrightarrow$ f impropiamente integrable Riemann en ]0,1] $\Leftrightarrow$ 
+
+¿$(R)\int_0^1 f(x) dx < \infty$?
+
+$\int_0^1$ casos:
+
+\begin{itemize}
+\item ($p\neq-1$) $[\frac{x^{p+1}}{p+1}]_0^1$ casos:
+\begin{itemize}
+\item (p+1 > 0) $\frac{1}{p+1} - 0= \frac{1}{p+1} < \infty$
+\item (p+1 < 0) $\frac{1}{p+1} - \lim_{x \to 0} \frac{x^{p+1}}{p+1}=+\infty$
+\end{itemize}
+
+\item (p=-1) $[ln(x)]_0^1$ = $ln 1- \lim{x \to 0^+} lnx= 0 -(-\infty)= +\infty$
+\end{itemize}
+
+$f(x) = x^p \in L(]0,1]) \Leftrightarrow p > -1$
+
+\item ¿$(L)\int_{[1,+\infty]} < \infty$? $\Leftrightarrow$ $(R)\int_1^{+\infty} f(x)dx < \infty$.
+
+$(R)\int_1^{+\infty} f(x) dx= (R)\int_1^{+\infty} x^p dx$ = (casos)
+
+\begin{itemize}
+\item (p+1 > 0) $[\frac{x^{p+1}}{p+1}]_1^{+\infty} = \infty -1 = \infty$
+\item (p = -1) $[ln x]_1^{+\infty} = \lim_{x\to +\infty} (ln x) - ln 1 = +\infty$
+\item (p + 1 < 0) $[\frac{x^{p+1}}{p+1}]_1^{+\infty} = 0 - \frac{1}{p+1} \in \mathbb{R}^+$ ( < $\infty$)
+\end{itemize}
+
+$f(x) = x^p \in L([1,+\infty])$ $\Leftrightarrow$ p < -1
+
+\item Nunca, $x^p \in L(\mathbb{R}^+) \Leftrightarrow$
+
+\begin{itemize}
+\item $\in L(]0,1]) \Leftrightarrow p > -1$
+\item $\in L([1,+\infty[) \Leftrightarrow p < -1$
+\end{itemize}
+
+ningún valor de p nos da que $x^p \in L(\mathbb{R}^+$
+
+$\forall p \in \mathbb{R} (fijo)$ f(x) = $x^p \notin L(\mathbb{R}^+)$
+\end{enumerate}
+
+\textbf{Una consecuencia}: $\sum_{n \geq 1} \frac{1}{n^2}$ es convergente.
+
+$\int_{\mathbb{R}^+} f = \sum_{n=1}^\infty \frac{1}{n^2} \int_{]n-1,n]} 1 = \sum_{n=1}^\infty \frac{1}{n^2}$
+
+$f \leq g \Rightarrow \int_{\mathbb{R}^+} f \leq 1 + \int_1^{+\infty} g$
+
+$\sum_{n=1}^\infty \frac{1}{n^2} \leq 1 + \int_1^{+\infty} x^{-2} dx = 2$ (igual sería, $\sum n^p$ converge para cualquier p < -1).
+
+\subsection{Criterio de comparación para integrabilidad}
+¿$f \in L(I)$?
+
+Si f es localmente integrable en I
+\begin{equation*}
+f \in L(I) \Leftrightarrow (c \in I) \>\>(casos:)
+\end{equation*}
+\begin{itemize}
+\item $f \in L(]\alpha,c])$
+\item $f \in L([c,\beta[)$
+\end{itemize}
+
+Estudiaremos intervalos de la forma $[c,\beta[$ ($]\alpha,c]$ análogo).
+
+\textbf{Criterio de comparación:} Si $f:[c,\beta[ \rightarrow \mathbb{R}$ y supongamos que existe $g \in L([c,\beta])$ tal que $|f| \leq g$. Entonces $f \in L([c,\beta[)$  \\
+
+\textbf{Criterio de comparación "por paso al límite":} Sea $-\infty < c < \beta \leq +\infty$, 
+
+$f,g:[c,\beta[ \rightarrow \mathbb{R}$ localmente integrable, con $g \neq 0 \forall x$ supongamos que
+
+\begin{equation*}
+\lim_{x \to \beta^-} \frac{f(x)}{g(x)}=L
+\end{equation*}
+
+Entonces:
+\begin{enumerate}[label=(\roman*)]
+\item Si $L \in \mathbb{R}\backslash\{0\}$ f integrable en $[c,\beta[ \Leftrightarrow g$ integrable en $[c,\beta[$
+\item Si L=0 y g integrable $[c,\beta[ \Rightarrow$ f integrable en $[c,\beta[$
+\item Si $L=\pm \infty$ y f integrable en $[c,\beta[ \Rightarrow$ g integrable en $[c,\beta[$
+\end{enumerate}
+
+\textbf{Demostración (es un coralario del criterio de comparación)}:
+\begin{enumerate}[label=(\roman*)]
+\item $L \in \mathbb{R}\backslash\{0\} \>\> \lim_{x \to \beta} \frac{f(x)}{g(x)}=L \exists d\in[c,\beta[: \forall x > d \frac{L}{2} < \frac{f(x)}{g(x)} < 2|L|$
+
+\begin{equation*}
+\frac{|L|}{2}|g(x)|<|f(x)| < 2|L||g(x)|
+\end{equation*}
+
+en [c,d] hay integrabilidad (es compacto), y en $[d,\beta[$ hacemos la comparación (la desigualdad anterior).
+
+\end{enumerate}
+
+\textbf{Ejemplo:}
+$f(x) = x^p e{-x} \>\>\> (p \in \mathbb{R} \> fijo)$ en ]0,1] $f(x) = x^pe^{-x} \Rightarrow \\ \frac{1}{e}x^p \leq f(x) = x^pe^{-x} \leq x^p$
+
+$x^p \in L(]0,1]) \Leftrightarrow p > -1$
+
+En [1,$+\infty[$ $f(x)=x^pe^{-x}$, $\sum_{n \geq 1} n^pe^{-n}$ \\
+
+Sea $g:[1,+\infty[ \rightarrow \mathbb{R}$, $g(x)=\frac{1}{x^2}=x^{-2}$ (-2 < -1) $g \in L([1,+\infty[)$
+
+\begin{equation*}
+\lim_{x \to +\infty} \frac{f(x)}{g(x)}=\lim_{x \to +\infty} \frac{x^pe^{-x}}{\frac{1}{x^2}}=\lim_{x \to +\infty} x^{p+2}*e^{-x}=0
+\end{equation*}
+
+$g \in L([1,+\infty[) \Rightarrow f \in L([1,\infty[)$
+
+$f\in L(]0,+\infty]) \Leftrightarrow p > -1$
+ 
+
+
+
+
+\section{Ejercicios}
+\textbf{Ejercicio 4}. Sea f definida y medible en $\mathbb{R}^n$. Si T es una trasformación lineal no singular de $\mathbb{R}^n$, demuestra que f(Tx) es medible. \\
+
+Utilizando la pista del libro consideramos los conjuntos $E_1=\{x: f(x) > a\}$ y $E_2=\{x: f(Tx) > a\}$, donde el primero es medible para todo $a$ finito, por ser $f$ una función medible, y el segundo es el que queremos comprobar que sea medible. Para ello se tiene que verificar que $T^-1(E_1)=E_2$, pues de esta manera implicaria que $E_2$ es un conjunto medible por el Teorema 3.33. Para ello haremos:
+
+\begin{equation*}
+E_2=\{y: f(Ty) > a\} \xrightarrow{y=T^{-1}x} \{T^{-1}x:f(TT^{-1}x) > a\} = \{T^{-1}x:f(x) > a\} = T^{-1}E_1
+\end{equation*}
+
+Por el Teorema 3.33, al ser $E_1$ medible, la inversa de un medible es medible, por tanto, $E_2$ es medible, y por consiguiente la composición $f(Tx)$ es medible por serlo el conjunto $E_2$. \\
+
+\textbf{Ejercicio 7}. Sea f semicontinua superiormente, menor que $+\infty$ en un conjunto compacto $E$. Demuestra que f está acotada superiormente en E. Demuestra que f alcanza su máximo en E, que es, que existe $x_0 \in E$ tal que $f(x_0) \geq f(x)$ para todo $x \in E$.\\
+
+Sabemos que el conjunto $\{x \in E: -\infty \leq f(x) < +\infty\} = E$. Además se tiene que $E \subset \{x: -\infty \leq f(x) \leq +\infty\}$, y por lo tanto,
+
+\begin{equation*}
+B = \{x: -\infty \leq f(x) \leq +\infty\} - E \neq \emptyset
+\end{equation*}
+
+por tanto sea $c$ un punto del conjunto B, este verificará que $f(c) > f(x)$ para todo $x \in E$, por consiguiente se tiene que f está acotada superiormente. \\
+
+Ahora sea M el supremo de f, y vemos que $M-\frac{1}{n}$ con $n \in \mathbb{N}$ no puede ser supremo. Entonces, existe un punto $d_n \in E$, tal que $M-\frac{1}{n} < f(d_n)$. Esto genera una sucesión $\{d_n\}$ según vamos dando valores naturales a n. Como M es supremo de f, se tiene que $M - \frac{1}{n} < f(d_n) \leq M$ para todo n natural. Entonces, si hacemos tender n hacia infinito por el "Lema del Sandwich (notación del año pasado)", tenemos que $\{f(d_n)\}$ converge a M. Por el Teorema de Bolzano-Weierstrass nos dice que existe una subsucesión  $\{d_{n_k}\}$, que converge a un punto d, y, dado que E es compacto, d está en E. Entonces tenemos que, la sucesión $\{f(d_{n_k})\}$ converge a f(d). Como esta es una subsucesión de $f(d_n)$ y esta última converge al supremo se tiene que f(d) = M. Como hemos visto que el punto d pertenece al conjunto E, llegamos a la conclusión de que el supremo pertenece a E y por tanto en E se alcanza un máximo. \\
+
+\textbf{Ejercicio Propuesto 3 Abril}. Constatar el teorema de Lusin con la función característica de los racionales. Es una función medible, por tanto el Teorema de Lusin afirma que para todo $\epsilon > 0$ existe un $F$ cerrado $\ldots$ (\textbf{describir el cerrado F}). \\
+
+En primer lugar definiremos la función,
+
+\begin{equation*}
+\chi_\mathbb{Q}:\mathbb{R} \rightarrow \mathbb{R}
+\end{equation*}
+
+,donde si x es racional $\chi_\mathbb{Q}(x) = 1$ y si x es irracional $\chi_\mathbb{Q}(x)=0$. Ahora para todo $\epsilon > 0$ definimos el conjunto $A = \cup_{n \in \mathbb{N}} ]q_n - \frac{\epsilon}{2^{n+1}},q_n + \frac{\epsilon}{2^{n+1}}[$ que es un conjunto abierto por ser unión de abiertos. Además como los racionales son numerables, todo $\mathbb{Q} \subset A$. Ahora veamos la medida del conjunto:
+
+\begin{equation}
+\lambda(A)=\lambda(\cup_{n \in \mathbb{N}} ]q_n - \frac{\epsilon}{2^{n+1}},q_n + \frac{\epsilon}{2^{n+1}}[) < \sum_{n \in \mathbb{N}} 2*\frac{\epsilon}{2^{n+1}} = \epsilon
+\end{equation}
+
+Hemos obtenido un abierto cuya medida es menor que $\epsilon$.Tomando su complementario $F = A^c$ obtenemos un cerrado tal que $\lambda(\mathbb{R}\backslash F) < \epsilon$. Ahora sólo nos queda ver que la función restringida a este conjunto es continua. Como $\mathbb{Q} \subset A$ se tiene que $F \subset \mathbb{R}\backslash Q$ y por consiguiente para todo $x \in F$, $\chi_{\mathbb{Q}\mid F}(x) = 0$, por lo tanto al ser constante se verifica que es continua en F, y finalmente $\chi_\mathbb{Q}$ verifica el teorema de Lusin. \\
+
+\textbf{Ejercicio Propuesto 3 Abril.} Escribir en detalle la condición de Cauchy para la convergencia en medida. \\
+
+Condición suficiente y necesaria para que $\{f_n \}$ converja en medida en E. Para todo $\epsilon > 0$ existe $n_1 \in \mathbb{N}$, tal que para todo $p,q \geq n_1$ se verifique que,
+
+\begin{equation}
+A_{p,q} = \{x \in E: |f_p(x) - f_q(x)| > \epsilon\}
+\end{equation}
+
+Ahora, para todo $\epsilon' > 0$, existe $n_2 \in \mathbb{N}$, tal que para todo $n \geq n_2$ se verifica que:
+
+\begin{equation}
+|\lambda(A_{p,q})| < \epsilon'
+\end{equation}
+
+Esta condición es suficiente y necesaria para que $\{f_n\}$ converja en medida en E. \\
+
+Para la segunda parte demostraremos que si $\epsilon = \epsilon'$, se sigue verificando. Estudiaremos dos casos: 
+
+\begin{itemize}
+\item Si $\epsilon > \epsilon'$ claramente al tomar $n_2 = n_1$ y $\epsilon' = \epsilon$ se seguirá verificando el enunciado, pues si para $\epsilon' > 0$ se verificaba que $\lambda(A_{p,q}) < \epsilon'$ como $\epsilon > \epsilon'$ se seguirá verificando que $\lambda(A_{p,q}) < \epsilon$. Y al sustituir $n_2$ por $n_1$ no aseguramos de que se siga verificando que $\{x \in E: |f_p(x) - f_q(x)| < \epsilon \}$
+
+\item Si $\epsilon' > \epsilon$ claramente al tomar $n_1 = n_2$ y $\epsilon = \epsilon'$ se verificará que $|\lambda(A_{p,q})| < \epsilon'$, ya que al sustituir $\epsilon$ por $\epsilon'$, los conjuntos $\{x \in E: |f_p(x) - f_q(x)| > \epsilon'\}$ tendrá menos puntos, y por consiguiente su medida, si es que se reduce, será menor. Además al sustituir $n_1$ por $n_2$, de lo que nos aseguramos es de que la función de medida $\lambda$ con los cojuntos $A_{p,q}$ siga converjiendo a 0.
+\end{itemize}
+
+\end{document}

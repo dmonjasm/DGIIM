@@ -1,0 +1,49 @@
+branch_and_bound_milindron(nodo actual,cola con prioridad, matriz distancias, nodo salida, contador podas, tamaño ramificación, nodos expandidos){
+si(nodo->ciudades_restantes.size() > 0){
+	crear_hijos(ciudades_restantes.size());
+	nodos expandidos += nuevos nodos;
+	esparcir_cota_superior_a_hijos;
+	Eliminar el nodo actual de la cola con prioridad;
+
+	Para cada hijo{
+		hijo->ciudades_restantes = padre->ciudades_restantes sin hijo->ciudad;
+		
+		distancia = 0;
+		si(hijo->ciudades_restantes.size() > 0){
+			distancia = minima_distancia(de hijo->ciudad, ciudad de ciudades restantes);
+			insertar en la cola con prioridad (distancia,nodo_hijo_actual);
+		}
+	
+		nodo_hijo_actual->cota_inferior = distancia + distancia_de_hijo_actual_a_raiz();
+	
+		
+		si(hijo actual no tiene ciudades_restantes){
+			se crea un solo nodo hijo para el nodo_hijo_actual;
+			se almacenan en nodo_hijo_actual->hijo->ciudad 1.
+			se actualiza la cota inferior de nodo_hijo_actual->hijo->ciudad 1.
+
+			si(nodo_hijo_actual->hijo->cota_inferior < salida->cota inferior)
+				salida = nodo_hijo_actual->hijo;
+		}
+
+		si(nodo_hijo_actual->cotainferior > cotasuperior){
+			se poda el hijo actual;
+			contador-podas++;
+		}
+	}
+	
+	si(tamaño_colaprioridad < tamaño_colaprioridad_actual){
+		tamaño_ramificación = tamaño_ramificación_actual;
+	}
+	
+	si(cola_prioridad no vacía){
+		mientras(el primer elemento de la cola esté podado){
+			se elimina el primer elemento de la cola;
+		}
+	}
+	
+	si(cola_prioridad no vacía)
+		branch_and_bound_milindron(primer elemento de la cola con prioridad, cola prioridad, matriz, salida, contador podas, tamaño ramificación, nodos expandidos);
+	
+	
+}

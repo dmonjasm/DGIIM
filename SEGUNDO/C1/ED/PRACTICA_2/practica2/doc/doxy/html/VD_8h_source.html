@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TIPOS INGREDIENTES: Fichero Fuente include/VD.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">TIPOS INGREDIENTES
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">VD.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef VD_h</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define VD_h</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div><div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="classVD.html">    5</a></span>&#160;<span class="keyword">class </span><a class="code" href="classVD.html">VD</a>{</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keyword">private</span>:</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;        T * datos;      <span class="comment">//zona de memoria para almacenar los datos de tipo T</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        <span class="keywordtype">int</span> reservados;     <span class="comment">//espacio asignado a datos</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <span class="keywordtype">int</span> n;          <span class="comment">//numero de datos almacenados</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"></span>        <span class="keywordtype">void</span> resize (<span class="keywordtype">int</span> nuevotam);</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordtype">void</span> Copiar(<span class="keyword">const</span> <a class="code" href="classVD.html">VD&lt;T&gt;</a> &amp;v);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">void</span> Liberar();</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">public</span>:</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="classVD.html#a1ce73549d14f68caecaa593de3255c30">VD</a>(<span class="keywordtype">int</span> tam=10);</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="classVD.html#a1ce73549d14f68caecaa593de3255c30">VD</a>(<span class="keyword">const</span> <a class="code" href="classVD.html">VD&lt;T&gt;</a> &amp; original);</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="classVD.html#a0533f99aa2fee31fde63edd6c4b8bb2d">~VD</a>();</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="classVD.html">VD&lt;T&gt;</a> &amp;<a class="code" href="classVD.html#a645b65a6343059cd921f6a2856c97249">operator=</a>(<span class="keyword">const</span> <a class="code" href="classVD.html">VD&lt;T&gt;</a> &amp;v);</div><div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classVD.html#a411ad026db1c8e0617d9031f1f1017a5">   52</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classVD.html#a411ad026db1c8e0617d9031f1f1017a5">size</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> n;}</div><div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classVD.html#a7d80240b5791d62b7e27657763afe712">   58</a></span>&#160;        <span class="keyword">inline</span> T &amp;<a class="code" href="classVD.html#a7d80240b5791d62b7e27657763afe712">operator[]</a>(<span class="keywordtype">int</span> i){<span class="keywordflow">return</span> datos[i];}   <span class="comment">//version no constante</span></div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            </div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">inline</span> T &amp;<a class="code" href="classVD.html#a7d80240b5791d62b7e27657763afe712">operator[]</a>(<span class="keywordtype">int</span> i)<span class="keyword"> const </span>{<span class="keywordflow">return</span> datos[i];}    <span class="comment">//versión constante</span></div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"></span>        <span class="keywordtype">void</span> <a class="code" href="classVD.html#a17d26b0f313f22b49b38ba1c8fd80e73">Insertar</a>(<span class="keyword">const</span> T dato_insertar, <span class="keyword">const</span> <span class="keywordtype">int</span> indice_insertar);</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classVD.html#a033d6e246f6a49cf66a1cad25b52aa8b">Borrar</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> indice_borrar);       </div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#include &quot;VD.cpp&quot;</span></div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="classVD_html_a645b65a6343059cd921f6a2856c97249"><div class="ttname"><a href="classVD.html#a645b65a6343059cd921f6a2856c97249">VD::operator=</a></div><div class="ttdeci">VD&lt; T &gt; &amp; operator=(const VD&lt; T &gt; &amp;v)</div><div class="ttdoc">Operador de asignacion. </div><div class="ttdef"><b>Definition:</b> <a href="include_2VD_8cpp_source.html#l00072">VD.cpp:72</a></div></div>
+<div class="ttc" id="classVD_html_a7d80240b5791d62b7e27657763afe712"><div class="ttname"><a href="classVD.html#a7d80240b5791d62b7e27657763afe712">VD::operator[]</a></div><div class="ttdeci">T &amp; operator[](int i)</div><div class="ttdoc">Consulta y modifica el elemento i-esimo. </div><div class="ttdef"><b>Definition:</b> <a href="VD_8h_source.html#l00058">VD.h:58</a></div></div>
+<div class="ttc" id="classVD_html"><div class="ttname"><a href="classVD.html">VD</a></div><div class="ttdef"><b>Definition:</b> <a href="VD_8h_source.html#l00005">VD.h:5</a></div></div>
+<div class="ttc" id="classVD_html_a033d6e246f6a49cf66a1cad25b52aa8b"><div class="ttname"><a href="classVD.html#a033d6e246f6a49cf66a1cad25b52aa8b">VD::Borrar</a></div><div class="ttdeci">void Borrar(const int indice_borrar)</div><div class="ttdoc">Elimimina el elemento en la posición pos del vector dinamico. </div><div class="ttdef"><b>Definition:</b> <a href="include_2VD_8cpp_source.html#l00098">VD.cpp:98</a></div></div>
+<div class="ttc" id="classVD_html_a17d26b0f313f22b49b38ba1c8fd80e73"><div class="ttname"><a href="classVD.html#a17d26b0f313f22b49b38ba1c8fd80e73">VD::Insertar</a></div><div class="ttdeci">void Insertar(const T dato_insertar, const int indice_insertar)</div><div class="ttdoc">Inserta un objeto en la posicion pos del vector dinámico. </div><div class="ttdef"><b>Definition:</b> <a href="include_2VD_8cpp_source.html#l00084">VD.cpp:84</a></div></div>
+<div class="ttc" id="classVD_html_a0533f99aa2fee31fde63edd6c4b8bb2d"><div class="ttname"><a href="classVD.html#a0533f99aa2fee31fde63edd6c4b8bb2d">VD::~VD</a></div><div class="ttdeci">~VD()</div><div class="ttdoc">Destructor. Elimina la memoria asociada al vector dinámico. </div><div class="ttdef"><b>Definition:</b> <a href="include_2VD_8cpp_source.html#l00065">VD.cpp:65</a></div></div>
+<div class="ttc" id="classVD_html_a411ad026db1c8e0617d9031f1f1017a5"><div class="ttname"><a href="classVD.html#a411ad026db1c8e0617d9031f1f1017a5">VD::size</a></div><div class="ttdeci">int size() const</div><div class="ttdoc">Devuelve el numero de datos almacenados en el vector dinamico. </div><div class="ttdef"><b>Definition:</b> <a href="VD_8h_source.html#l00052">VD.h:52</a></div></div>
+<div class="ttc" id="classVD_html_a1ce73549d14f68caecaa593de3255c30"><div class="ttname"><a href="classVD.html#a1ce73549d14f68caecaa593de3255c30">VD::VD</a></div><div class="ttdeci">VD(int tam=10)</div><div class="ttdoc">Constructor por defecto y con parametro. </div><div class="ttdef"><b>Definition:</b> <a href="include_2VD_8cpp_source.html#l00050">VD.cpp:50</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

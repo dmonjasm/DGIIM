@@ -1,0 +1,5 @@
+3.mount -t ext3 -r -L LABEL_ext3 /mnt/SA_ext3
+4.mount -t ext4 -o dirsync -L LABEL_ext4 /mnt/LABEL_ext4 
+
+Otra opción posible para 4. sería:
+4.mount -t ext4 -o sync -L LABEL_ext4 /mnt/LABEL_ext4

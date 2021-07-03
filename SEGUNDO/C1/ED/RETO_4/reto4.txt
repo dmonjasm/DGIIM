@@ -1,0 +1,81 @@
+
+void ArbolBinario<Tbase>::escribe_arbol(ostream& out, Nodo nod) const
+{
+
+if(nod!=0 && nod->izquierda==0 && nod->derecha==0)
+	out<< "c " << nod->etiqueta << " ";
+
+else{
+	if(nod->izquierda != 0){
+		out << "i " << nod->etiqueta << " ";
+		escribe_arbol(out,nod->izquierda);
+	}
+	
+	else{	
+		if(nod->derecha!= 0){
+			out << "d " << nod->etiqueta << " ":
+			escribe_arbol(out,nod->derecha);
+		}
+
+		else{
+			out << "n " << nod->etiqueta << " ";
+			escribe_arbol(out,nod->izquierda);
+			escribe_arbol(out,nod->derecha);
+		}
+	}
+}
+}
+
+
+void ArbolBinario<Tbase>::lee_arbol(istream& in, Nodo & nod)
+{
+
+char clave;
+in >> clave;
+
+if(clave=='n') {
+	nod=new nodo;
+	in >> nod->etiqueta;
+	lee_arbol(in,nod->izquierda);
+	lee_arbol(in,nod->derecha);
+	
+	if(nod->izquierda != 0)
+		nod->izquierda->padre=nod;
+	if(nod->derecha != 0)
+		nod->derecha->padre=nod;
+}
+
+else{
+	if(clave=='i'){
+		nod=new nodo;
+		in >> nod-> etiqueta;
+		lee_arbol(in,nod->izquierda);
+		nod->derecha=0;
+		if(nod->izquierda != 0)
+			nod->izquierda->padre=nod;
+	}
+	
+	else{
+		if(clave=='d'){
+			nod=new nodo;
+			in >> nod-> etiqueta;
+			lee_arbol(in, nod->izquierda);
+			nod->izquierda=0;
+			if(nod->derecha!=0)
+				nod->derecha->padre=nod;
+		}
+		
+		else{
+			nod=new nodo;
+			in >> nod-> etiqueta;
+			nod->izquierda=0;
+			nod->derecha=0;
+		}
+	}
+}
+}
+		
+		
+
+
+

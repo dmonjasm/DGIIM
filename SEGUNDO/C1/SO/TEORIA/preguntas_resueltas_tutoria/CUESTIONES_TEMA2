@@ -1,0 +1,40 @@
+1.
+a)
+b)Las excepciones no recuperables no hacen una llamada a sistema.
+Los segmentation faul tampoco es ncesario la llamda de exit().
+c)
+	context_switch(){
+		PID=planifCPU()(schecdule())
+		PID.ESTADO='BLOQUEADO_HD'
+		ENCOLAR(PID, "BLOQUEADOS_HD");
+			DISPATCHER(PIDcpu,PID);
+	}
+
+2.
+b) SYS_EXIT->
+   	*LIBERAR RECURSOS 
+   	*PCB: estado-finalizacion=(lo que se devuelve tras terminar la ejecución, ej, EXIT_SUCCESS)
+   	*ENVIAR SEÑAL DE FINALIZACIÓN AL PADRE (SIGCHLD), puede ser que el proceso padre este a la espera de la finalización del proceso hijo.
+	*TODOS LOS HIJOS DEL PROCESO SON AHORA HIJOS DEL (INIT==PROCESO PADRE DE TODOS LOS PROCESOS PO ESTANDAR POSIX)
+	*CONTEXT_SWITCH()
+c)SE PUEDEN RETIRAR PORCESOS COMPLETOS DE MEMORIA.
+
+6.SI PUEDE EN AMBOS CASOS NO AFECTA QUE SEA APROPIATIVA O NO.
+CUANDO SE PRODUCE UNA INTERRUPCIÓN A NIVEL HARDWARE SE LANZA UN IDENTIFICADOR DE RUTINA DE SERVICIOS DE INTERRUPCIONES, SE SALVA LA PSW Y EL PC EN LA PILA DE CONTROL DE PROGRAMA Y SE CARGRA EN PC LA PRIMERA POSICION DEL VECTOR DE INTERRUPCION CUYA IDENTIFICADOR ES EL DADO POR EL DISPOSITIVO Y SE EJECUTA LA RUTINA DE SERVICIO DE INTERRUPCIONES. EN NINGÚN MOMENTO SE REALIZA UN CONTEXT_SWITCH();
+
+7.SI ES UN SISTEMA APROPIATIVO SE HACE UN
+	IF(PLANIFCPU ...)}
+		PID.ESTADO=LISTO_HD;
+		ENCOLAR(PID,LISTOS_HD);
+		DISPATCH(PID);
+	}
+
+11.
+Hacerse la tabla con la llegadas de cada proceso, la decisión de planificación y calcular 
+M= tiempo de llegada - momento en que se planifica. (tiempo de espera)
+T= tiempo de llegada - momento en que se termina su ejecución. (tiempo de respuesta)
+Media= media de los M de todos los procesos. (tiempo medio de espera)
+T media= media de los T de todos los procesos (tiempo medio de respuesta)
+
+   
+   

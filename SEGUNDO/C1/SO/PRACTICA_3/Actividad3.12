@@ -1,0 +1,2 @@
+mknod disp_bloques b 10 5
+mknod disp_caracteres c 10 5

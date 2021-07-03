@@ -1,0 +1,152 @@
+\hypertarget{classingredientes}{}\section{Referencia de la Clase ingredientes}
+\label{classingredientes}\index{ingredientes@{ingredientes}}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classingredientes_adb3e000aa798184c7253c401f165c1a5}\label{classingredientes_adb3e000aa798184c7253c401f165c1a5}} 
+\hyperlink{classingredientes_adb3e000aa798184c7253c401f165c1a5}{ingredientes} ()
+\begin{DoxyCompactList}\small\item\em Constructor sin parametros. \end{DoxyCompactList}\item 
+void \hyperlink{classingredientes_a2380f0b945d44f0c1c7e26a4cb5e1247}{Insertar} (const \hyperlink{classingrediente}{ingrediente} \&insertado)
+\begin{DoxyCompactList}\small\item\em Inserta un ingrediente en la posicion pos. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classingredientes_aaf628d0360800484ae277fbb7aa2f81d}\label{classingredientes_aaf628d0360800484ae277fbb7aa2f81d}} 
+int \hyperlink{classingredientes_aaf628d0360800484ae277fbb7aa2f81d}{size} () const
+\begin{DoxyCompactList}\small\item\em Devuelve el numero de datos contenidos en el vector dinamico ordenado por nombre. \end{DoxyCompactList}\item 
+void \hyperlink{classingredientes_a8d8d637d74d3cfb1382cf4f0646a6fb8}{borrar} (const string \&nombre)
+\begin{DoxyCompactList}\small\item\em Borra el ingrediente con el nombre indicado. \end{DoxyCompactList}\item 
+\hyperlink{classingrediente}{ingrediente} \hyperlink{classingredientes_a0b1562faa104954dd65d92e7fa17cdf8}{Obtener\+\_\+ingrediente} (int pos)
+\begin{DoxyCompactList}\small\item\em Devuelve el ingrediente que se encuentra en la posicion pos del vector dinámico. \end{DoxyCompactList}\item 
+void \hyperlink{classingredientes_a8233a658023175299cd83c0bfa9e5421}{set\+Ingrediente} (int pos, const \hyperlink{classingrediente}{ingrediente} \&nuevo)
+\begin{DoxyCompactList}\small\item\em Modifica el contenido de la posicion pos del vector de ingredientes por el ingrediente nuevo. \end{DoxyCompactList}\item 
+\hyperlink{classingrediente}{ingrediente} \hyperlink{classingredientes_a88b5117b69d592fff44320ccfab5ce58}{get} (const string \&n)
+\begin{DoxyCompactList}\small\item\em Devuelve la información de un ingrediente dado su nombre. \end{DoxyCompactList}\item 
+\hyperlink{classingredientes}{ingredientes} \hyperlink{classingredientes_a199783a93628a846e8d0b568b06fe3d4}{get\+Ingrediente\+Tipo} (const string \&tipo)
+\begin{DoxyCompactList}\small\item\em Devuelve todos los ingredientes de un tipo tipo. \end{DoxyCompactList}\item 
+pair$<$ bool, int $>$ \hyperlink{classingredientes_a5a2723852db946495aca5f70c81f5fb9}{Buscar\+\_\+nombre} (const \hyperlink{classingrediente}{ingrediente} \&insertar)
+\begin{DoxyCompactList}\small\item\em Busca si el ingrediente a insertar pertenece o no al vector dinamico, y en que posicion se debería insertar. \end{DoxyCompactList}\item 
+pair$<$ bool, int $>$ \hyperlink{classingredientes_a3427d84b6e0df98bdbe17e5d1c3791ab}{Buscar\+\_\+tipo} (const \hyperlink{classingrediente}{ingrediente} \&insertar)
+\begin{DoxyCompactList}\small\item\em Consulta y/o modifica la posicion i del vector dinamico de ingredientes. \end{DoxyCompactList}\item 
+\hyperlink{classingrediente}{ingrediente} \& \hyperlink{classingredientes_a9e099786f83d0ac3cf38317b194691db}{operator\mbox{[}$\,$\mbox{]}} (int i)
+\begin{DoxyCompactList}\small\item\em Para acceder a la posición i-\/ésima del dato miembro datos. \end{DoxyCompactList}\item 
+\hyperlink{classingrediente}{ingrediente} \& \hyperlink{classingredientes_a58214e1464cd16342bfb6f756befa9c6}{operator\mbox{[}$\,$\mbox{]}} (int i) const
+\begin{DoxyCompactList}\small\item\em Se trata del operador \mbox{[}\mbox{]} constante que sirve para obtener la posición i-\/esima de datos. \end{DoxyCompactList}\item 
+\hyperlink{classingredientes}{ingredientes} \hyperlink{classingredientes_aeb1b9830ed35d73ec057e7037312b695}{operator=} (const \hyperlink{classingredientes}{ingredientes} \&original)
+\begin{DoxyCompactList}\small\item\em Sobrecarga Operador de asignación. Asigna a una variable ingrediente un dato de tipo ingrediente. \end{DoxyCompactList}\item 
+void \hyperlink{classingredientes_a29b978d5b42dea79bdd85f366ebbe70f}{Imprimir\+Por\+Tipo} (std\+::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Se imprimen los ingredientes del vector dinamico por tipo. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classingredientes_a0404324a62539f06a97498169b879005}\label{classingredientes_a0404324a62539f06a97498169b879005}} 
+\hyperlink{classVD}{VD}$<$ string $>$ \hyperlink{classingredientes_a0404324a62539f06a97498169b879005}{get\+Tipos} ()
+\begin{DoxyCompactList}\small\item\em Se devuelve un vector dinamico de string con todos los tipos almacenados. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Amigas}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classingredientes_adaef6ec124faaf2beac1cadefa45e783}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classingredientes}{ingredientes} \&i)
+\begin{DoxyCompactList}\small\item\em Se almacenan los datos de i en el fichero al que apunte el flujo de salida os. \end{DoxyCompactList}\item 
+std\+::istream \& \hyperlink{classingredientes_abbcb1255e417a8a8b4a9fd4ca0ad4ee6}{operator$>$$>$} (std\+::istream \&is, \hyperlink{classingredientes}{ingredientes} \&i)
+\begin{DoxyCompactList}\small\item\em Se almacenan los datos contenidos en el fichero al que apunta el flujo de entrada is en la variable i. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+
+
+Definición en la línea 12 del archivo ingredientes.\+h.
+
+
+
+\subsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classingredientes_a8d8d637d74d3cfb1382cf4f0646a6fb8}\label{classingredientes_a8d8d637d74d3cfb1382cf4f0646a6fb8}} 
+\index{ingredientes@{ingredientes}!borrar@{borrar}}
+\index{borrar@{borrar}!ingredientes@{ingredientes}}
+\subsubsection{\texorpdfstring{borrar()}{borrar()}}
+{\footnotesize\ttfamily void ingredientes\+::borrar (\begin{DoxyParamCaption}\item[{const string \&}]{nombre }\end{DoxyParamCaption})}
+
+
+
+Borra el ingrediente con el nombre indicado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em pos\+:posicion} & cuyo ingrediente se va a eliminar \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 103 del archivo ingredientes.\+cpp.
+
+
+\begin{DoxyCode}
+103                                               \{
+104     \textcolor{keywordtype}{bool} encontrado=\textcolor{keyword}{false};
+105         
+106     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i < datos.\hyperlink{classVD_a411ad026db1c8e0617d9031f1f1017a5}{size}() && !encontrado; i++)\{
+107         \textcolor{keywordflow}{if}(datos[i].getNombre()==nombre)\{
+108             datos.\hyperlink{classVD_a033d6e246f6a49cf66a1cad25b52aa8b}{Borrar}(i);
+109             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j < indice.\hyperlink{classVD_a411ad026db1c8e0617d9031f1f1017a5}{size}();j++)\{
+110                 \textcolor{keywordflow}{if}(indice[j]>i)
+111                     indice[j]--;
+112                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(indice[j]==i)
+113                     indice.\hyperlink{classVD_a033d6e246f6a49cf66a1cad25b52aa8b}{Borrar}(j);
+114             \}
+115             encontrado=\textcolor{keyword}{true};
+116         \}
+117     \}
+118 
+119     \textcolor{keywordflow}{if}(!encontrado)
+120         cerr << \textcolor{stringliteral}{"ERROR: el nombre introducido no es encuentra en datos."} << endl;   
+121 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classingredientes_a5a2723852db946495aca5f70c81f5fb9}\label{classingredientes_a5a2723852db946495aca5f70c81f5fb9}} 
+\index{ingredientes@{ingredientes}!Buscar\+\_\+nombre@{Buscar\+\_\+nombre}}
+\index{Buscar\+\_\+nombre@{Buscar\+\_\+nombre}!ingredientes@{ingredientes}}
+\subsubsection{\texorpdfstring{Buscar\+\_\+nombre()}{Buscar\_nombre()}}
+{\footnotesize\ttfamily pair$<$ bool, int $>$ ingredientes\+::\+Buscar\+\_\+nombre (\begin{DoxyParamCaption}\item[{const \hyperlink{classingrediente}{ingrediente} \&}]{insertar }\end{DoxyParamCaption})}
+
+
+
+Busca si el ingrediente a insertar pertenece o no al vector dinamico, y en que posicion se debería insertar. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em insertar} & ingrediente que se comprueba si pertenece y en que posicion se va a insertar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+pair$<$boo.,int$>$ donde bool indica si esta o no en el vector dinámico y int en que posición se insertaría 
+\end{DoxyReturn}
+
+
+Definición en la línea 10 del archivo ingredientes.\+cpp.
+
+
+\begin{DoxyCode}
+10                                                                       \{
+11     \textcolor{keywordtype}{int} inf=0;
+12     \textcolor{keywordtype}{int} sup=datos.\hyperlink{classVD_a411ad026db1c8e0617d9031f1f1017a5}{size}()-1;
+13     \textcolor{keywordtype}{int} mitad=0;
+14     pair<bool,int> salida(\textcolor{keyword}{false},0);
+15     
+16     \textcolor{keywordflow}{while}(inf <= sup && !salida.first)\{
+17         mitad=(inf+sup)/2;
+18         
+19         \textcolor{keywordflow}{if}(datos[mitad].getNombre()==insertar.\hyperlink{classingrediente_a8da227d03af8811627434703922b463a}{getNombre}()&&datos[mitad].getTipo()==insertar.
+      \hyperlink{classingrediente_a03334e887add1dbdc7991de77234ede7}{getTipo}())\{
+20             salida.first=\textcolor{keyword}{true};
+21             salida.second=mitad;
+22             
+23         \}
+24         
+25         \textcolor{keywordflow}{else}\{
+26             \textcolor{keywordflow}{if}(datos[mitad].getNombre()<insertar.\hyperlink{classingrediente_a8da227d03af8811627434703922b463a}{getNombre}())
+27                 inf=mitad+1;
+28             \textcolor{keywordflow}{else}
+29                 sup=mitad-1;
+30 
+31             salida.second=inf;
+32         \}
+33 
+34         
+35     \}
+36 
+37     \textcolor{keywordflow}{return} salida;
+38 \}
+\end{DoxyCode}
+Gráfico de llamadas para esta función\+:

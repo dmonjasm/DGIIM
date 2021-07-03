@@ -1,0 +1,7 @@
+<genera-apunte>
+#!/bin/bash
+ls -a -R /home >> listahome-`date +%Y-%j-%T-$$`
+
+chmod +x genera-apunte
+
+at now + 1 minute -f ./genera-apunte

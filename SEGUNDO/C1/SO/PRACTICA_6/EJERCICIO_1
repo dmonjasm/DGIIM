@@ -1,0 +1,22 @@
+Se declaran las variables enteras fd1 y fd2 que contendrán el filedescriptor del archivo que abran.
+Se declara un struct stat atributos.
+
+
+Se abre un archivo llamado archivo1 y se almacena su filedescriptor en fd1. Si el archivo no existe se crea, si tiene permisos de escritura se trunca su longitud a 0 y se le da solo permiso de lectura.
+Además se le da permiso de lectura, escritura y ejecución para grupos. Si el return es negativo se devuelve un mensaje de error y se aborta el programa.
+
+Se establece la umask a 000.
+
+Se abre un archivo archivo2 y si no existe se crea se trunca su longitud a 0 si tiene permiso de escritura y se le da permiso solo de lectura. Ademas se le dan permisos de lectura, escritura y ejecución al grupo.
+Si se retorna un valor negativo se muestra un mensaje de error.
+
+Se almacena en atributos toda la información relacionada con archivo1, si no se pudiese se retorna un mensaje de error.
+
+Se quita el permiso de ejecución para grupos del stat atributos y se añade que el proceso que use el archivo tome el GID del propietario. Si no funiona se muestra un error.
+
+Se le añaden a archivo2 permisos de RWX para el usuario, RW para grupo y R para otros.
+
+Se cierrar los archivos cuyos filedescriptor estan almacenados en fd1 y fd2.
+
+
+

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ind /home -mtime 1 &> modificados_`date +%Y-%j-%l`

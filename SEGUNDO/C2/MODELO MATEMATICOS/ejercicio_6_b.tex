@@ -1,0 +1,141 @@
+\documentclass{article}
+
+
+\author{Daniel Monjas Migu\'elez}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=cyan,
+}
+
+\begin{document}
+
+\textbf{Autor:Daniel Monjas Miguélez} \\ \\
+
+\textbf{6.- a) Una población se rige por el modelo 
+\begin{equation}
+p_{n+1}=10*p_n*e^{-p_n}, n \geq 0
+\end{equation}
+Prueba que los equilibrios son inestables.}
+
+Definimos $f(x)=10*x*e^{-x}$ y buscamos los puntos tales que $f(x)=x$ para ello:
+
+
+\begin{equation}
+10*x*e^{-x}=x \Longleftrightarrow x*(10*e^{-x} - 1) = 0 \Rightarrow x=0 \> o \> x = ln(10)
+\end{equation}
+
+Una vez tenemos los puntos de equilibrio calculamos la derivada de $f(x)$ y evaluamos en dichos puntos la función:
+
+\begin{equation}
+f'(x)=10*(e^{-x}-x*e^{-x})
+\end{equation}
+
+Luego $f'(0)=10 \notin (-1,1)$ y $f'(ln(10))=1-ln(10) \notin (-1,1)$. Como al evaluar $f'(x)$ en $x=0$ y en $x=ln(10)$ se tiene que las imagenes para dichos valores de $x$ no están en $(-1,1)$ llegamos a que dichos puntos de equilibrio no son estables. \\
+
+\textbf{6.- b) Para conseguir un equilibrio poblacional localmente asintóticamente estable (a.e), se propone vender una fracción $\alpha$ ($0 < \alpha < 1)$ de la población en cada periodo de tiempo dando lugar al modelo: 
+\begin{equation}
+p_{n+1}=10*(1-\alpha)*p_n*e^{-(1-\alpha)p_n}
+\end{equation} 
+} \\
+
+\textbf{b) i) Encuentre el intervalo abierto (de amplitud máxima) donde elegir $\alpha$ para que esté asegurada la estabilidad asintótica local del equilibrio positivo.}
+
+En primer lugar buscaremos los puntos fijos, por lo tanto definimos $f(x)=10*(1-\alpha)*x*e^{-(1-\alpha)*x}$  e igualamos $f(x)=x$.
+
+\begin{equation}
+f(x) = x  \Longleftrightarrow x=10*(1-\alpha)x*e^{-(1-\alpha)*x}
+\end{equation}
+
+Despejando la ecuación anterior obtenemos que $x=0$ es solución pero la descartamos porque nos preguntan por puntos de equilibrio positivos. La otra solución se obtiene al despejar:
+
+\begin{equation}
+1=10*(1-\alpha)*e^{-(1-\alpha)*x} \Longleftrightarrow ln(\frac{1}{10*(1-\alpha)}) = -(1-\alpha)*x
+\end{equation}
+
+finalmente obtenemos que el segundo punto de equilibrio dependerá del $\alpha$ y tendrá la siguiente forma 
+
+
+\begin{equation}
+x=\frac{ln(10*(1-\alpha))}{(1-\alpha)} \label{funcion}
+\end{equation}
+
+Ahora el objetivo será asegurar que x sea positivo, luego buscaremos la primera cota para $\alpha$. Buscamos que $x > 0$ y debemos tener en cuenta que como $0 < \alpha < 1$ se tiene que $-(1-\alpha) < 0$, por consiguiente,
+
+\begin{equation}
+x > 0 \Longleftrightarrow ln(\frac{1}{10*(1-\alpha)}) < 0 \Longleftrightarrow \alpha < \frac{9}{10}
+\end{equation}
+
+Por último el objetivo será el obtener para que valores de $\alpha$ los puntos x de la forma (\ref{funcion}), son estables. En primer lugar calculamos la derivada de $f(x)$,
+
+\begin{equation}
+f'(x)=10*(1-\alpha)*(e^{-(1-\alpha)*x}+x*e^{-(1-\alpha)*x}*(-(1-\alpha)))
+\end{equation}
+
+Ahora evaluamos la expresión (\ref{funcion}) y buscamos los valores de $\alpha$ para los que x es estable.
+
+\begin{equation}
+f'(\frac{ln(10*(1-\alpha))}{(1-\alpha)})=1-ln(10*(1-\alpha))
+\end{equation}
+
+Sabemos que para que x sea estable $f'(x) \in (-1,1)$,  por tanto
+
+\begin{equation}
+1-ln(10*(1-\alpha)) < 1 \Longleftrightarrow 10*(1-\alpha) > 1 \Longleftrightarrow \alpha < \frac{9}{10}
+\end{equation}
+
+Ahora hacemos la versión análoga para -1
+
+\begin{equation}
+1-ln(10*(1-\alpha)) > -1 \Longleftrightarrow e^2 > 10*(1-\alpha) \Longleftrightarrow \alpha > \frac{10-e^2}{10}
+\end{equation}
+
+Llegando finalmente a la conclusión de que un punto de equilibrio será estable y positivo si tiene la forma de la expresión (\ref{funcion}) y $\alpha \in (\frac{10 - e^2}{10}, \frac{9}{10})$. \\
+
+\textbf{b) ii) Calcula el valor m\'aximo de $\alpha$ para el que la poblaci\'on de equilibrio alcanza su valor m\'aximo y el localmente estable.}
+
+Sabemos que para que x sea punto fijo y estable $\alpha \in (\frac{10-e^2}{10},\frac{9}{10})$ y 
+
+\begin{equation}
+x=\frac{ln(10*(1-\alpha))}{(1-\alpha)}
+\end{equation}
+
+Buscaremos el m\'aximo de x en funci\'on de $\alpha$ para lo que definir\'e la siguiente funci\'on:
+
+\begin{equation}
+g(\alpha)=\frac{ln(10*(1-\alpha))}{(1-\alpha)}
+\end{equation}
+
+Se hace la derivada y se iguala a 0 para obtener puntos cr\'iticos de la funci\'on.
+
+\begin{equation}
+g'(\alpha)=\frac{-1-ln(\frac{1}{10*(1-\alpha)})}{\alpha^2-2\alpha+1}
+\end{equation}
+
+Igualando la derivada a cero se obtiene que,
+
+\begin{equation}
+g'(\alpha)=0 \Longleftrightarrow -1-ln(\frac{1}{10*(1-\alpha)})=0 \Longleftrightarrow \frac{1}{10*(1-\alpha)} = \frac{1}{e}
+\end{equation}
+
+despejando la expresi\'on anterior se obtiene que $\alpha=\frac{10-e}{10} \in (\frac{10-e^2}{10}, \frac{9}{10})$, por lo que x es estable, ahora falta por comprabar que se trata de un m\'aximo. Para ello hacemos la segunda derivada de la funci\'on,
+
+\begin{equation}
+g''(\alpha)=\frac{3+2*ln(\frac{1}{10* (1-\alpha)})}{(\alpha-1)^3}
+\end{equation}
+
+Y ahora evaluamos $g''(\alpha)$ en el punto cr\'tico que hemos obtenido, de forma que 
+
+\begin{equation}
+g''(\frac{10-e}{10})=\frac{-1000}{e^3} < 0
+\end{equation}
+
+De donde obtenemos que el punto $\alpha=\frac{10-e}{10}$ es un m\'aximo relativo de $g(\alpha)$ y adem\'as $\alpha \in(\frac{10-e^2}{10},\frac{9}{10})$ por lo que $\alpha$ sería el máximo valor en el que x alcanza su valor máximo y es localmente estable.
+
+
+\end{document}

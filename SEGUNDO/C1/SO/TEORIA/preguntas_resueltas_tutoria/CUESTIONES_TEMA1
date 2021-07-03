@@ -1,0 +1,74 @@
+Relacion de cuestiones y problemas 
+
+1.Cuestiones generales relacionadas con un SO:
+-¿Qué es el núcleo (kernel) de un SO?
+El núcleo o kernel es la parte central de un sistema operativo y es el que se encarga de realizar toda
+la comunicación segura entre el software y el hardware del ordenador. El núcleo kernel es la parte
+más importante del sistema operativo Unix y sus derivados.
+El modo kernel se encarga, en un interrupción, de cargar el PC con el contenido del vector correspondiente al dispositivo controlado por el controlador que solicita la interrupción.
+En las excepciones el modo kernel carga el PC con el contenido del vector correspondiente a la excepcion
+
+-¿Qué es un modelo de memoria para un programa? Explique los diferentes modelos de memoria para la 
+arquitectura IA-32.
+
+Flat memory model. Es un espacio lineal con direcciones consecutivas en el rango [0,2^32-1](linear address space). Permite direccionar con granularidad de un byte.
+
+Segmented memory model. Los programas ven el espacio de memoria como un grupo de espacios independientes llamados segmentos.
+Para acceder a un byte dentro de un segmento el programa utiliza un dirección bidimensional(dirección logica), con la forma (selector de segmento, offset)
+IA-32 permite identifcar 16383 segmentos de diferentes tipos y tamaños con un tamaño máximo por segmento de 2^32 bytes
+
+Real-address mode memory model. Proporcionado por compatibilidad hacia atrás con el procesador 8086.
+Implementación de segmentación con limitaciones en el tamaño de los segmentos, 64KB, y en el espacio de memoria final accesible, 2^20 bytes.
+
+-¿Cómo funciona el mecanismo de tratamiento de interrupciones mediante interrupciones vectorizadas? Explique que parte es realizada por el hardware y que parte por el software.
+En las interrupciones vectorizadas, el periférico que ha interrumpido envía un código o número de vector a la CPU a partir del cual se puede calcular la dirección de comienzo de la Rutina De Tratamiento De Interrupciones de ese periférico particular. 
+Cuando el periférico recibe una señal de confirmación o reconocimiento de interrupción INTA(interruption Ack) envía el nº de vector a través del bus de datos.
+A partir del nº de vector se calcula una dirección de memoria(vector) donde está almacenada la dirección de comienzo de la RTI.
+1.El periférico activa la señar de interrupción(INTR=0)
+2.La CPU activa una señal de confirmación de interrupción(INTA=1) que se conecta a los dispositivos de forma encadenada (daisy-chain)
+3.Un periférico que no ha interrumpido, cuando recibe la señal INTA, la propaga al siguiente.
+4.Cuando el periférico que interrumpió recibe la señal INTA vuelca su número de vector sobre el bus de datos y desactiva la señal de petición de interrupción. Este periférico no propaga INTA.
+5.La CPU calcula la dirección de comienzo de la RTI a partir del nº de vector.
+6.La CPU salva el contexto en pila(CPU y reg. de estado) y salta a la RTI
+7.Se guarda los registros accsibles por programa, se ejecuta la operación de E/S y se retoma la interrupción al programa principal restaurando previamente todo el contexto.
+
+El hardware se encarga de salvar los registros y el PC y de transferir el control a la RTI, asi como de restauralos y devolver el control al programa.
+La interrupción la realiza hardware E/S, y es este el que activa la señal de interrupción.
+
+-Describa detalladamente los pasos que lleva a cabo el SO cuando un programa solicita una llamada al sistema.
+
+Cuando durante la ejecución de un programa se produce una excepción asociada a la ejecución de la instrucción actual, se produce una trampa o trap, el SO cambia a modo kernel y llama al manejador de llamadas al sistema este busca el numero de la llamada del sistema y ejecuta la rutina de servicio de la llamada asociada a dicho numero. Una vez finalizada la llamada al sistema devuelve el estado de finalización y los valores de retorno y se restaura el modo usuario.
+
+
+2.Explique tres responsabilidades asignadas al gestor de memoria de un SO y tres asignadas al gestor de procesos.
+
+Gestor de memoria:
+Aislamiento de procesos: El sistema operativo debe evitar que los procesos independientes interfieran en la memoria de otro proceso, tanto datos como instrucciones.
+
+Asignación y gestión automática: Los programas deben tener una asignación dinámica de memoria por demanda, en cualquier nivel de la jerarquía de memoria. La asignación debe ser transparente al programador. Por tanto, el programador no debe preocuparse de aspectos relacionados con limitaciones de memoria, y el sistema operativo puede lograr incrementar la eficiencia, asignando memoria a los trabajos sólo caundo se necesiten.
+
+Soporte a la programación modular: Los programadores deben ser capaces de definir módulos de programación y crear, destruir, y alterar el tamaño de los módulos dinámicamente.
+
+
+Gestor de procesos:
+Equitatividad: Normalmente, se desea que todos los procesos que compiten por un determinado recurso, se les conceda un acceso equitativo a dicho recurso. Esto es especialmente cierto para trabajos de la misma categoría, es decir, trabajos con demandas similares.
+
+Respuesta diferencial: por otro lado, el sistema operativo puede necesitar discriminar entre diferentes clases de trabajos con diferentes requisitos de servicio. El sistema operativo debe tomar las decisiones de asignación y planificación con el objetivo de satisfacer el conjunto total de requisitos. Además, debe tomar las decisiones de forma dinámica. Por ejemplo, si un proceso está esperando por el uso de un dispositivo E/S, el sistema operativo puede intentar planificar este proceso para su ejecución tan pronto como sea posible a fin de liberar el dispositivo para posteriores demandas de otros procesos.
+
+Eficiencia: El sistema operativo debe intentar maximizar la productividad, minimizar el tiempo de respuesta, y, en caso de sistemas de tiempo compartido, acomodar tantos usuarios como sea posible. Estos criterios entran en conflicto; encontrar un compromiso adecuado en una situación particular es un problema objeto de la investigación sobre sistemas operati
+vos.
+
+
+3.Contraste las ventajas e inconvenientes de una arquitectura de SO monolítica frente a una arquitectura microkernel.
+
+En la arquitectura monolítica los sistemas operativos disponen de un núcleo monolítico. Estos grandes núcleos proporcionan la mayoría de las funcionalidades consideradas del sistema operativo, incluyendo la planificación, los sistemas de ficheros, las redes, los controladores de dispositivos, la gestión de memoria y otras funciones. Una arquitectura micronúcleo asigna sólo unas pocas funciones esenciales al núcleo, incluyendo los espacios de almacenamiento, comunicación entre procesos (IPC),y la planificación básica. 
+
+
+
+
+
+
+
+
+
+

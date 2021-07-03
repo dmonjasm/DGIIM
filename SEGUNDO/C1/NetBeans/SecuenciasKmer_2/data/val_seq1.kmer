@@ -1,0 +1,17 @@
+MP-KMER
+0
+gaGGgg -1
+tctcTAt 1
+tgt 2
+tatdt 3
+
+
+
+SALIDA
+
+Abriendo fichero P3/Tests/seq1.kmer
+Leyendo 0 Kmers
+Comprimiendo secuencia de Kmers ...
+Ordenando secuencia de kmers ...
+Escribiendo 0 Kmers
+

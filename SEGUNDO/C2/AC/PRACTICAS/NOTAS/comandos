@@ -1,0 +1,4 @@
+Comandos usador:
+lscpu
+sbatch -p ac --account ac --wrap "lscpu"
+
