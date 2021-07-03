@@ -1,0 +1,86 @@
+Test #1: valgrind --leak-check=full ../dist/Debug/GNU-Linux/proyecto -c unknown1.dna gusano.kmer humano.kmer raton.kmer mosca.kmer pez.kmer ebola.kmer
+
+Abriendo fichero [unknown1.dna] ...
+Procesados [9996] Kmers
+Obtencion de secuencia de [995] KMERS
+OBTENIENDO DISTANCIAS...
+SE HAN LEIDO CORRECTAMENTE [1023] KMERS DEL FICHERO [gusano.kmer]
+[1. gusano.kmer] = 0.294499
+SE HAN LEIDO CORRECTAMENTE [1015] KMERS DEL FICHERO [humano.kmer]
+[2. humano.kmer] = 0.155501
+SE HAN LEIDO CORRECTAMENTE [1017] KMERS DEL FICHERO [raton.kmer]
+[3. raton.kmer] = 0.179841
+SE HAN LEIDO CORRECTAMENTE [1024] KMERS DEL FICHERO [mosca.kmer]
+[4. mosca.kmer] = 0.253052
+SE HAN LEIDO CORRECTAMENTE [977] KMERS DEL FICHERO [pez.kmer]
+[5. pez.kmer] = 0.244113
+SE HAN LEIDO CORRECTAMENTE [1014] KMERS DEL FICHERO [ebola.kmer]
+[6. ebola.kmer] = 0.224622
+SUGERENCIA >> humano.kmer [0.155501]
+
+================================================================================================================
+
+Test #2: valgrind --leak-check=full ../dist/Debug/GNU-Linux/proyecto -c unknown2.dna gusano.kmer humano.kmer raton.kmer mosca.kmer pez.kmer ebola.kmer
+
+Abriendo fichero [unknown2.dna] ...
+Procesados [9996] Kmers
+Obtencion de secuencia de [926] KMERS
+OBTENIENDO DISTANCIAS...
+SE HAN LEIDO CORRECTAMENTE [1023] KMERS DEL FICHERO [gusano.kmer]
+[1. gusano.kmer] = 0.231334
+SE HAN LEIDO CORRECTAMENTE [1015] KMERS DEL FICHERO [humano.kmer]
+[2. humano.kmer] = 0.231202
+SE HAN LEIDO CORRECTAMENTE [1017] KMERS DEL FICHERO [raton.kmer]
+[3. raton.kmer] = 0.188244
+SE HAN LEIDO CORRECTAMENTE [1024] KMERS DEL FICHERO [mosca.kmer]
+[4. mosca.kmer] = 0.280522
+SE HAN LEIDO CORRECTAMENTE [977] KMERS DEL FICHERO [pez.kmer]
+[5. pez.kmer] = 0.176631
+SE HAN LEIDO CORRECTAMENTE [1014] KMERS DEL FICHERO [ebola.kmer]
+[6. ebola.kmer] = 0.26078
+SUGERENCIA >> pez.kmer [0.176631]
+
+================================================================================================================
+
+Test #3: valgrind --leak-check=full ../dist/Debug/GNU-Linux/proyecto -c unknown3.dna gusano.kmer humano.kmer raton.kmer mosca.kmer pez.kmer ebola.kmer
+
+Abriendo fichero [unknown3.dna] ...
+Procesados [9996] Kmers
+Obtencion de secuencia de [987] KMERS
+OBTENIENDO DISTANCIAS...
+SE HAN LEIDO CORRECTAMENTE [1023] KMERS DEL FICHERO [gusano.kmer]
+[1. gusano.kmer] = 0.181242
+SE HAN LEIDO CORRECTAMENTE [1015] KMERS DEL FICHERO [humano.kmer]
+[2. humano.kmer] = 0.274044
+SE HAN LEIDO CORRECTAMENTE [1017] KMERS DEL FICHERO [raton.kmer]
+[3. raton.kmer] = 0.209257
+SE HAN LEIDO CORRECTAMENTE [1024] KMERS DEL FICHERO [mosca.kmer]
+[4. mosca.kmer] = 0.242148
+SE HAN LEIDO CORRECTAMENTE [977] KMERS DEL FICHERO [pez.kmer]
+[5. pez.kmer] = 0.19221
+SE HAN LEIDO CORRECTAMENTE [1014] KMERS DEL FICHERO [ebola.kmer]
+[6. ebola.kmer] = 0.237085
+SUGERENCIA >> gusano.kmer [0.181242]
+
+================================================================================================================
+
+Test #4: valgrind --leak-check=full ../dist/Debug/GNU-Linux/proyecto -c unknown4.dna gusano.kmer humano.kmer raton.kmer mosca.kmer pez.kmer ebola.kmer
+
+Abriendo fichero [unknown4.dna] ...
+Procesados [9996] Kmers
+Obtencion de secuencia de [1020] KMERS
+OBTENIENDO DISTANCIAS...
+SE HAN LEIDO CORRECTAMENTE [1023] KMERS DEL FICHERO [gusano.kmer]
+[1. gusano.kmer] = 0.223203
+SE HAN LEIDO CORRECTAMENTE [1015] KMERS DEL FICHERO [humano.kmer]
+[2. humano.kmer] = 0.256874
+SE HAN LEIDO CORRECTAMENTE [1017] KMERS DEL FICHERO [raton.kmer]
+[3. raton.kmer] = 0.249375
+SE HAN LEIDO CORRECTAMENTE [1024] KMERS DEL FICHERO [mosca.kmer]
+[4. mosca.kmer] = 0.202835
+SE HAN LEIDO CORRECTAMENTE [977] KMERS DEL FICHERO [pez.kmer]
+[5. pez.kmer] = 0.252896
+SE HAN LEIDO CORRECTAMENTE [1014] KMERS DEL FICHERO [ebola.kmer]
+[6. ebola.kmer] = 0.253318
+SUGERENCIA >> mosca.kmer [0.202835]
+
