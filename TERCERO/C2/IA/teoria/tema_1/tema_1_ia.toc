@@ -1,0 +1,10 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Introducción}{3}{section.1}%
+\contentsline {section}{\numberline {2}¿Qué significa ser inteligente?}{3}{section.2}%
+\contentsline {section}{\numberline {3}¿Qué es inteligencia Artificial?}{4}{section.3}%
+\contentsline {section}{\numberline {4}Sistemas que piensan como humanos: Aproximación del Test de Turing}{5}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Test de Turing}{6}{subsection.4.1}%
+\contentsline {section}{\numberline {5}Sistemas que actúan racionalmente}{6}{section.5}%
+\contentsline {section}{\numberline {6}La habitación china de Searle}{7}{section.6}%
+\contentsline {section}{\numberline {7}Bases de la inteligencia artificial - Filosofía}{7}{section.7}%
+\contentsline {section}{\numberline {8}Historia de la IA}{8}{section.8}%

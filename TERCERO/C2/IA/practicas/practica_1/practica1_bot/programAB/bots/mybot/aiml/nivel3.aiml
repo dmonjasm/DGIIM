@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<category>
+<pattern>REFORMAT *</pattern>
+<template>
+
+<think>
+<set var="deletrea"><srai>deletrea <star/></srai></set>
+<set var="dos_puntos"><srai>FINDITEM : IN <get var="deletrea"/></srai></set>
+<set var="salida"><srai>decode <srai>SUBLIST FROM 1 TO <map name="predecessor"><get var="dos_puntos"/></map> OF <get var="deletrea"/></srai></srai></set>
+</think>
+
+<get var="salida"/>
+</template>
+</category>
+
+<category>
+<pattern>NEXTHOUR *</pattern>
+<template>
+
+<think>
+<set var="deletrea"><srai>deletrea <star/></srai></set>
+<set var="pos_dos_puntos"><srai>FINDITEM : IN <get var="deletrea"/></srai></set>
+<set var="sublist"><srai>SUBLIST FROM 1 TO <map name="predecessor"><get var="pos_dos_puntos"/></map> OF <get var="deletrea"/></srai></set>
+</think>
+
+<think>
+<set var="salida"><srai>decode <get var="sublist"/></srai></set>
+<set var="salida"><srai>DAY2TWODIGITS <map name="successor"><get var="salida"/></map></srai></set>
+</think>
+
+<get var="salida"/>:00
+
+</template>
+</category>
+
+<category>
+<pattern>INTERVALS *</pattern>
+<template>
+
+<think>
+<set var="principio"><srai>TOP <star/></srai></set>
+<set var="siguiente_hora"><srai>NEXTHOUR <get var="principio"/></srai></set>
+<set var="encontrado"><srai>FINDITEM <get var="siguiente_hora"/> IN <star/></srai></set>
+</think>
+
+
+<condition var="encontrado">
+    <li value="0">
+        <get var="principio"/>
+
+        <think>
+        <set var="siguiente_hora"><srai>NEXTHOUR <get var="principio"/></srai></set>
+        <set var="encontrado"><srai>FINDITEM <get var="siguiente_hora"/> IN <star/></srai></set>
+        </think>
+
+
+    </li>
+
+    <li>
+       
+        <think>
+        <set var="principio"><get var="siguiente_hora"/> <get var="principio"/></set>
+        <set var="siguiente_hora"><srai>NEXTHOUR <get var="principio"/></srai></set>
+        <set var="encontrado"><srai>FINDITEM <get var="siguiente_hora"/> IN <star/></srai></set>
+        </think>
+
+        <loop/>
+    </li>
+</condition>
+
+</template>
+</category>
+
+<!-- Esta funcionalidad devuelve los intervalos de forma escrita de una lista de horas dada-->
+<!-- Ejemplo:TELODIGO 09:00 10:00 11:00 13:00 15:00 16:00 17:00 19:00 20:00
+DESDE LAS NUEVE DE LA MANYANA HASTA LAS ONCE DE LA MANYANA
+
+
+A LA UNA DE LA TARDE
+
+
+DESDE LAS TRES DE LAS TARDE HASTA LAS CINCO DE LA TARDE
+
+DESDE LAS SIETE DE LA TARDE HASTA LAS OCHO DE LA TARDE-->
+<category>
+<pattern>TELODIGO *</pattern>
+<template>
+
+<think>
+<set var="intervalo"><srai>INTERVALS <star/></srai></set>
+<set var="principio"><srai>SELECTITEM <srai>COUNT <get var="intervalo"/></srai> IN <get var="intervalo"/></srai></set>
+<set var="final"><srai>TOP <get var="intervalo"/></srai></set>
+<set var="pos"><srai>FINDITEM <get var="final"/> IN <star/></srai></set>
+<set var="sublista"><srai>SUBLIST FROM <map name="successor"><get var="pos"/></map> TO <srai>COUNT <star/></srai> OF <star/></srai></set>
+<set var="tam"><srai>COUNT <get var="intervalo"/></srai></set>
+</think>
+
+
+<condition var="sublista">
+    <li value="TAS PASAO">
+    <condition var="tam">
+            <li value="1">
+            A LA <map name="hora_escrita"><srai>REFORMAT <get var="principio"/></srai></map>
+            </li>
+
+            <li>
+            DESDE LAS <map name="hora_escrita"><srai>REFORMAT <get var="principio"/></srai></map> HASTA LAS <map name="hora_escrita"><srai>REFORMAT <get var="final"/></srai></map>
+            </li>
+        </condition>
+    </li>
+
+    <li>
+        <condition var="tam">
+            <li value="1">
+            A LA <map name="hora_escrita"><srai>REFORMAT <get var="principio"/></srai></map>
+            </li>
+
+            <li>
+            DESDE LAS <map name="hora_escrita"><srai>REFORMAT <get var="principio"/></srai></map> HASTA LAS <map name="hora_escrita"><srai>REFORMAT <get var="final"/></srai></map>
+            </li>
+        </condition>
+
+        <think>
+        <set var="intervalo"><srai>INTERVALS <get var="sublista"/></srai></set>
+        <set var="principio"><srai>SELECTITEM <srai>COUNT <get var="intervalo"/></srai> IN <get var="intervalo"/></srai></set>
+        <set var="final"><srai>TOP <get var="intervalo"/></srai></set>
+        <set var="pos"><srai>FINDITEM <get var="final"/> IN <get var="sublista"/></srai></set>
+        <set var="sublista"><srai>SUBLIST FROM <map name="successor"><get var="pos"/></map> TO <srai>COUNT <get var="sublista"/></srai> OF <get var="sublista"/></srai></set>
+        <set var="tam"><srai>COUNT <get var="intervalo"/></srai></set>
+        </think>
+
+        <loop/>
+    </li>
+</condition>
+
+</template>
+</category>
+</aiml>

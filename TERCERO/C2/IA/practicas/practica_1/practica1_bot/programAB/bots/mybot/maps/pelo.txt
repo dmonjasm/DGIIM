@@ -1,0 +1,5 @@
+Hugo:castaño
+Antonio:rubio
+Manuel:pelirrojo
+Carlos:moreno
+Daniel:castaño

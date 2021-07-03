@@ -1,0 +1,22 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Tema 2. Grupos: Definición y ejemplos}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Definciones}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Ejemplos}{7}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Grupos Simétricos}{10}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Los grupos Diédricos}{16}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Grupo de los cuaternios}{23}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}El grupo de Klein}{24}{subsection.1.6}%
+\contentsline {section}{\numberline {2}Tema 3. Subgrupos. Generadores. Retículos}{30}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Grupos Alternados:}{33}{subsection.2.1}%
+\contentsline {section}{\numberline {3}Tema 4. Grupos Cocientes. Teoremas de Isomorfías.}{57}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Grupo Cociente}{61}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Producto Directo de Grupos:}{70}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Tema 5. Grupos Resolubles (Solubles)}{75}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Teorema de Jordan-Holder. Teorema de Refinamiento de Shreier.}{81}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Grupos Resolubles}{87}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Tema 6: G-conjuntos y p-grupos.}{95}{section.5}%
+\contentsline {subsection}{\numberline {5.1}p-grupos (p número primo)}{105}{subsection.5.1}%
+\contentsline {section}{\numberline {6}Tema 7: Clasificación de grupos abelianos finitos.}{125}{section.6}%
+\contentsline {section}{\numberline {7}Tema 8: Presentaciones de grupos. Clasificación de los grupos de orden menor o igual que 15}{136}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Clasificación de los grupos de orden menor o igual que 15.}{139}{subsection.7.1}%
+\contentsline {subsubsection}{\numberline {7.1.1}Grupos de orden 12:}{142}{subsubsection.7.1.1}%

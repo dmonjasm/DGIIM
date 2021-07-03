@@ -1,0 +1,8 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Niveles generales de la arquitectura:}{2}{section.1}%
+\contentsline {section}{\numberline {2}Nivel Externo}{6}{section.2}%
+\contentsline {section}{\numberline {3}Nivel Conceptual}{6}{section.3}%
+\contentsline {section}{\numberline {4}Nivel Interno}{6}{section.4}%
+\contentsline {section}{\numberline {5}Administrador de la BD}{7}{section.5}%
+\contentsline {section}{\numberline {6}Tipos de arquitecturas de implantación}{8}{section.6}%
+\contentsline {section}{\numberline {7}Glosario}{11}{section.7}%

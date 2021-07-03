@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<category>
+<pattern>LIBRE *</pattern>
+<template>
+
+<think>
+<set var="eleccion"><star/></set>
+</think>
+
+<condition var="eleccion">
+    <li value="hoy">
+        <think>
+            <set name="fecha_larga"><srai>DATE</srai></set>
+        </think>
+        
+        <srai>LIBRE <get name="fecha_larga"/></srai>
+    </li>
+
+    <li value="manyana">
+        <think>
+            <set name="fecha_larga"><srai>DATE TOMORROW</srai></set>
+        </think>
+        
+        <srai>LIBRE <get name="fecha_larga"/></srai>
+    </li>
+
+    <li value="pasado manyana">
+        <think>
+            <set name="fecha_larga"><srai>DAYAFTERTOMORROWDATE</srai></set>
+        </think>
+        
+        <srai>LIBRE <get name="fecha_larga"/></srai>
+    </li>
+
+    <li>
+        <think>
+        <set var="proximo"><srai>ES PROXIMO <star/></srai></set>
+        </think>
+
+        <condition var="proximo">
+        <li value="TRUE">
+            <think>
+            <set name="fecha_larga"><srai>DATE ON <srai>REMAIN <star/></srai></srai></set>
+            </think>
+
+            <srai>LIBRE <get name="fecha_larga"/></srai>
+        </li>
+
+        <li>
+            <think>
+            <set var="siguiente"><srai>ES SIGUIENTE <star/></srai></set>
+            </think>
+
+            <condition var="siguiente">
+            <li value="TRUE">
+                <think>
+                <set name="fecha_larga"><srai>DATE ON <srai>REMAIN <star/></srai></srai></set>
+                </think>
+
+                <srai>LIBRE <get name="fecha_larga"/></srai>
+            </li>
+
+            <li>
+            <think>
+            <set var="fecha_larga"><star index="1"/></set>
+            <set name="fecha_reserva"><srai>FORMAT <get var="fecha_larga"/></srai></set>
+            </think>
+            
+            <srai>LIBRE <star/></srai>
+            </li>
+            </condition>
+        </li>
+
+        </condition>
+    </li>
+ 
+
+</condition>
+
+</template>
+</category>
+
+<category>
+<pattern>HORASLIBRES *</pattern>
+<template>
+
+<think>
+<set var="eleccion"><star/></set>
+</think>
+
+<condition var="eleccion">
+    <li value="hoy">
+        <think>
+            <set name="fecha_larga"><srai>DATE</srai></set>
+        </think>
+        
+        <srai>HORASLIBRES <get name="fecha_larga"/></srai>
+    </li>
+
+    <li value="manyana">
+        <think>
+            <set name="fecha_larga"><srai>DATE TOMORROW</srai></set>
+        </think>
+        
+        <srai>HORASLIBRES <get name="fecha_larga"/></srai>
+    </li>
+
+    <li value="pasado manyana">
+        <think>
+            <set name="fecha_larga"><srai>DAYAFTERTOMORROWDATE</srai></set>
+        </think>
+        
+        <srai>HORASLIBRES <get name="fecha_larga"/></srai>
+    </li>
+
+    <li>
+        <think>
+        <set var="proximo"><srai>ES PROXIMO <star/></srai></set>
+        <set name="fecha_larga"><srai>DATE ON <srai>REMAIN <star/></srai></srai></set>
+        </think>
+
+        <condition var="proximo">
+        <li value="TRUE">
+
+            <srai>HORASLIBRES <get name="fecha_larga"/></srai>
+        </li>
+
+        <li>
+            <think>
+            <set var="siguiente"><srai>ES SIGUIENTE <star/></srai></set>
+            </think>
+
+            <condition var="siguiente">
+            <li value="TRUE">
+
+                <srai>HORASLIBRES <get name="fecha_larga"/></srai>
+            </li>
+
+            <li>
+            <think>
+            <set var="fecha_larga"><star index="1"/></set>
+            <set name="fecha_reserva"><srai>FORMAT <get var="fecha_larga"/></srai></set>
+            </think>
+
+            <srai>HORASLIBRES <star/></srai>
+            </li>
+            </condition>
+        </li>
+
+        </condition>
+    </li>
+ 
+
+</condition>
+</template>
+</category>
+
+<category>
+<pattern>HORASLIBRES * POR LA MANYANA</pattern>
+<template>
+
+<think>
+<set var="eleccion"><star/></set>
+</think>
+
+<condition var="eleccion">
+    <li value="hoy">
+        <think>
+            <set name="fecha_larga"><srai>DATE</srai></set>
+            <set name="fecha_reserva"><srai>FORMAT <get name="fecha_larga"/></srai></set>
+        </think>
+        
+        <srai>HLMANYANA <get name="fecha_larga"/></srai>
+    </li>
+
+    <li value="manyana">
+        <think>
+            <set name="fecha_larga"><srai>DATE TOMORROW</srai></set>
+            <set name="fecha_reserva"><srai>FORMAT <get name="fecha_larga"/></srai></set>
+        </think>
+        
+        <srai>HLMANYANA <get name="fecha_larga"/></srai>
+    </li>
+
+    <li value="pasado manyana">
+        <think>
+            <set name="fecha_larga"><srai>DAYAFTERTOMORROWDATE</srai></set>
+            <set name="fecha_reserva"><srai>FORMAT <get name="fecha_larga"/></srai></set>
+        </think>
+        
+        <srai>HLMANYANA <get name="fecha_larga"/></srai>
+    </li>
+
+    <li>
+        <think>
+        <set var="proximo"><srai>ES PROXIMO <star/></srai></set>
+        <set name="fecha_larga"><srai>DATE ON <srai>REMAIN <star/></srai></srai></set>
+        <set name="fecha_reserva"><srai>FORMAT <get name="fecha_larga"/></srai></set>
+        </think>
+
+        <condition var="proximo">
+        <li value="TRUE">
+
+            <srai>HLMANYANA <get name="fecha_larga"/></srai>
+        </li>
+
+        <li>
+            <think>
+            <set var="siguiente"><srai>ES SIGUIENTE <star/></srai></set>
+            </think>
+
+            <condition var="siguiente">
+            <li value="TRUE">
+
+                <srai>HLMANYANA <get name="fecha_larga"/></srai>
+            </li>
+
+            <li>
+            <think>
+            <set var="fecha_larga"><star index="1"/></set>
+            <set name="fecha_reserva"><srai>FORMAT <get var="fecha_larga"/></srai></set>
+            </think>
+            <srai>HLMANYANA <star/></srai>
+            </li>
+            </condition>
+        </li>
+
+        </condition>
+    </li>
+ 
+
+</condition>
+</template>
+</category>
+
+<category>
+<pattern>HORASLIBRES * POR LA TARDE</pattern>
+<template>
+
+<think>
+<set var="eleccion"><star/></set>
+</think>
+
+<condition var="eleccion">
+    <li value="hoy">
+        <think>
+            <set name="fecha_larga"><srai>DATE</srai></set>
+            <set name="fecha_reserva"><srai>FORMAT <get name="fecha_larga"/></srai></set>
+        </think>
+        
+        <srai>HLTARDE <get name="fecha_larga"/></srai>
+    </li>
+
+    <li value="manyana">
+        <think>
+            <set name="fecha_larga"><srai>DATE TOMORROW</srai></set>
+            <set name="fecha_reserva"><srai>FORMAT <get name="fecha_larga"/></srai></set>
+        </think>
+        
+        <srai>HLTARDE <get name="fecha_larga"/></srai>
+    </li>
+
+    <li value="pasado manyana">
+        <think>
+            <set name="fecha_larga"><srai>DAYAFTERTOMORROWDATE</srai></set>
+            <set name="fecha_reserva"><srai>FORMAT <get name="fecha_larga"/></srai></set>
+        </think>
+        
+        <srai>HLTARDE <get name="fecha_larga"/></srai>
+    </li>
+
+    <li>
+        <think>
+        <set var="proximo"><srai>ES PROXIMO <star/></srai></set>
+        <set name="fecha_larga"><srai>DATE ON <srai>REMAIN <star/></srai></srai></set>
+        <set name="fecha_reserva"><srai>FORMAT <get name="fecha_larga"/></srai></set>
+        </think>
+
+        <condition var="proximo">
+        <li value="TRUE">
+
+            <srai>HLTARDE <get name="fecha_larga"/></srai>
+        </li>
+
+        <li>
+            <think>
+            <set var="siguiente"><srai>ES SIGUIENTE <star/></srai></set>
+            </think>
+
+            <condition var="siguiente">
+            <li value="TRUE">
+
+                <srai>HLTARDE <get name="fecha_larga"/></srai>
+            </li>
+
+            <li>
+
+            <think>
+            <set var="fecha_larga"><star index="1"/></set>
+            <set name="fecha_reserva"><srai>FORMAT <get var="fecha_larga"/></srai></set>
+            </think>
+            <srai>HLTARDE <star/></srai>
+            </li>
+            </condition>
+        </li>
+
+        </condition>
+    </li>
+ 
+
+</condition>
+</template>
+</category>
+
+<category>
+<pattern>HORASLIBRES * A PARTIR DE LAS *</pattern>
+<template>
+
+<think>
+<set var="eleccion"><star/></set>
+</think>
+
+<condition var="eleccion">
+    <li value="hoy">
+
+        <think>
+            <set var="hora"><srai>CONVERTHOUR <star index="2"/></srai></set>
+            <set name="fecha_larga"><srai>DATE</srai></set>
+            <set name="fecha_reserva"><srai>FORMAT <get name="fecha_larga"/></srai></set>
+        </think>
+        
+        <srai>FREE <get name="fecha_reserva"/> FROM <get var="hora"/> TO 20</srai>
+    </li>
+
+    <li value="manyana">
+        <think>
+            <set var="hora"><srai>CONVERTHOUR <star index="2"/></srai></set>
+            <set name="fecha_larga"><srai>DATE TOMORROW</srai></set>
+            <set name="fecha_reserva"><srai>FORMAT <get name="fecha_larga"/></srai></set>
+        </think>
+        
+        <srai>FREE <get name="fecha_reserva"/> FROM <get var="hora"/> TO 20</srai>
+    </li>
+
+    <li value="pasado manyana">
+        <think>
+            <set var="hora"><srai>CONVERTHOUR <star index="2"/></srai></set>
+            <set name="fecha_larga"><srai>DAYAFTERTOMORROWDATE</srai></set>
+            <set name="fecha_reserva"><srai>FORMAT <get name="fecha_larga"/></srai></set>
+        </think>
+        
+        <srai>FREE <get name="fecha_reserva"/> FROM <get var="hora"/> TO 20</srai>
+    </li>
+
+    <li>
+        <think>
+        <set name="fecha_larga"><srai>DATE ON <srai>REMAIN <star/></srai></srai></set>
+        <set var="proximo"><srai>ES PROXIMO <star/></srai></set>
+        <set name="fecha_reserva"><srai>FORMAT <get name="fecha_larga"/></srai></set>
+        <set var="hora"><srai>CONVERTHOUR <star index="2"/></srai></set>
+        </think>
+
+
+        <condition var="proximo">
+            <li value="TRUE">
+                <think>
+                <set name="fecha_larga"><srai>DATE ON <srai>REMAIN <star/></srai></srai></set>
+                </think>
+
+                <srai>FREE <get name="fecha_reserva"/> FROM <get var="hora"/> TO 20</srai>
+            </li>
+
+            <li>
+
+                <condition var="siguiente">
+                <li value="TRUE">
+                    <think>
+                    <set name="fecha_larga"><srai>DATE ON <srai>REMAIN <star/></srai></srai></set>
+                    </think>
+
+                    <srai>FREE <get name="fecha_reserva"/> FROM <get var="hora"/> TO 20</srai>
+                </li>
+
+                <li>
+                <think>
+                <set var="fecha_larga"><star index="1"/></set>
+                <set name="fecha_reserva"><srai>FORMAT <get var="fecha_larga"/></srai></set>
+                </think>
+
+                <srai>FREE <get name="fecha_reserva"/> FROM <get var="hora"/> TO 20</srai>
+                </li>
+                </condition>
+            </li>
+
+        </condition>
+    </li>
+ 
+
+</condition>
+</template>
+</category>
+
+<category>
+<pattern># [cita reserva+] (hora) para (el) *</pattern>
+<template>
+
+<think>
+<set var="eleccion"><star index="2"/></set>
+<set var="libres_manyana"><srai>HORASLIBRES <star index="2"/> POR LA MANYANA</srai></set>
+<set var="libres_tarde"><srai>HORASLIBRES <star index="2"/> POR LA TARDE</srai></set>
+<set var="ocupacion"><srai>LIBRE <star index="2"/></srai></set>
+</think>
+
+Muy bien voy a comprobarlo, un momento por favor.
+
+<condition var="ocupacion">
+    <li value="LIBRE">
+
+        <condition var="libres_manyana">
+
+        <li value="EMPTYLIST">
+    Tengo huecos libres solo por la tarde.
+    Tengo toda la manyana ocupada y por la tarde tengo libres
+    <random>
+    <li>
+    <srai>TELODIGO <get var="libres_tarde"/></srai>
+    </li>
+
+    <li>
+    <get var="libres_tarde"/>
+    </li>
+    </random>
+        </li>
+
+        <li>
+
+            <condition var="libres_tarde">
+
+            <li value="EMPTYLIST">
+    Tengo huecos libres solo por la manyana.
+    Por la manyana tengo libres 
+    <random>
+    <li>
+    <srai>TELODIGO <get var="libres_manyana"/></srai>
+    </li>
+
+    <li>
+    <get var="libres_manyana"/>
+    </li>
+    </random>
+    y toda la tarde ocupada.
+            </li>
+
+            <li>
+    Tengo huecos libres tanto por la mañana como por la tarde.
+    <random>
+    <li>
+    Por la manyana tengo libres <srai>TELODIGO <get var="libres_manyana"/></srai> y por la tarde tengo libres <srai> TELODIGO <get var="libres_tarde"/></srai>
+    </li>
+
+    <li>
+    Por la manyana tengo libres <get var="libres_manyana"/> y por la tarde tengo libres <get var="libres_tarde"/>
+    </li>
+    </random>
+            </li>
+
+            </condition> 
+        </li>
+
+        </condition>
+
+        ¿Que hora prefiere?
+
+        <think>
+        <set name="topic">empty_day</set>
+        </think>
+    </li>
+    
+    <li>
+        Lo siento, el día seleccionado está completamente reservado.
+        ¿Desea elegir otra fecha?
+
+        <think>
+        <set name="topic">busy_day</set>
+        </think>
+    </li>
+</condition>
+
+</template>
+</category>
+
+<category>
+<pattern># [cita reserva+] (hora) para (el) * por la manyana</pattern>
+<template>
+
+<think>
+<set var="eleccion"><star index="2"/></set>
+<set var="libres_manyana"><srai>HORASLIBRES <star index="2"/> POR LA MANYANA</srai></set>
+<set var="ocupacion"><srai>LIBRE <star index="2"/></srai></set>
+</think>
+
+Muy bien voy a comprobarlo, un momento por favor.
+
+<condition var="ocupacion">
+    <li value="LIBRE">
+    Por la manayna tengo libre a las 
+    <random>
+    <li>
+    <srai>TELODIGO <get var="libres_manyana"/></srai>
+    </li>
+
+    <li>
+    <get var="libres_manyana"/>
+    </li>
+    </random>
+    
+    ¿Que hora prefiere?
+
+    <think>
+        <set name="topic">empty_day</set>
+    </think>
+    </li>
+    
+    <li>
+        Lo siento, el día seleccionado está completamente reservado.
+        ¿Desea elegir otra fecha?
+
+        <think>
+        <set name="topic">busy_day</set>
+        </think>
+    </li>
+</condition>
+
+</template>
+</category>
+
+<category>
+<pattern># [cita reserva+] (hora) para (el) * por la tarde</pattern>
+<template>
+
+<think>
+<set var="eleccion"><star index="2"/></set>
+<set var="libres_tarde"><srai>HORASLIBRES <star index="2"/> POR LA TARDE</srai></set>
+<set var="ocupacion"><srai>LIBRE <star index="2"/></srai></set>
+</think>
+
+Muy bien voy a comprobarlo, un momento por favor.
+
+<condition var="ocupacion">
+    <li value="LIBRE">
+    Pues por la tarde tengo libre a las 
+    <random>
+    <li>
+    <srai>TELODIGO <get var="libres_tarde"/></srai>
+    </li>
+
+    <li>
+    <get var="libres_tarde"/>
+    </li>
+    </random>
+    ¿Que hora prefiere?
+
+    <think>
+        <set name="topic">empty_day</set>
+    </think>
+    </li>
+    
+    <li>
+        Lo siento, el día seleccionado está completamente reservado.
+        ¿Desea elegir otra fecha?
+
+        <think>
+        <set name="topic">busy_day</set>
+        </think>
+    </li>
+</condition>
+
+</template>
+</category>
+
+<category>
+<pattern># [cita reserva+] (hora) para (el) * a partir de *</pattern>
+<template>
+
+<think>
+<set var="eleccion"><star index="2"/></set>
+<set var="libres"><srai>HORASLIBRES <star index="2"/> A PARTIR DE <star index="3"/></srai></set>
+<set var="ocupacion"><srai>LIBRE <star index="2"/></srai></set>
+</think>
+
+Muy bien voy a comprobarlo, un momento por favor.
+
+<condition var="ocupacion">
+    <li value="LIBRE">
+
+        Pues tengo libres 
+        <random>
+        <li>
+        <srai>TELODIGO <get var="libres"/></srai>
+        </li>
+
+        <li>
+        <get var="libres"/>
+        </li>
+        </random>
+        ¿Que hora prefiere?
+        <think>
+        <set name="topic">empty_day</set>
+        </think>
+    </li>
+    
+    <li>
+        Lo siento, el día seleccionado está completamente reservado.
+        ¿Desea elegir otra fecha?
+
+        <think>
+        <set name="topic">busy_day</set>
+        </think>
+    </li>
+</condition>
+
+</template>
+</category>
+
+
+
+<topic name="busy_day">
+<category>
+<pattern>Si ^</pattern>
+<template>¿Que día desea?
+<think>
+<set name="topic">choose_day</set>
+</think>
+</template>
+</category>
+
+<category>
+<pattern>No ^</pattern>
+<template>Gracias de todas formas, esperamos volver a verle.
+<think>
+<set name="topic">unknown</set>
+</think>
+</template>
+</category>
+</topic>
+
+<topic name="choose_day">
+<category>
+<pattern>*</pattern>
+<template>
+<srai>BUENAS QUISIERA UNA CITA PARA <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>Que tal *</pattern>
+<template>
+<srai>BUENAS QUISIERA UNA CITA PARA <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>* *</pattern>
+<template>
+<srai>BUENAS QUISIERA UNA CITA PARA <star index="1"/></srai>
+</template>
+</category>
+
+</topic>
+
+</aiml>

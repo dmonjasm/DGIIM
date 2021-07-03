@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<!-- Regla 1 -->
+<category>
+<pattern>(Di+) en que [epoca temporada estacion] (del anyo) (nos) [estamos encontramos] ^</pattern>
+<template>Estamos en <srai>SEASON</srai></template>
+</category>
+
+<category>
+<pattern>De las [epocas temporadas estaciones] (del anyo) en cual (nos) [estamos encontramos] ^</pattern>
+<template><srai>EN QUE ESTACION ESTAMOS</srai></template>
+</category>
+
+<!-- Regla 2 -->
+<category>
+<pattern>en que fase del dia estamos</pattern>
+<template>ahora estamos en la <srai>DAY PHASE</srai></template>
+</category>
+
+<category>
+<pattern>* es la fase del dia ^ </pattern>
+<template><srai>EN QUE FASE DEL DIA ESTAMOS</srai></template>
+</category>
+
+<!-- Regla 3 -->
+<category>
+<pattern>que dia de la semana es *</pattern>
+<template> 
+
+<think>
+    <set var="respuesta"> <star index="1"/> </set>
+</think>
+
+<condition var="respuesta">
+    <li value="hoy">
+        <star/> es <srai>DAY</srai>
+    </li>
+    <li value="manyana">
+        <star/> es <srai>TOMORROW</srai>
+    </li>
+    <li value="pasado manyana">
+        Pasado mañana es <srai>DAY AFTER TOMORROW</srai>
+    </li>
+    <li>
+        No hay introducido un caso válido. Opciones:[hoy/manyana/pasado manyana]
+    </li>
+</condition>
+</template>
+</category>
+
+<category>
+<pattern>* dia ^ es *</pattern>
+<template><srai>QUE DIA DE LA SEMANA ES <star index="2"/></srai></template>
+</category>
+
+<!-- Regla 4 -->
+<category>
+<pattern>que fecha sera dentro de [1 una] semana</pattern>
+<template>dentro de una semana será <srai>DATE A WEEK FROM <srai>DAY</srai></srai></template>
+</category>
+
+<category>
+<pattern>que fecha sera dentro de [siete 7] dias</pattern>
+<template><srai>QUE FECHA SERA DENTRO DE UNA SEMANA</srai></template>
+</category>
+
+<category>
+<pattern>Dentro de [una 1] semana que fecha sera</pattern>
+<template><srai>QUE FECHA SERA DENTRO DE UNA SEMANA</srai></template>
+</category>
+
+<category>
+<pattern>Dentro de [7 siete] dias que fecha sera</pattern>
+<template><srai>QUE FECHA SERA DENTRO DE UNA SEMANA</srai></template>
+</category>
+
+<!-- Regla 5 -->
+<category>
+<pattern>que [fecha dia] sera el [proximo siguiente] <set>weekday_es</set></pattern>
+<template>El proximo <star/> será <srai>DATE ON <star/></srai></template>
+</category>
+
+<category>
+<pattern>El [proximo siguiente] <set>weekday_es</set> que [fecha dia] sera</pattern>
+<template><srai>QUE FECHA SERA EL PROXIMO <star/></srai></template>
+</category>
+
+</aiml>

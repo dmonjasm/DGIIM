@@ -1,0 +1,608 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{cancel}
+\usepackage{amsmath, amssymb}
+
+\title{Algebra II. Ejercicios Examenes Años Anteriores}
+\author{Daniel Monjas Miguélez}
+
+\begin{document}
+\maketitle
+\newpage
+\textbf{Ejercicio 1.}\begin{enumerate}
+\item Demostrar que en un grupo de orden par el número de elementos de orden 2 es impar.
+
+\textbf{Resolución:} Sea $G$ un grupo de orden par, definimos $X=\{g\in G/g^2\neq 1\}$, es decir, $X$ es el conjunto de elementos de $G$ con orden mayor o igual que dos. Por otro lado definimos el conjunto $G\backslash X$ que es el conjunto de los elementos de orden 2 con el uno.
+
+Si $g\in X$ entonces claramente $x^2\neq 1\Rightarrow x\neq x^{-1}\Rightarrow 1\neq (x^{-1})^2\Rightarrow x^{-1}\in G$, luego si un elemento pertenece a $X$ también lo hace su correspondiente inverso, luego el conjunto $G$ tiene un número par de elementos. 
+
+Con esto se tiene que el número de elementos de $G\backslash X$ debe ser también par, pues claramente ambos $X$ y $G\backslash X$ son disjuntos y $X\cup G\backslash X=G$, luego al sumar el número de elementos de estos conjuntos nos tiene que dar el orden que es par. Como 1 pertenece a $G\backslash X$ entonces $G\backslash (X\cup \{1\})$ tiene un número impar de elementos y se trata de todos los elementos de orden 2.
+
+\item Describe dos grupos de orden 6 que sean isomorfos y otros dos que no lo sean.
+
+\textbf{Resolución:} Por el ejercicio 23 de la relación 2, se tiene que todo grupo de orden 6 es isomorfo o bien a $C_6$ o bien a $D_3$. \\
+
+Usando esto vemos claramente que $C_6\cancel{\overset{\sim}{=}} D_3$, pues $C_6$ es abeliano, mientras que $D_3$ no lo es. \\
+
+Para la primera parte simplemente tomaremos algún grupo que tenga orden $6$, y si es abeliano será isomorfo a $C_6$, y en caso contrario lo será a $D_3$. Por ejemplo, tomaré $S_3$, el cual no es un grupo abeliano, por consiguiente será isomorfo a $D_3$
+
+\end{enumerate}
+
+\textbf{Ejercicio 2.} Razona, de forma breve, si son verdaderas o falsas las siguientes afirmaciones:
+\begin{enumerate}
+\item Si $\sigma=(1\:2\:4\:3)(5\:2)\in S_5$ entonces $\sigma^{106}=\sigma$
+
+\textbf{Resolución:} Verdadero
+Para esto simplemente nos fijaremos en que $\sigma=(1\:2\:5\:4\:3)$, que es un $5-ciclo$ luego tendrá orden 5. Para calcular el orden de $\sigma^{106}$ simplemente hacemos,
+\begin{equation*}
+ord(\sigma^{106})=\frac{ord(\sigma)}{mcd(ord(\sigma),106)}=5
+\end{equation*}
+
+, claramente al ser 5 un número primo, su mcd con cualquier otro número es 1 o el mismo como 106 no es múltiplo de 5 se tiene que el mcd es 1 y por tanto el orden de $ord(\sigma^{106})=5=ord(\sigma)$ y por consiguiente $\sigma^{106}=\sigma$
+
+\item Usando las presentaciones usualer de $D_{14}$ y $D_7$ se puede definir un homomorfismo sobreyectivo de $D_{14}$ en $D_7$.
+
+\textbf{Resolución:} Verdadero.
+
+Simplemente tenemos que fijarnos que los elementos $r$ y $s$ de $D_7$ cumplen las relaciones de $D_{14}$. 
+\begin{gather*}
+r^{14}=(r^7)^2=1^2=1\quad s^2=1\quad sr=r^{-1}s
+\end{gather*}
+
+, luego por el teorema de Dyck existe un único homomorfismo de grupos entre $D_{14}$ y $D_7$. Además, como $D_{7}$ está generado por $r$ y $s$ dicho homomorfismo es un epimorfismo.
+\item Los grupos $D_3\times D_4$ y $D_{24}$ son isomorfos.
+
+\textbf{Resolución:} Falso.
+
+Claramente ambos grupos tienes orden 48, luego comprobaremos si para algún orden hay algún grupo tenga más elementos de dicho orden que el otro. Por ejemplo, tomemos los elementos de orden 2.
+
+Hay 5 elementos de la forma $(1,x)\in D_3\times D_4$ con $ord(x)=2$, que tienen orden dos, pues $D_4$ tiene cinco elementos de orden 2. Análogamente, hay 3 elementos de la forma $(x,1)\in D_3\times D_4$ con $ord(x)=2$, que tienen orden dos, pues hay solo tres elementos de orden dos en $D_3$. Por otro lado hay 15 elementos de orden 2 de la forma $(x,y)\in D_3\times D_4$, pues es el producto de los elementos de orden dos de ambos. En total $D_3\times D_4$ tiene 23 elementos de orden 3.
+
+Por su parte $D_{24}$ tiene 25 elementos de orden 2, luego no pueden ser isomorfos pues tienen distinto número de elementos de orden 2.
+
+\item En $D_6=\left\langle r,s|r^6=1=s^2,\:sr=r^{-1}s\right\rangle$ se tiene que el subgrupo $H=\left\langle r^3\right\rangle$ es normal y el cociente $D_6/H$ tiene un único subgrupo de orden 2 y otro de orden 3.
+
+\textbf{Resolución:} Falso.
+
+Partimos de que $D_6$ tiene un total de 12 elementos y $H$ tiene un total de 2 elementos. Se verifica claramente que
+\begin{gather*}
+r^i Hr^{-i}=H
+\end{gather*}
+
+Veamos por otra parte si $r^isHsr^{-i}=H$. Para 1 esto se verifica sin ninguna duda, luego lo comprabaremos para $r^3$
+\begin{equation*}
+r^isr^3sr^{-i}=r^ir^{-3}ssr^{-i}=r^{i-3}r^{-i}=r^{-3}=r^3
+\end{equation*}
+
+Luego ya hemos demostrado que $H$ es normal. Para ver que tiene un único subgrupo de orden 2 y otro de orden 3 veremos que
+\begin{equation*}
+|D_6/H|=6=2\cdot 3
+\end{equation*}
+
+Este debe ser isomorfo o bien a $C_6$ o bien a $D_3$.
+\begin{equation*}
+D_6/H=\{aH/a\in D_6\}
+\end{equation*}
+
+$D_6/H\cancel{C_6}$, pues $H=Z(D_6)$, y por tanto al no ser $D_6$ abeliano $D_6/Z(D_6)$ no puede ser cíclico. De aquí se deduce que no hay elementos de orden 6 en el grupo cociente. 
+
+Por otro lado, podemos asegurar que hay al menos un 2-subgrupo de Sylow y al menos un 3-subgrupo de Sylow.
+
+\begin{gather*}
+n_3\mid 2\quad n_3\equiv 1\mod 3\Rightarrow n_3=1\\
+n_2\mid 3\quad n_2\equiv 1\mod 2\Rightarrow n_2=1\quad o\quad n_2=3
+\end{gather*}
+
+Veamos que si $n_2$ es 1, llegamos a contradicción con que el grupo cociente no es 6. Si $n_2=1$ entonces $P\cup Q$ donde uno es un 3-subgrupo de Sylow y el otro un 2-subgrupo de Sylow tiene en total 4 elementos, luego quedan 2 elementos que son de orden distinto a una potencia de dos y de orden distinto a una potencia de tres, luego solo pueden ser de orden 6, pues el uno ya se ha tenido en cuenta. Con esto llegamos a contradicción, luego $n_2=3$
+
+
+
+\item Si $\sigma=(1\:2\:3\:4\:5\:6\:7)$ y $\tau=(2\:7)(3\:6)(4\:5)$ son dos permutaciones de $S_7$ se tiene que $G=\left\langle \sigma,\tau\right\rangle \overset{\sim}{=} D_7$
+
+\textbf{Resolución:} Verdadero.
+
+Buscaremos si $\tau\sigma =\sigma^{-1}\tau$
+
+\begin{gather*}
+\tau\sigma=(1\:7)(2\:6)(3\:5)\qquad \sigma^{-1}=(1\:7\:6\:5\:4\:3\:2)\\
+\sigma^{-1}\tau=(1\:7)(2\:6)(3\:5)
+\end{gather*}
+
+Luego coinciden y se cumple que podemos aplicar el Teorema de Dyck, luego sabemos que existe un homomorfismo de grupos entre ambos. Además, como $G=\left\langle \sigma,\tau\right\rangle$ este homomorfismo, es también un epimorfismo. 
+
+Aplicando el primer teorema de isomorfía
+\begin{equation*}
+G/Ker(f)\overset{\sim}{=} Img(f)=D_7
+\end{equation*}
+
+$\left\langle \sigma \right\rangle =7$, $\tau \sigma \tau^{-1}=\sigma^{-1}\in \left\langle\sigma\right\rangle$, esto implica que $\left\langle \sigma\right\rangle\unlhd G$.
+\begin{equation*}
+G/\left\langle\sigma\right\rangle=\left\langle\tau\left\langle\sigma\right\rangle\right\rangle.
+\end{equation*}
+
+$\Rightarrow |G/\left\langle\sigma\right\rangle|=2\Rightarrow |G|=7\cdot 2=14$
+
+
+\end{enumerate}
+
+\textbf{Ejercicio 3:} Razona, de forma breve, si son verdaderas o falsas las siguientes afirmaciones:
+\begin{enumerate}
+\item Podemos definir un homomorfismo de grupo $f:D_4\longrightarrow S_3$ que lleve los generadores $r$ y $s$ de $D_4$ en $f(r)=(1\:2)$ y $f(s)=(2\:3)$
+
+\textbf{Resolución:} Falso.
+
+Claramente se verifica que el $ord(f(a))\mid ord(a)$, además se verifican algunas de las relaciones de $D_4$, es decir
+\begin{gather*}
+f(r^4)=f(r)^4=1\quad f(s^2)=f(s)^2=1
+\end{gather*}
+
+Sin embargo, 
+\begin{gather*}
+f(sr)=(1\:3\:2)\quad f(sr)=f(r^3s)=f(r)^3f(s)=(1\:2)(2\:3)=(1\:2\:3)
+\end{gather*}
+, luego $f(sr)\neq f(r^{-1}s)$ y por consiguiente no es un homomorfismo de grupos.
+
+\item Si $H$ es un grupo normal de un grupo $G$ entonces todo subgrupo $K$ de $H$ es también normal de $G$.
+
+\textbf{Resolución:} Falso.
+
+Contraejemplo. Sea $S_4$, se verifica que $A_4\unlhd S_4$, y además $H=\left\langle (1\:2)(3\:4)\right\rangle \leq A_4$. Es obvio que
+\begin{equation*}
+(1\:4)(1\:2)(3\:4)(1\:4)=(1\:3)(2\:4)\notin H
+\end{equation*}
+
+Luego no se verifica.
+
+\item Si $X$ es un conjunto de 11 elementos sobre el que actúa el grupo de Klein, entonces en $X$ hay un elemento fijo bajo dicha acción. 
+
+\textbf{Resolución:} 
+
+Veamos que 
+\[11=|Fix(X)|+\sum_{x_i\notin Fix(X)} |O(x_i)|=|Fix(X)|+\sum_{x_i\notin Fix(X)} \left[G:Stab_G(x_i)\right]\]
+
+Pero claro el $\left[G:Stab_G(x_i)\right]=|G|/|Stab_G(x_i)|\Rightarrow \left[G:Stab_G(x_i)\right]=2$ o $4$. Por consiguiente el sumatorio de los índices da un número par, luego $|Fix(X)|$ debe ser un número impar, y por consiguiente tiene que haber al menos un elmentos en el.
+
+\item $D_4$ no es producto directo interno de dos subgrupos suyos propios.
+
+\textbf{Resolución:}. Verdadero
+
+$D_4$ es un grupo de orden 8, luego solo puede tener subgrupos propios de orden 2 y 4. \\
+
+Orden 2: Todo subgrupo de orden 2 es isomorfo a $C_2$, luego es generado por un elemento de orden 2 y es cíclico. $D_4$ tiene 5 elementos de orden 2, luego habría 5 subgrupos de orden 2, pero como además tiene que ser normal para que se pueda aplicar luego el producto directo interno sólo cumple los requisitos $\left\langle r^2\right\rangle$. \\
+
+Orden 4: Todo subgrupo de orden 4 tiene que ser o bien isomorfo a $C_4$ o bien isomorfo al grupo de Klein. En $D_4$ solo tenemos un subgrupos isomorfos a $C_4$ que son $\left\langle r\right\rangle=\left\langle r^3\right\rangle$, donde ninguno de ellos es normal. 
+
+Por otro lado, grupos de Klein tenemos
+\begin{gather*}
+\left\langle r^2,s\right\rangle=\{1,r^2,s,r^2s\}\\
+\left\langle r^2,rs\right\rangle=\{1,r^2,rs,r^3s\}\\
+\left\langle r^2,r^2s\right\rangle=\{1,r^2,r^2s,s\}\\
+\left\langle r^2,r^3s\right\rangle=\{1,r^2,r^3s,rs\}\\
+\left\langle s,r^2s\right\rangle=\{1,s,r^2s,r^2\}\\
+\left\langle rs,r^3s\right\rangle=\{1,rs,r^3s,r^2\}
+\end{gather*}
+
+De estos nos vamos a quedar únicamente con aquellos que verifiquen que $H_1H_2\ldots =G$ teniendo en cuenta también el subgrupo de orden 2 que hemos seleccionado, pues si es producto directo interno tiene que serlo de un subgrupo normal de orden 2 y otro de orden 4 que verifiquen que $H_1H_2=G$ y $H_1\cap H_2=\{1\}$.
+
+La parte de la intersección únicamente la verifica solamente $\left\langle rs,r^3s\right\rangle$ pero claramente se ve que no verifica la parte del producto, luego ni nos hace falta comprobar que sean normales.
+
+\end{enumerate}
+
+\textbf{Ejercicio 4:}
+\begin{enumerate}
+\item Ordena de mayor a menor los enteros positivos $n_1, n_2, n_3, n_4$ donde $n_1$ es el número de grupos abelianos no isomorfos de orden 252, $n_2$ es el número de grupos abelianos no isomorfos de orden 585, $n_3$ es el número de grupos abelianos no isomorfos de orden 1683 y $n_4$ es el número de grupos abelianos no isomorfos de orden 440. Describe a continuación las descomposiciones cíclica y cíclica primaria de los grupos abelianos no isomorfos de orden el mayor de los $n_i$ , i = 1, 2, 3, 4. ¿Hay algún $n_i$ de los anteriores de forma que no existen grupos simples de ese orden?
+
+\textbf{Resolución:}
+
+Para cada uno de los ordenes dados obtenemos simplemente la lista de divisores elementales, obteniendo que 
+\begin{gather*}
+252=2^2\cdot 3^2\cdot 7
+\end{gather*}
+
+, tiene en total 4 descomposiciones en divisores elementales, y como la DCP es única pues se tendrá que cada grupo abeliano es no isomorfo a 3 grupos abelianos del mismo orden $\Rightarrow n_1=3$. Repitiendo este mismo proceso para os $n_i$ restantes nos queda que
+\begin{equation*}
+n_1=3>n_4=2>n_2=1=n_3
+\end{equation*}
+
+Calculados los $n_i$ veamos los DCP y DC de las distintas listas de divisores elementales. Para orden 252 se tiene.
+\begin{itemize}
+\item $\{2^2,3^2,7\}\longrightarrow C_4\times C_9\times C_7$ DCP.
+
+La DC es $C_{252}$
+
+\item $\{2^2,3,3,7\}\longrightarrow C_4\times C_3\times C_3\times C_7$ DCP.
+
+La DC es $C_{84}\times C_3$
+
+\item $\{2,2,3^2,7\}\longrightarrow C_2\times C_2\times C_9\times C_7$ DCP.
+
+La DC es $C_{126}\times C_2$
+
+\item $\{2,2,3,3,7\}\longrightarrow C_2\times C_2\times C_3\times C_3\times C_7$ DCP.
+
+La DC es $C_{42}\times C_6$
+\end{itemize}
+
+Para orden 585 se tiene
+\begin{itemize}
+\item $\{5,3^2,13\}\longrightarrow C_5\times C_9\times C_{13}$ DCP.
+
+La DC es $C_{585}$.
+
+\item $\{5,3,3,13\}\longrightarrow C_5\times C_3\times C_3\times C_{13}$ DCP.
+
+La DC es $C_{195}\times C_3$.
+\end{itemize}
+
+Para orden 1683 se tiene
+\begin{itemize}
+\item $\{3^2,11,17\}\longrightarrow C_9\times C_{11}\times C_{17}$ DCP.
+
+La DC es $C_{1683}$.
+
+\item $\{3,3,11,17\}\longrightarrow C_3\times C_3\times C_{11}\times C_{17}$ DCP.
+
+La DC es $C_{561}\times C_{3}$.
+\end{itemize}
+
+Por último, para orden 440 se tiene
+\begin{itemize}
+\item $\{2^3,5,11\}\longrightarrow C_8\times C_5\times C_{11}$.
+
+La DC es $C_{440}$
+
+\item $\{2^2,2,5,11\}\longrightarrow C_4\times C_2\times C_5\times C_{11}$.
+
+La DC es $C_{220}\times C_2$
+
+\item $\{2,2,2,5,11\}\longrightarrow C_2\times C_2\times C_2\times C_5\times C_{11}$.
+
+La DC es $C_{110}\times C_2\times C_2$
+\end{itemize}
+
+No lo hay, pues un grupo abeliano es simple si y sólo si es finito de orden primo, pero claramente hemos encontrado divisores elementales para todos los órdenes dados, luego ninguno de los órdenes es primo, y por tanto ninguno de los grupos anteriores, todos abelianos, es simple.
+\end{enumerate}
+
+\textbf{Ejercicio 5}. Sean, $p$ un número primo, $G$ un grupo finito, $H$ un subgrupo normal de $G$ y $P$ un p-subgrupo de Sylow de G. Demuéstrese que:
+\begin{enumerate}
+\item $H\cap P$ es un p-subgrupo de Sylow de $H$.
+
+\item $HP/H$ es un p-subgrupo de Sylow de $G/H$.
+\end{enumerate}
+
+\textbf{Ejercicio 6}.
+\begin{enumerate}
+\item Sea $f:S_4\longleftrightarrow S_6$ la aplicación dada por $f(\sigma)=\overline{\sigma}$, donde $\overline{\sigma}$ actúa igual que $\sigma$ sobre los elementos $\{1,2,3,4\}$ y los elementos $\{5,6\}$ los fija si $\sigma$ es par o bien los intercambia si $\sigma$ es impar. Demuestra que $f$ es un homomorfismo inyectivo de grupos y que su imagen está contenida en $A_6$.
+
+\textbf{Resolución:} En primer lugar vemos que si $\sigma=id$ es trivial que $f(\sigma)=id$, pues la identidad es una permutación par, luego $f(id)=\overline{id}$, y como sabemos que la identidad es par se tiene que $\overline{id}$ fija los elementos 5 y 6, y los demás ya están fijos pues actúa como la identidad en $S_4$. \\
+
+Por otro lado, comprobemos que si $\sigma,\tau\in S_4$, entonces $f(\sigma\tau)=f(\sigma)=f(\tau)$. 
+\begin{itemize}
+\item $\sigma$ y $\tau$ son dos permutaciones pares. Si ambas son permutaciones se tiene que 
+\begin{gather*}
+f(\sigma\tau)=\overline{\sigma\tau}
+\end{gather*}
+
+, que como son ambas pares, se verificará que $\sigma\tau$ también es par, mantienendo fijos el cinco y el seis, luego $\overline{\sigma\tau}=\sigma\tau$.
+
+Por otro lado, como son ambas pares $f(\sigma)=\sigma$ y $f(\tau)=\tau$, luego $f(\sigma)f(\tau)=\sigma\tau=f(\sigma\tau)$
+
+\item $\sigma$ y $\tau$ son dos permutaciones impares. Se verificará que $\sigma\tau$ será una permutación, par pues tanto $\sigma$ como $\tau$ se escriben como producto impar de trasposiciones, luego el producto de ambas se el producto de un número par de trasposiciones, y por tanto será par. Esto implica que, para $\sigma\tau$, $\overline{\sigma\tau}$ mantiene fijos el 5 y el 6.
+
+Por otro lado $f(\sigma)=\sigma(5\:6)$, y $f(\tau)=\tau(5\:6)$, luego $f(\sigma)f(\tau)=\sigma(5\:6)\tau(5\:6)$, pero como $\sigma$ y $\tau$ solo actúan en los primeros 4 elementos se tiene que $f(\sigma)f(\tau)=\sigma\tau$, pues $\sigma$ y $\tau$ mantienen fijos el 5 y el 6, luego si tenemos como entrada un 5 o un 6 estos se trasponen dos veces, dandonos la identidad.
+
+\item $\sigma$ es una permutación par y $\tau$ es una permutación impar. Esto implica que el $\sigma\tau$ es una permutación impar pues se escribe como producto de un número par más un número impar de trasposiciones, luego se descompone en un número impar de tras posiciones. Eso implica que $f(\sigma\tau)=\sigma\tau(5\:6)$.
+
+Por otro lado es claro que $f(\sigma)=\sigma$ y que $f(\tau)=\tau(5\:6)\Rightarrow f(\sigma)f(\tau)=\sigma\tau(5\:6)=f(\sigma\tau)$.
+
+\item El caso $\sigma$ impar y $\tau$ par es análogo al anterior, la única diferencia es que se tiene que $f(\sigma)f(\tau)=\sigma(1\:5)\tau$, pero como ni $\sigma$ ni $\tau$ actúan sobre 5 y 6 podemos desplazar la trasposición al final teniendo $f(\sigma)f(\tau)=\sigma\tau(5\:6)=f(\sigma\tau)$
+\end{itemize}
+
+Con esto ya tenemos demostrado que se cumplen las condiciones para que nuestra aplicación sea un homomorfismo. Para comprobar que es inyectiva tomaremos dos elementos de $S_4$, que tendrán la misma paridad, pues si no la tienen es trivial que $f(\sigma)\neq f(\tau)$, pues uno desplazará al 5 y al 6 y otro los mantendrá fijos. Si es par también es trivial pues $f(\sigma)=\sigma$ y si $f(\sigma)=\sigma=\tau=f(\tau)$, se tiene que $\sigma=\tau$ en contra de la elección de nuestros elementos. Por últimos si ambas son impares se tiene que $f(\sigma)=\sigma(5\:6)$ y $f(\tau)=\tau(5\:6)$, pero es claro que si $f(\sigma)=f(\tau)\Rightarrow \sigma=\tau$ en contra de nuestr elección de $\sigma$ y $\tau$.\\
+
+Por otro lado es trivial que $S_4\leq S_6$. Y también es claro que nuestro epimorfismo $f$ transforma las permutaciones impares en permutaciones en pares añadiendole una trasposición. Luego nos queda que $f(S_4)\leq A_6$, quedando así demostrado
+
+\item Considera los grupos $\mathcal{Q}_2=\left\langle x,y/x^4=1,\:y^2=x^2,\:yx=x^{-1}y\right\rangle$ y $S_4$, Demuestra que la asignación
+\begin{equation*}
+x\mapsto (1\:2)(3\:4)\quad ,\quad y\mapsto (3\:4)
+\end{equation*}
+
+determina un homomorfismo de grupos. Calcula su imagen y su núcleo, dando todos sus elementos.
+
+\textbf{Resolución:} Queremos ver si se cumple el teorema de Dyck. Para eso sea $\sigma=(1\:2)(3\:4)$ y $\tau=(3\:4)$. De forma trivial se aprecia que $\sigma^4=(\sigma^2)^2=1^2=1$ y por su parte $\sigma^2=1=\tau^2$. Nos faltaría por ver que $\tau\sigma=\sigma^{-1}\tau$. A simple vista se aprecia que $\sigma$ tiene orden 2, luego $\tau\sigma=(3\:4)(1\:2)(3\:4)=(1\:2)(3\:4)^2=(1\:2)(3\:4)(3\:4)=\sigma\tau=\sigma^{-1}\tau$, luego por el Teorema de Dyck existe un homomorfismo tal que 
+\begin{equation*}
+f(x)=\sigma \quad \wedge \quad f(y)=\tau
+\end{equation*}
+
+Para ver el $Ker(f)$ y $Img(f)$ simplemente vamos evaluando
+\begin{gather*}
+Img(f)=\{id,(1\:2)(3\:4), (3\:4), (1\:2)\}\\
+Ker(f)=\{z\in Q_2/f(z)=1\}=\{1,x^2,y^2,x^2y^2\}
+\end{gather*}
+
+Esto es claro, pues al tener $y$ orden 4, pues 4 $y^2=x^2\Rightarrow y^4=x^4=1$. Se tiene entonces que $x^iy$ tiene orden cuatro, luego todos ellos distintos de 1 están en el núcleo, dando por concluido el ejercicio.
+
+\end{enumerate}
+
+\textbf{Ejercicio 7.}
+\begin{enumerate}
+\item Si $\sigma=(1\:2\:3)(1\:3\:4\:5)(4\:5\:6)(1\:6)\in S_6$. ¿Es verdad que $\sigma^{16}$ es una permutación par de orden 3?.
+
+\textbf{Resolución:} $\sigma=(1\:5\:6)(2\:3\:4)$, luego claramente tiene orden 3. Utilizando esto se tiene que
+\begin{equation*}
+ord(\sigma^{16})=\frac{ord(\sigma)}{mcd(ord(\sigma),16)}=3
+\end{equation*}
+
+Luego por un lado ya hemos sacado que el orden de $\sigma^{16}=3$. Por otro como $\sigma$ sabemos que es de orden 3 se tiene que $\sigma^{3\cdot 5}=1\Rightarrow \sigma^{16}=\sigma$, que claramente es par, luego es verdad que $\sigma^{16}$ es una permutación de orden 3 y par.
+
+\item Razona, utilizando el teorema de Dyck, que $S_5$ tiene un subgrupo isomorfo a $D_5$.
+
+\textbf{Resolución:} Utilizando que $D_5=\left\langle r,s/r^5=1=s^2,\:sr=r^{-1}s\right\rangle$, tenemos que buscar permutaciones $\sigma,\tau\in S_5$ tal que verifiquen lo pedido. Por un lado es claro que nuestro $\sigma$ tendrá que ser de orden 5 o un divisor del mismo, pero como es primo, pues solo cabela posibilidad que sea de orden 5. Por otro lado tenemos que $\tau$ debe ser de orden 2, lo que nos deja las siguientes posibilidades. Basta buscar un elemento de orden 5 y uno de orden 2 que verifiquen lo que buscamos, por ejemplo
+\[\sigma=(1\:3\:2\:4\:5)\quad \tau=(1\:3)(2\:4)\]
+
+Luego por el teorema de Dyck, existe un epimorfismo entre $H=\left\langle\sigma,\tau\right\rangle$ y $D_5$, definido por
+\begin{equation*}
+f(s)=\tau\quad f(r)=\sigma
+\end{equation*}
+
+Para ver que es un epimorfismo, aplicamos el primer teorema de isomorfía, de forma que
+\begin{equation*}
+D_5/Ker(f)\overset{\sim}{=} H
+\end{equation*}
+
+Si comprobamos que $H$ tiene justo 10 elementos se tendrá que $Ker(f)=\{1\}$ y por consiguiente es un isomorfismo. Veamos que $\tau\sigma\tau^{-1}=\sigma^{-1}\tau\tau^{-1}=\sigma^{-1}\in \left\langle \sigma \right\rangle$, luego el subgrupo generado por $\sigma$ es normal en $H$ y se tiene que 
+\begin{equation*}
+H/\left\langle\sigma\right\rangle=\left\langle \tau\left\langle \sigma\right\rangle\right\rangle
+\end{equation*}
+
+Sabiendo que $ord(\tau)=2$ veamos que $(\tau\left\langle \sigma\right\rangle)^2=\tau^2\left\langle\sigma\right\rangle=\left\langle\sigma\right\rangle\Rightarrow |H/\left\langle\sigma\right\rangle|=2\Rightarrow |H|=10$. Luego el núcleo de f es trivial y se tiene lo buscado.
+\end{enumerate}
+
+\textbf{Ejercicio 8.} 
+\begin{enumerate}
+\item Clasifica todos los grupos (abeliano o no) de orden 6175. Da una serie de composición de cada uno de ellos.
+
+\textbf{Resolución:}\\
+
+\textbf{Caso abeliano:} Buscamos los divisores elementales
+\begin{gather*}
+\{5^2,13,19\}\longrightarrow C_{25}\times C_{13}\times C_{19}\overset{\sim}{=} C_{6175}\\
+\{5,5,13,19\}\longrightarrow C_{5}\times C_5\times C_{13}\times C_{19}\overset{\sim}{=} C_{1235}\times C_5
+\end{gather*} 
+
+, luego estos son todos los posibles  valores que pueden tomar. Por el ejercicio 4 de la relación 6 se tiene que si $p_1^{e_1}\ldots p_n^{e_n}$ la factorización en primos del orden de un grupo abeliano, entonces $l(G)=e^1+\ldots+e_n$ y $fact(G)=\{C_{p_1},e^1-veces,C_{p_1},\ldots,C_{p_n},e^n-veces,C_{p_n}\}$. En este caso $l(G)=4$ y $fact(G)=\{C_5,C_5,C_{13},C_{19}\}$
+
+Podemos tomar pues por ejemplo la serie de composición
+\begin{equation*}
+1\unlhd C_5\unlhd C_{25}\unlhd C_{325}\unlhd C_{6175}
+\end{equation*}
+
+\textbf{Caso no abeliano:}
+\begin{gather*}
+n_5\mid 247 \quad n_5\equiv 1\mod 5 \Rightarrow n_5=1\\
+n_{13}\mid 95\quad n_{13}\equiv 1\mod 13 \Rightarrow n_{13}=1\\
+n_{19}\mid 65\quad n_{19}\equiv 1\mod 19 \Rightarrow n_{19}=1
+\end{gather*}
+
+, luego en total se tiene un 5-subgrupo de Sylow, un 13-subgrupo de Sylow, y un 19-subgrupo de Sylow. Además son primos relativos 2 a dos, lo que nos indica que la intersección 2 a dos es vacía, pues en caso contrario habría algún elemento perteneciente a dos p-subgrupos vacíos tal que divide a dos primos distintos, lo cual no es posible. Por otro lados los 3 subgrupos de Sylow que hemos encontrados son normales por ser únicos. Por último como está claro que $G$ es finito, $P,Q,X$ son subgrupos normales de $G$ y además $mcd(P,Q)=mcd(|Q|,|X|)$, luego se tiene que
+\begin{equation*}
+|PQX|=|P||Q||X|=6175\Rightarrow PQX=G
+\end{equation*}
+
+Luego se verificará que nuestro grupo $G$ es producto interno de sus p-subgrupos de Sylow.
+
+Para la serie de composición hacemos lo siguiente, llamando $P$ al 5-subgrupo de Sylow $Q$ al 13-subgrupo de Sylow y $X$ al 19-subgrupo de Sylow, veremos que claramente $QX$ es normal en G.
+\begin{gather*}
+gQXg^{-1}=QgXg^{-1}=Qgg^{-1}X=QX
+\end{gather*}
+
+, con lo que tenemos que es normal. Por otro lado se tiene que $|G/(QX)|=5$, luego $|G/QX\overset{\sim}{=} C_5$. Por tanto $l(G)=l(QX)+l(G/QX)=l(QX)+1$. Si repetimos el proceso para se tiene que $l(QX)=l(Q)+l(Q/X)=1+1\Rightarrow l(G)=3$, podemos tomar por ejemplo
+\begin{equation*}
+1\unlhd Q\unlhd QX\unlhd G
+\end{equation*}
+
+, donde todos los factores tienen un orden primo, luego son isomorfos a un grupo cíclico de orden primo y por consiguiente no tendran subgrupos normales, pues no tienen divisores por ser de orden primo.
+
+\item Sea $G$ un grupo de orden 1690.
+	\begin{enumerate}
+	\item Demuestra que $G$ contiene un subgrupo normal $N$ de orden 169.
+	
+	\textbf{Resolución:}
+
+$1690=2\cdot 5\cdot 13^2$. Esto nos asegura que nuestro grupo tendrá al menos un 5-subgrupo de Sylow, un 2-subgrupo de Sylow y un 13-subgrupo de Sylow. Luego tenemos por el 1 teorema de Sylow que existe al menos un subgrupo de orden 169 en $G$. 
+
+Ahora para ver que es normal veamos que
+\begin{equation*}
+n_{13}\mid 10 \quad n_{13}\equiv 1\mod 13\Rightarrow n_{13}=1
+\end{equation*}
+
+Por consiguiente existe un único $P\unlhd G$ tal que $|P|=13^2=169$
+	
+	\item Demuestra que $G$ contiene un subgrupo normal $M$ que contiene a $N$ con $|M|=845$.
+	
+	\textbf{Resolución:}
+	
+	En primer lugar veamos que si ese grupo existe es normal pues $\left[G:M\right]=2$, y por consiguiente $M\unlhd G$. Por otro lado veamos como construir dicho subgrupo normal. Si nos fijamos tenemos seguro que existe un único 13-subgrupo de orden 169. También sabemos que existe un 5-subgrupo de Sylow en $G$. Si nos fijamos es trivial que
+\begin{equation*}
+n_5\mid 338\quad n_5\equiv 1 \mod 5\Rightarrow n_5=1
+\end{equation*}
+
+, luego existe un unico $Q\unlhd G$ tal que $|Q|=5$.Claramente se tiene que $xP=Px$ $\forall x\in Q\Rightarrow QP=PQ$, luego $PQ\leq G$ Utilizando el tercer teorema de isomorfía se tiene que
+\begin{equation*}
+P/(P\cap Q)\overset{\sim}{=} PQ/Q
+\end{equation*}
+
+Claramente $P\cap Q$ es trivial, pues no hay elemento que divida a 5 y a 13 o 169 simultáneamente, luego $|P||Q|/|P\cap Q|=|PQ|=169\cdot 5=845$, con lo que el subgrupo $PQ$ nos verifica lo requerido.
+
+	\item Si $G$ tiene un único 2-subgrupo de Sylow, demuestra que $G$ contiene un subgrupo normal $H$ de orden 388.
+	
+	\textbf{Resolución:} Por hipótesis tenemos que $n_2=1$, luego $\exists ! R\unlhd G$ tal que $|R|=2$. Claramente se tiene que $xP=Px$ $\forall x\in R\Rightarrow RP=PR$, luego $PR\leq G$. Repitiendo un razonamiento análogo al que hemos realizado en el apartado anterior, aplicamos el tercer teorema de isomorfía
+	\begin{equation*}
+	R/(P\cap R)\overset{\sim}{=} RP/P\Rightarrow |RP|=|R||P|/|P\cap R|=338
+	\end{equation*}
+	
+	, esto es claro pues conocemos el orden de P, el de R y no existe elementos que divida a 2 y a 169 más que el 1. Ahora lo único que debemos comprobar es que es normal. Pero claramente lo es, pues se tiene que
+	\begin{equation*}
+	gPRg^{-1}=PgRg^{-1}=Pgg^{-1}R=PR
+	\end{equation*}
+	
+	, luego el subgrupo es normal.
+	\end{enumerate}
+\end{enumerate}
+
+\textbf{Ejercicio 9:} Razona, de forma breve, si son verdaderas o falsas las siguientes afirmaciones:
+\begin{enumerate}
+\item Si un grupo $G$ tiene un único subgrupo $H$ de un orden dado entonces $H$ es un subgrupo normal de $G$.
+
+\textbf{Resolución:} El enunciado nos indica que $G$ tiene un único subgrupo $H$. Como $gHg^{-1}$ es un subgrupo para todo $g\in G$ se tiene que $gHg^{-1}=H$ para todo $g\in G$ luego cumple que $H$ es normal.
+
+\item El orden del elementos $(a^3,b,c^2)\in C_{21}\oplus C_{25}\oplus C_5$, es 35, donde $a,b,c$ son , respectivamente, los generadores de $C_{21},C_{25}$ y $C_5$.
+
+\textbf{Resolución:} Calcularemos primero el orden de las componentes del elemento que nos han dado. Claramente tenemos que $ord(b)=25$. Por otro lado
+\begin{gather*}
+ord(a^3)=\frac{ord(a)}{mcd(ord(a),3)}=\frac{21}{3}\Rightarrow ord(a^3)=7\\
+ord(c^2)=\frac{ord(c)}{mcd(ord(c),2)}=\frac{5}{1}\Rightarrow ord(c^2)=5
+\end{gather*}
+
+El segundo calculo no era necesario, pues $5$ es primo y como el orden de sus elementos tiene que dividir a 5 se tiene que todo elemento distinto de 1 será de orden 5. Una vez calculado el orden por separado simplemente buscamos el $mcm(ord(a^3),ord(b),ord(c^2))=175$, luego no tiene orden 35.
+
+\item No hay grupos simples de orden 561 y todo grupo de este orden es resoluble.
+
+\textbf{Resolución:} En primer lugar veamos que $561=3\cdot 11\cdot 17$, luego sabemos que en nuestro grupo habrá por lo menos un 3-subgrupo de Sylow, un 11-subgrupo de Sylow y un 17-subgrupo de Sylow, luego por el 2º teorema de Sylow tenemos que
+\begin{gather*}
+n_3\mid 187 \quad n_3\equiv 1\mod 3\Rightarrow n_3=1\\
+n_{11}\mid 51 \quad n_{11}\equiv 1\mod 11 \Rightarrow n_{11}=1\\
+n_{17}\mid 33 \quad n_{17}\equiv 1\mod 17 \Rightarrow n_{17}=1
+\end{gather*}
+
+Luego sabemos que existen por lo menos tres subgrupos normales, que coinciden con sus subgrupos de Sylow. Finalmente para ver que se trata de un grupo resoluble veamos que
+$|G/P|=p\cdot q$, donde $P$ es cualquiera de los p-subgrupos de Sylow indicados anteriormente, por ejemplo tomaremos $P$ el 3-subgrupo de Sylow, luego $|P|=3$, y por consiguiente $|G/P|=11\cdot 17$. $P$ es resoluble por ser un p-grupo, y $|G/P|$ es resoluble por tener como orden el producto de dos primos distintos, luego $G$ es también resoluble.
+
+\item El grupo $S_3\times \mathbb{Z}_4$ es resoluble, tiene un único 3-subgrupo de Sylow y un 2-subgrupo de Sylow que no es normal.
+
+\textbf{Resolución:} $|S_3\times \mathbb{Z}_4|=3!\cdot 4=24=\cdot 2^3\cdot 3$.
+
+Se verifica que 
+\begin{gather*}
+n_3\mid 8\quad n_3\equiv 1\mod 3 \Rightarrow n_3=1\quad o \quad n_3=4\\
+n_2\mid 3\quad n_2\equiv 1\mod 2 \Rightarrow n_2=1\quad o \quad n_2=3
+\end{gather*}
+
+Es claro que no se puede dar que $n_3=4$ y $n_2=3$, pues $\cup_{i=1}^3 P_i-\{1\}$ con $P_i$ 2-subgrupo de Sylow, tiene 22 elementos y es disjunto con los 3-subgrupos de Sylow, luego la suma de elementos nos daría $22+8=30\neq 24$, luego habría más elementos que los que tiene el grupo. \\
+
+Hemos descartado una de las combinaciones. Para descartar otra nos fijaremos en los elementos. De orden 2 son aquellos de la forma $(1,x),(x,1),(x,y)$, donde $x,y$ tienen orden 2, luego tenemos que hay 7 elementos de orden 2, 1 de la forma $(1,x)$, 3 de la forma (x,1) y 3 de la forma $(x,y)$. Pero tenemos que descartar el caso $n_2=1$, pues en ese caso nuestro grupo sería producto directo interno de sus p-subgrupos de Sylow, lo cual no puede ser. Por tanto $n_2=3$
+
+Por otro lado este 3-subgrupo de Sylow es resoluble por ser un p-grupo y además como el cociente $G/P$, donde $P$ es el 2-subgrupo de Sylow es también resoluble por ser un p-grupo se tiene que $G$ es resoluble.
+
+\item Todo subgrupo de $S_n$ de orden impar está contenido en $A_n$.
+
+\textbf{Resolución:} Sea $P\leq S_n$ un subgrupo de $S_n$ tal que $|P|=2m+1$ con $m$ un número natural y verificándose que $2m+1\leq n!$. Claramente al hacer el cociente de un par entre un impar nos queda obligatoriamente un número par, o lo que es lo mismo divisible entre dos, luego
+\[n!/(2m+1)=2\cdot k\]
+
+, donde $k$ es un entero. Por consiguiente tenemos que $2m+1$ divide también a $n!/2$, pues 
+\begin{equation*}
+\frac{\frac{n!}{2}}{2m+1}=\frac{n!}{2\cdot(2m+1)}=\frac{2k}{2}=k
+\end{equation*}
+
+, luego tenemos por consiguiente que si $P$ es un subgrupo de orden impar entonces puede estar contenido en $A_n$. Por otro lado, todo subgrupo de $S_n$ no puede tener únicamente permutaciones impares, pues no sería un subgrupo. Luego nos deja la opción de que o todas su permutaciones sean pares, y por tanto $P\leq A_n$, o bien tiene el mismo número de permutaciones pares e impares, pero eso implicaría tener orden par, luego $G\leq A_n$
+\end{enumerate}
+
+\textbf{Ejercicio 10:} Razona, de forma breve, si son verdaderas o falsas las siguientes afirmaciones:
+\begin{enumerate}
+\item Si $G$ es un grupo tal que $\left[G:Z(G)\right]=15$ entonces $G$ es abeliano.
+
+\textbf{Resolución:} Es claro que $|G/Z(G)|=15$ implica que el conjunto cociente verifica que tiene al menos un 3-subgrupo de Sylow y al menos un 5-subgrupos de Sylow. Ambos son únicos luego podemos escribir dicho cociente como producto interno directo de $C_3\times C_{5}\overset{\sim}{=} C_{15}$. De aquí obtenemos que $G/Z(G)$ es un grupo abeliano y por consiguiente G es abeliano. Luego la afirmación es cierta.
+
+\item Un grupo simple de orden 60 tiene 30 elementos de orden 5.
+
+\textbf{Resolución:} $60=2^2\cdot 3\cdot 5$. Luego tendrá 
+\begin{gather*}
+n_2\mid 15 \quad n_2=1\mod 2\Rightarrow n_2=3\quad o \quad n_2=5\quad o\quad n_2=15\\
+n_3\mid 20 \quad n_3=1\mod 3\Rightarrow n_3=4 \quad o\quad n_3=10\\
+n_5\mid 12 \quad n_5=1\mod 5\Rightarrow n_5=6
+\end{gather*}
+
+Se descartan automáticamente todos los casos únicos porque se tendría entonces que el grupo no es simple. Por otro lado todo elemento de orden 5 queda incluido en un 5-subgrupo de Sylow. Sin embargo, sean $P_i$ con $i=1,\ldots, 6$ y $|P_i|=5$ los 5-subgrupos de Sylow. Suponiendo que $P_i\cap P_j=\{1\}$ con $i\neq j$ se tiene que 
+$\cup_{i=1}^6 P_i\{1\}$ tiene 24 elementos. Como todos los elementos de orden 5 estarían en el conjunto anterior llegamos a contradicción.
+
+\item Si $G$ es un grupo finito y $N$ un subgrupo normal suyo, entonces, $\forall x\in G$ se tiene que el orden del elemento $xN$ en el cociente $G/N$ divide al orden de $x$ en $G$.
+
+\textbf{Resolución:} Supongamos que eso no se verifica y llegaremos a contradicción. Tomando un elemento del grupo cociente de $G$ cualquiera podemos hacer
+\begin{equation*}
+(xN)^{ord(x)}=\overbrace{(xN)\ldots(xN)}^{ord(x)-veces}
+\end{equation*}
+
+Usando que $N$ es normal se tiene que $xN=Nx$, luego $(xN)^{ord(x)}=x^{ord(x)}N\neq N$, pues hemos supuesto que el orden de $xN$ no divide al orden de $x$. Luego contradice que $x^{ord(x)}=1$ y por tanto $ord(xN)\mid ord(x)$ para todo $x\in G$.
+
+\item No hay grupos simples de orden $429$ y todo grupo de este orden es resoluble.
+
+\textbf{Resolución:} $429=3\cdot 13\cdot 11$. Se verifica que 
+\begin{gather*}
+n_3\mid 143\quad n_3\equiv 1\mod 3\Rightarrow n_3=1\quad o \quad n_3=13\\
+n_{11}\mid 39 \quad n_{11}\equiv 1\mod 11\Rightarrow n_{11}=1\\
+\end{gather*}
+No hace falta calcular el número de 13-subgrupos de Sylow, pues al haber sólo un 11-subgrupo de Sylow, existe un único $P\unlhd G$ tal que $|P|=11$. Luego con esto ya tenemos que efectivamente no hay grupo de orden 429 que sea simple, pues tendrá al menos un 11-subgrupo de Sylow normal al grupo. Por otro lado, como es un p-subgrupo, el 11-subgrupo de Sylow es resoluble, y además
+\[|G/P|=3\cdot 13\]
+
+, que al ser el producto de dos primos distintos también verifica que sea resoluble y por consiguiente $G$ es resoluble.
+
+\item Si $X$ es un conjunto de 23 elementos sobre el que actúa el grupo diédrico $D_4$, entonces en $X$ hay un punto fijo.
+
+\textbf{Resolución:} $23=|Fix(X)|+\sum_{x_i\notin Fix(X)} \left[D_4:Stab_{D_4}(x_i)\right]$.
+
+De nuevo se tiene que verificar que los índices son o bien $2,4$ o $8$. Esto significa que el sumatorio de los íncide es un número par y por consiguiente tiene que haber algún elementos en $Fix(X)$, de forma que la suma salga impar.
+
+\item Si $H$ y $K$ son subgrupos normales de un grupo $G$ tales que $H\cap K=1$ entonces $hk=kh$ $\forall h\in H$ y $\forall k\in K$
+
+\textbf{Resolución:} Verdadero. 
+
+Tomando $x=hkh^{-1}k^{-1}$, por ser $H\unlhd G$ se tiene que $kh^{-1}k^{-1}\in H$ y por consiguiente, el producto de $h$ por un elemento de $H$ también está en $H$ luego tenemos que $x\in H$. 
+
+Si cogemos el mismo elemento tenemos que por ser $K\unlhd G$ se tiene que $hkh^{-1}\in K$ y el producto de elementos de $K$ está en $K$, luego $x\in K$. como tenemos que la intersección es trivial, se tiene que $hk=kh$ para todo $h\in H$ y para todo $k\in K$, pues son arbitrarios.
+\end{enumerate}
+
+\textbf{Ejercicio 11.}
+\begin{enumerate}
+\item Clasifica, dando sus descomposiciones cíclica y cíclica primaria, todos los grupos abelianos de orden 144.
+
+\textbf{Resolución:} $144=2^4\cdot 3^2$. Las listas de divisores elementales son
+\begin{gather*}
+\{2^4,3^2\}\overset{\sim}{=} C_{16}\times C_9\:DCP\overset{\sim}{=}C_{144}\:DC\\
+\{2^4,3,3\}\overset{\sim}{=} C_{16}\times C_3\times C_3\:DCP\overset{\sim}{=}C_{48}\times C_3\:DC\\
+\{2^3,2,3^2\}\overset{\sim}{=} C_{8}\times C_2\times C_9\:DCP\overset{\sim}{=}C_{72}\times C_2\:DC\\
+\{2^3,2,3,3\}\overset{\sim}{=} C_{8}\times C_2\times C_3\times C_3\:DCP\overset{\sim}{=}C_{24}\times C_6\:DC\\
+\{2^2,2,2,3^2\}\overset{\sim}{=} C_{4}\times C_2\times C_2\times C_9\:DCP\overset{\sim}{=}C_{36}\times C_2\times C_2\:DC\\
+\{2^2,2,2,3,3\}\overset{\sim}{=} C_{4}\times C_2\times C_2\times C_3\times C_3\:DCP\overset{\sim}{=}C_{12}\times C_6\times C_2\:DC\\
+\{2,2,2,2,3^2\}\overset{\sim}{=} C_{2}\times C_2\times C_2\times C_2\times C_9\:DCP\overset{\sim}{=}C_{18}\times C_2\times C_2\times C_2\:DC\\
+\{2,2,2,2,3,3\}\overset{\sim}{=} C_{2}\times C_2\times C_2\times C_2\times C_3\times C_3\:DCP\overset{\sim}{=}C_6\times C_6\times C_2\times C_2\:DC
+\end{gather*}
+
+\item Si $G$ es un grupo simple de orden 168, calcula el número de 7-subgrupos de Sylow de $G$. Si $P$ es un 7-subgrupo de Sylow de $G$, calcula el orden del normalizador $N_G(P)$ y razona que $G$ no tiene subgrupos de orden 14.
+
+\textbf{Resolución:} $168=2^3\cdot 3\cdot 7$
+\begin{gather*}
+n_7\mid 24\quad n_7\equiv 1\mod 7\Rightarrow n_7=8
+\end{gather*}
+
+Con esto ya hemos calculado el número de 7-subgrupos de Sylow. Ahora calculemos el orden del normalizador
+\[N_G(P)=\{x\in G/xP=Px\}\]
+
+En primer lugar definimos la acción
+\begin{equation*}
+G\times S\longrightarrow S \qquad g_P=gPg^{-1}
+\end{equation*}
+
+, donde $S=\{P/P\:es\:7-subgrupo\:de\:Sylow\}$. De aquí se obtiene que 
+\[T\leq O(P)=\{gPg^{-1}/g\in G\}\]
+
+como los p-subgrupos de Sylow son conjugados en G por el 2º teorema de Sylow. Por otro lado obtenemos que $Stab_G(P)=\{g\in G/g_P=P\}=\{g\in G/gP=Pg\}=N_G(P)$. Ahora bastaría con utilizar que $|G|/|Stab_G(P)|=O(P)$, como $|O(P)|= 8$, $|Stab_G(P)|=21$, como $N_G(P)=Stab_G(P)$, ya tenemos el orden del mismo. \\
+
+Sea $|H|=14$ con $H\leq G$. Entonces $H$ verifica que
+\begin{gather*}
+n_7\mid 2\quad n_7\equiv 1\mod 7\Rightarrow n_7=1
+\end{gather*}
+
+, luego existe un único 7-grupdo de Sylow en H, y es normal $Q$ de orden 7. Luego tenemos $H\leq G$ y $Q\unlhd H$, luego $N_G(Q)\leq H$, lo cual es imposible.
+
+\end{enumerate}
+\end{document}

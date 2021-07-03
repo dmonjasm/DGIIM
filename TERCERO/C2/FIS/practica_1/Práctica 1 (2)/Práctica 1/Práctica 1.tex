@@ -1,0 +1,378 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{enumerate}
+\usepackage{punk}
+\usepackage[T1]{fontenc}
+\usepackage[usenames]{color}
+\usepackage{color}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Juan Manual Cruz Blázquez, Ignacio Garach Vélez, Daniel Monjas Miguelez, Javier Ojeda Baena, Manuel Horacio Torres Cañero}
+\usepackage[pages=some]{background}
+\backgroundsetup{
+ scale=1,
+ color=black,
+ opacity=0.2,
+ angle=0,
+ contents={
+  \includegraphics[scale=0.5]{UGR-Logo}
+ }
+}
+\begin{document}
+
+\BgThispage
+\begin{flushright}
+\textcolor{red}{\bfseries\Large GESTIÓN DE UNA INMOBILIARIA}\vspace{1cm}\\
+{\bfseries\Large LISTA DE REQUISITOS\vspace{0.5cm}\\
+ESTRUCTURADA}\vspace{1cm}\\
+\end{flushright}
+\begin{center}
+{\large\bfseries Juan Manual Cruz Blázquez, Ignacio Garach Vélez, Daniel Monjas Miguelez, Javier Ojeda Baena y Manuel Horacio Torres Cañero}
+\end{center}
+\rule{17 cm}{1 pt}
+\vspace{1cm}
+
+\tableofcontents
+
+\newpage
+
+\section{Objetivos}
+\textbf{Recordatorio: No necesitamos que el cliente tenga acceso, eso sería si diseñásemos una página web. Serán los comerciales los que accedan a la aplicación.}\\
+
+El objetivo de este proyecto será la creación de una herramienta software que nos permita gestionar los datos asociados a la gestión de alquileres de una inmobiliaria, así como otras funcionalidades extra y mejoras de calidad.\\
+
+Este sistema deberá ser capaz de mantener una base de datos la información relativa a los inmuebles asociados con nuestra inmobiliaria, los propietarios de los mismos y sus actuales huéspedes. Además, facilitara el pago y cobro de las rentas de alquiler, así como la gestión de cualquier desperfecto que pueda surgir en el inmueble.\\
+
+Entre las características propias de la aplicación, podremos destacar el intercambio de viviendas, que se dará entre dos arrendadores, y la publicitación de los inmuebles. A parte, se gestionará de forma interna un calendario asociado a cada inmueble para evitar que sucedan varias visitas en un mismo momento.\\
+
+Los objetivos de nuestro sistema pueden resumirse en:
+\begin{enumerate}[\bfseries OBJ-1]
+\item El sistema gestionará y almacenará las características de los inmuebles, así como su disponibilidad.
+\item El sistema mantendrá la información y datos de contacto de arrendadores y arrendatarios.
+\item Las quejas de cualquiera de las partes se gestionarán mediante la aplicación.
+\end{enumerate}
+\section{Descripción de los implicados}
+\subsection*{Entorno de usuario}
+Los usuarios directos de la aplicación a desarrollar son dos, los agentes de la propiedad inmobiliaria y los comerciales. Tienen cierta experiencia en informática de oficina y en la empresa. Por otro lado los usuarios del sistema, no interactúan directamente con el mismo pero se deben gestionar sus datos y acciones.
+\subsection*{Resumen}
+{\footnotesize
+\begin{tabular}{|l|l|l|l|}
+\hline
+{\small\textbf{Nombre}} & {\small\textbf{Descripción}} & {\small\textbf{Tipo}} & {\small\textbf{Responsabilidad}}\\ \hline
+\multirow{2}{*}{Interesado} & \multirow{2}{*}{Potencial cliente o arrendador} & \multirow{2}{*}{Usuario del sistema} & Darse de alta como \textit{arrendador}, \\
+ & & &  alquilar un inmueble o concertar una cita \\ \hline
+Inquilino  & Actual huésped de una vivienda & Usuario del sistema & Pagar el alquiler y tener averías \\ \hline
+\multirow{2}{*}{Arrendador} & \multirow{2}{*}{Persona que proporciona el inmueble} & \multirow{2}{*}{Usuario del sistema} & Actualizar la información de su \\
+ & & &  inmueble y decidir si intercambiar \\ \hline
+\multirow{2}{*}{Comercial} & \multirow{2}{*}{Empleado de la inmobiliaria} & \multirow{2}{*}{Usuario del producto} & Encargado de mostrar los inmuebles\\
+ & & &  a los \textit{interesados} \\ \hline
+\multirow{2}{*}{Gestor} & \multirow{2}{*}{Empleado de la inmobiliaria} & \multirow{2}{*}{Usuario del producto} & Dar de alta a los \textit{inquilinos} y \textit{arrendadores}; \\
+ & & &  y consultar información \\ \hline
+ \multirow{2}{*}{Personal externo} & \multirow{2}{*}{Empresa ajena a la inmobiliaria} & \multirow{2}{*}{Usuario del sistema} & Proveer de un servicio del que no dispone la \\
+ & & & inmobiliaria \\ \hline
+\end{tabular}}
+{\footnotesize
+\subsubsection*{Interesado}
+\begin{tabular}{|l|l|}
+\hline
+{\small\textbf{Representante}} & Cristiano Ronaldo dos Santos Aveiro \\ \hline
+{\small\textbf{Descripción}} & Posible arrendador o arrendatario \\ \hline
+\multirow{2}{*}{\small\textbf{Tipo}} & No utiliza el sistema de forma directa, sino que contactará con un \textit{gestor} para ello o a un \\
+ & \textit{comercial} para ir físicamente al inmueble. Es un usuario casual. \\ \hline
+{\small\textbf{Responsabilidades}} & Pasar a ser \textit{inquilino} o \textit{propietario} \\ \hline
+\multirow{2}{*}{\small\textbf{Criterios de éxito}} & Que el acceso a la información de los inmuebles es más rápida y eficaz, pudiendo gestionar de\\
+ & forma eficiente las citas físicas \\ \hline
+\multirow{3}{*}{\small\textbf{Implicación}} & Puede utilizar el sistema varias veces hasta encontrar un inmueble adecuado (entonces pasa a\\
+ & ser \textit{inquilino}) o poner su inmueble para que este sea alquilado (entonces pasa a ser\\
+ & \textit{arrendador}).  \\ \hline
+{\small\textbf{Comentarios/Cuestiones}} & \\ \hline
+\end{tabular}
+\subsubsection*{Inquilino}
+\begin{tabular}{|l|l|}
+\hline
+{\small\textbf{Representante}} & Neymar da Silva Santos Júnior \\ \hline
+{\small\textbf{Descripción}} & Persona que habita en una de las viviendas \\ \hline
+\multirow{2}{*}{\small\textbf{Tipo}} & No utiliza el sistema de forma directa, contactará con el \textit{gestor} para ello. Será un usuario\\
+ & frecuente \\ \hline
+\multirow{2}{*}{\small\textbf{Responsabilidades}} & Avisar de cualquier desperfecto producido en el inmueble. Pagar la renta de alquiler cada\\
+ & mes. \\ \hline
+\multirow{2}{*}{{\small\textbf{Criterios de éxito}}} & Que conozca su contrato, que pueda gestionarlo de forma fácil, que tenga un fácil acceso\\
+ & a todos los pagos relacionados con el inmueble y que pueda dar parte de forma sencilla.\\ \hline
+{\small\textbf{Implicación}} & Utilizará el sistema para notificar desperfectos y gestionar su contrato \\ \hline
+{\small\textbf{Comentarios/Cuestiones}} & \\ \hline
+\end{tabular}
+\subsubsection*{Arrendador}
+\begin{tabular}{|l|l|}
+\hline
+{\small\textbf{Representante}} & Zlatan Ibrahimović \\ \hline
+{\small\textbf{Descripción}} & Persona que es dueño del inmueble y deja que la inmobiliaria lo gestione \\ \hline
+{\small\textbf{Tipo}} & No utilizará el sistema de forma directa, contactará con un \textit{gestor}. \\ \hline
+\multirow{2}{*}{\small\textbf{Responsabilidades}} & Tendrá la palabra final sobre el precio. Deberá informar de cambios referentes a la\\
+& vivienda. Recibirá una cuantía mensual. Indicará si quiere que intercambiar viviendas. \\ \hline
+\multirow{2}{*}{\small\textbf{Criterios de éxito}} & Que pueda abstraerse de la condición de la vivienda y publicitarla a través del sistema; y\\
+&que pueda elegir viviendas para el intercambio. \\ \hline
+\multirow{2}{*}{\small\textbf{Implicación}} & Usará el sistema para publicitar su inmueble y, en caso de querer, elegir una vivienda con\\
+ & intercambiar. \\ \hline
+{\small\textbf{Comentarios/Cuestiones}} & \\ \hline
+\end{tabular}
+\subsubsection*{Comercial}
+\begin{tabular}{|l|l|}
+\hline
+{\small\textbf{Representante}} & Andrés Iniesta Luján \\ \hline
+{\small\textbf{Descripción}} & Trabajador de la inmobiliaria que se encarga de las visitas en persona a las viviendas \\ \hline
+\multirow{2}{*}{\small\textbf{Tipo}} & Utilizará el sistema de forma directa para consultar y modificar el calendario de visitas\\
+ & asociado a un inmueble. También podrá consultar la lista de inmuebles \\ \hline
+\multirow{2}{*}{\small\textbf{Responsabilidades}} & Que de la fecha más conveniente cuando un \textit{interesado} se la pida y que pueda buscar\\
+ & un inmueble adaptado a las necesidades del \textit{interesado} \\ \hline
+\multirow{2}{*}{\small\textbf{Criterios de éxito}} & Se tendrá éxito si la consulta del calendario es eficiente y rápida, así como la búsqueda de\\
+ & inmuebles por filtros. \\ \hline
+{\small\textbf{Implicación}} & Es el encargado de ir al inmueble físico y hacer la visita. \\ \hline
+{\small\textbf{Comentarios/Cuestiones}} & \\ \hline
+\end{tabular}
+\subsubsection*{Gestor}
+\begin{tabular}{|l|l|}
+\hline
+{\small\textbf{Representante}} & Josep Maria Bartomeu Floreta \\ \hline
+{\small\textbf{Descripción}} & Empleado de la inmobiliaria que trabaja desde la oficina \\ \hline
+{\small\textbf{Tipo}} & Experto del sistema. \\ \hline
+\multirow{3}{*}{\small\textbf{Responsabilidades}} & Atenderá a todos los clientes. Creará los contratos. Será el nexo entre los inmuebles y el\\
+ & seguro que cubra los desperfectos. Actualizará la información de las viviendas y se\\
+ & encargará de su publicitación en base a la información que aporte el \textit{arrendatario}. \\ \hline
+\multirow{3}{*}{{\small\textbf{Criterios de éxito}}} & Se tendrá éxito si el sistema le permite consultar y actualizar la información de forma\\
+ & eficaz. \\ \hline
+\multirow{2}{*}{\small\textbf{Implicación}} & Usará el sistema para dar de alta clientes, añadir información y contactar con las agencias\\
+ & externas. \\ \hline
+{\small\textbf{Comentarios/Cuestiones}} & \\ \hline
+\end{tabular}
+\subsubsection*{Personal externo}
+\begin{tabular}{|l|l|}
+\hline
+{\small\textbf{Representante}} & Lionel Andrés Messi Cuccittini \\ \hline
+{\small\textbf{Descripción}} & Trabajador de una empresa externo \\ \hline
+\multirow{2}{*}{\small\textbf{Tipo}} & No utiliza el sistema de forma directa, un gestor se pondrá en contacto con su empresa\\
+ & para indicarle más detalles. \\ \hline
+{\small\textbf{Responsabilidades}} & Ofrecerá un servicio del que la inmobiliaria no dispone. \\ \hline
+\multirow{2}{*}{\small\textbf{Criterios de éxito}} & Se tendrá éxito si el \textit{gestor} puede localizar fácilmente las especificaciones de la empresa y\\
+ & contactar con ella. \\ \hline
+{\small\textbf{Implicación}} & Sus datos se guardan en el sistema. \\ \hline
+{\small\textbf{Comentarios/Cuestiones}} & \\ \hline
+\end{tabular}}
+\subsection*{Principales necesidades de los implicados}
+{\footnotesize
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+{\small\textbf{Necesidad}} & {\small\textbf{Prioridad}} & {\small\textbf{Problema}} & {\small\textbf{Solución actual}} & {\small\textbf{Solución propuesta}} \\ \hline
+\multirow{2}{*}{Buscar inmueble} & \multirow{2}{*}{Alta} & Difícil encontrar inmuebles que & Buscar inmuebles por zona & Busqueda con filtro \\
+ & & cumplan los requisitos &  e ir mirando uno a uno & \\ \hline
+\multirow{3}{*}{Publicitar inmueble} & \multirow{3}{*}{Alta} & Muchas plataformas en las & El arrendador elige en & La inmobiliaria se encarga de \\
+ & & que publicitarse & que plataformas se publicita & dar a conocer el inmueble
+por sus \\
+ & & & & plataformas asociadas\\ \hline
+\multirow{4}{*}{Copia de llaves} & \multirow{4}{*}{Media-baja} & El arrendador ha perdido & Llama a un cerrajero & El cliente puede identificarse \\
+ & & las llaves & & las llaves con el DNI en la\\
+ & & & &  agencia y se le proporcionarán \\
+ & & & & una copia de las llaves\\ \hline
+\multirow{3}{*}{Calendario de inmuebles} & \multirow{3}{*}{Media-alta} & Los comerciales no pueden & Se informan entre ellos & Se mantiene un calendario\\
+ & & coincidir en el mismo & &  común para cada inmueble en
+el\\
+ & & momento en el mismo inmueble & & que reservan horas\\ \hline
+\multirow{3}{*}{Alquilar inmueble} & \multirow{3}{*}{Alta} & Alquilar un inmueble en & Contactar con el arrendador & La inmobiliaria informa le \\
+ & & en un tiempo razonable & y firmar un contrato & hace un contrato al interesado\\
+ & & & & e informa al arrendador \\ \hline
+\end{tabular}}
+{\footnotesize
+\section{Obtención de requisitos}
+\subsection*{Requisitos funcionales}
+\begin{enumerate}[\bfseries RF-1]
+\item \textbf{Gestionar finanzas}. El sistema debe llevar una gestión de las finanzas relativa a todos y cada uno de los inmuebles del sistema que estén en alquiler.
+\begin{enumerate}[\bfseries RF-{1}.1]
+\item El sistema deberá llevar la gestión del cobro del alquiler asociado a todas y cada una de las viviendas arrendadas.
+\begin{enumerate}[\bfseries RF-{1}.{1}.1]
+\item El sistema se encargará de pagar al arrendador el porcentaje correspondiente de la renta de la vivienda.
+\end{enumerate}
+\item El sistema deberá encargarse de gestionar el cobro de los impuestos asociados a una vivienda.
+\begin{enumerate}[\bfseries RF-{1}.{2}.1]
+\item El sistema deberá encargarse de gestionar el cobro de luz
+\item El sistema deberá encargarse de gestionar el cobro de agua
+\item El sistema deberá encargarse de gestionar el cobro de comunidad.
+\item El sistema deberá encargarse de gestionar el cobro de basuras.
+\end{enumerate}
+\item El sistema se deberá encargar de controlar la reclamación de deudas a los usuarios que tenga.
+\end{enumerate}
+\item \textbf{Gestionar publicidad}. Se debe gestionar la campaña publicitaria de los inmuebles registrados en el sistema para facilitar su arrendamiento o intercambio.
+\begin{enumerate}[\bfseries RF-{2}.1]
+\item El sistema de debe encargar de publicitar las viviendas que se registren en ellas.
+\begin{enumerate}[\bfseries RF-{2}.{1}.1]
+\item El sistema debe generar folletos conforme a las características del inmueble que se vaya a anunciar.
+\item El sistema se debe encargar de añadir las viviendas registradas en todo el catálogo de portales inmobiliarios del que disponga.
+\item El sistema se debe encargar de recomendar a los usuarios inmuebles afines a sus consultas anteriores.
+\end{enumerate}
+\item El sistema debe recoger información de los usuarios a partir de sus consultas anteriores.
+\begin{enumerate}[\bfseries RF-{2}.{2}.1]
+\item El sistema debe crear un perfil de los intereses de los usuarios conforme a la información recogida del mismo.
+\end{enumerate}
+\end{enumerate}
+\item \textbf{Gestionar alquileres}. Hay que guardar información sobre los alquileres de las viviendas así como su disponibilidad en todo momento.
+\begin{enumerate}[\bfseries RF-{3}.1]
+\item El sistema debe gestionar en todo momento la disponibilidad de las viviendas registradas en el mismo.
+\begin{enumerate}[\bfseries RF-{3}.{1}.1]
+\item El sistema debe mantener un calendario asociado a cada vivienda en el que se indique la disponibilidad del mismo.
+\item Se deberá actualizar la disponibilidad de la vivienda cuando termine un contrato, se cese prematuramente, se termine un intercambio o se realice una reserva.
+\item Gestionar la disponibilidad para intercambio de una vivienda.
+\end{enumerate}
+\item El sistema debe ser capaz de gestionar las reservas para las viviendas registradas en el mismo, manteniendo un registro de disponibilidad.
+\begin{enumerate}[\bfseries RF-{3}.{2}.1]
+\item El sistema deberá permitir realizar reservas para una determinada vivienda.
+\item El sistema deberá anular la reserva para una determinada vivienda.
+\end{enumerate}
+\end{enumerate}
+\item \textbf{Gestionar contratos}. Se debe realizar una gestión en todo momento de los contratos de alquiler de las viviendas.
+\begin{enumerate}[\bfseries RF-{4}.1]
+\item El sistema debe gestionar los contratos de alquiler de todas las viviendas que tenga registradas.
+\begin{enumerate}[\bfseries RF-{4}.{1}.1]
+\item Deberá permitir generar un contrato de alquiler para una determinada vivienda con la duración que indique el comercial.
+\item Deberá permitir marcar como finalizado un contrato de alquiler cuando termine su duración y guardarlo en un registro.
+\item Deberá permitir cesar en cualquier momento un contrato de alquiler que esté activo.
+\item Deberá permitir generar un contrato para el intercambio de viviendas entre dos propietarios.
+\end{enumerate}
+\end{enumerate}
+\item \textbf{Gestión de usuarios}. Se llevara en todo momento un control de los usuarios del sistema.
+\begin{enumerate}[\bfseries RF-{5}.1]
+\item El sistema deberá permitir registrar nuevos usuarios con su correspondiente información personal e información dentro del sistema.
+\begin{enumerate}[\bfseries RF-{5}.{1}.1]
+\item Registrar usuario como arrendador
+\item Registrar usuario como posible arrendatario
+\item Registrar usuario como personal externo
+\item Registrar usuario como personal técnico
+\end{enumerate}
+\item El sistema deberá permitir recuperar información de los usuarios que tenga almacenados.
+\begin{enumerate}[\bfseries RF-{5}.{2}.1]
+\item Ver datos personales del usuario
+\item Ver inmuebles que tiene para arrendar el usuario
+\item Ver inmuebles que tiene para intercambiar el usuario
+\item Ver inmuebles que tiene arrendados el usuario
+\end{enumerate}
+\item Modificar información de un usuario
+\item Eliminar a un usuario del sistema
+\item Gestionar los pagos del usuario
+\begin{enumerate}[\bfseries RF-{5}.{5}.1]
+\item Pago de la renta de alquiler
+\item Cobro de rentas de alquiler
+\item Pago de deudas pendientes
+\end{enumerate}
+\end{enumerate}
+\item \textbf{Gestionar incidencias}. El sistema deberá mantener una historial de las incidencias presentadas por los inquilinos así como mantener la información de las empresas externas que se necesiten para subsanarlo.
+\begin{enumerate}[\bfseries RF-{6}.1]
+\item El sistema deberá permitir el añadir nuevas empresas y consultar de forma rápida la misma.
+\begin{enumerate}[\bfseries RF-{6}.{1}.1]
+\item Añadir la información de una empresa.
+\item Modificar/Eliminar una empresa del sistema.
+\item Mantener un historial de peticiones hechas a la empresa.
+\end{enumerate}
+\item El sistema debe permitir que un inquilino pueda notificar sobre una incidencia y que esta sea subsanada.
+\begin{enumerate}[\bfseries RF-{6}.{1}.1]
+\item Acceso del arrendador a un formulario de incidencias.
+\item Sistema de notificaciones (avisa a un gestor de la incidencia).
+\item Historial de incidencias.
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Requisitos no funcionales}
+\begin{enumerate}[\bfseries RNF-1]
+\item \textbf{Seguridad}. Se debe hacer que el sistema sea capaz de mantener todos los datos seguros así como todas las transacciones que se realicen en la plataforma.
+\begin{enumerate}[\bfseries RNF-{1}.1]
+\item Distinguir la jerarquía de acceso de los distintos usuarios del sistema
+\item Utilizar una pasarela segura para los pagos
+\item Mantener cifrada la información bancaria
+\item Gestionar los datos de acuerdo con la Ley General de Protección de Datos
+\end{enumerate}
+\item \textbf{Usabilidad}. El usuario debe tener una fácil interacción con el entorno software para mejorar su experiencia con el mismo.
+\begin{enumerate}[\bfseries RNF-{2}.1]
+\item Estilo y diseño intuitivo con apariencia corporativa
+\item Proporcionar tutoriales intuitivos para formar a los nuevos empleados
+\item Proporcionar asistentes para registrar cómodamente nuevos datos
+\end{enumerate}
+\item \textbf{Fiabilidad}. El sistema debe ser robusto para prevenir errores y daños en el mismo.
+\begin{enumerate}[\bfseries RNF-{3}.1]
+\item Realizar copias de seguridad para prevenir caídas del sistema
+\item El sistema debe gestionar correctamente los accesos concurrentes al mismo
+\item Debe tener mecanismos para asegurar la continuidad del sistema
+\end{enumerate}
+\item \textbf{Rendimiento}. Se tiene que asegurar que el software tenga un buen rendimiento en distintas plataformas para asegurar la mejor experiencia posible con el usuario.\begin{enumerate}[\bfseries RNF-{4}.1.]
+\item Deben estar disponibles versiones estables y rápidas para los SO más usados (software multiplataforma).
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Requisitos de información}
+\begin{enumerate}[\bfseries R{I}-1]
+\item \textbf{Usuarios}. Datos sobre las personas que van a ser inscritas en el sistema\\
+\textbf{Contenido}: Tipo de usuario, nombre, DNI, correo electrónico, número de teléfono.
+\\
+\textbf{Requisitos asociados}: RF-5.1, RF-5.2, RF-5.3, RF-5.4, RNF-1.4.
+\item \textbf{Cuentas usuarios}. Información sobre las operaciones que realiza un usuario\\
+\textbf{Contenido}: Inmuebles para arrendar, inmuebles arrendados, inmuebles para intercambio, pagos realizados, deudas pendientes.\\
+\textbf{Requisitos asociados}: RF-5.5.1, RF-5.5.2, RF-5.5.3, RNF-1.2, RNF-1.3.
+\item \textbf{Empleado}. Datos sobre personas con permisos para realizar operaciones dentro del sistema\\
+\textbf{Contenido}: nombre, DNI, correo electrónico, número de teléfono, código de empleado\\
+\textbf{Requisitos asociados}: RF-2.1.1, RF-2.1.2, RF-2.1.3.
+\item \textbf{Viviendas de alquiler}. Datos sobre las viviendas expuestas por la inmobiliaria para alquilar\\
+\textbf{Contenido}: localización, número de habitaciones, número de baños, tamaño, precio, edificio (si tiene ascensor, número de planta…), fecha de disponibilidad.\\
+\textbf{Requisitos asociados}: RF-3.1.1, RF-3.1.2.
+\item \textbf{Viviendas de intercambio}. Información sobre viviendas cuyo propietario está dispuesto a intercambiar\\
+\textbf{Contenido}: lo mismo que viviendas para alquiler, añadiendo las especificaciones del inmueble por el que se intercambia\\
+\textbf{Requisitos asociados}: RF-3.1.3, RF-3.2.1, RF-3.2.2.
+\item \textbf{Personal externo}. Información sobre empresas externas a la propia inmobiliaria\\
+\textbf{Contenido}: Servicio que proveen, información de contacto, precios.\\
+\textbf{Requisitos asociados}: RF-6.
+\item \textbf{Contratos}. Datos sobre los contratos que se han realizado.
+\textbf{Contenido}: DNI del inquilino, DNI del propietario, fecha de creación, fecha de vencimiento, dirección de la propiedad.\\
+\textbf{Requisitos asociados}: RF-4.1.1, RF-4.1.2, RF-4.1.3, RF-4.1.4, RF-1.1, RF-1.2.1, RF-1.2.2, RF-1.2.3, RF-1.3.
+\end{enumerate}
+
+\section{Glosario de términos}
+\begin{itemize}
+\item \textbf{Alquiler}: precio en que se alquila algo.
+\item \textbf{API (Agente de la Propiedad Inmobiliaria)}: profesional titulado que actúa como intermediario en una transacción inmobiliaria y a cambio cobra una comisión por sus servicios.
+\item \textbf{Arrendador}: persona que cede el derecho a uso de un inmueble de su propiedad a un tercero a cambio de una renta.
+\item \textbf{Arrendatario/Inquilino}: persona obligada al pago de una renta por el derecho a uso de una vivienda, que no es de su propiedad.
+\item \textbf{Capacidad}: aptitud de una persona para la toma de decisiones y llevar a cabo negocios y celebrar contratos. Para inhabilitar a una persona para realizar una compraventa o firmar un contrato se necesita una sentencia judicial. Legalmente tampoco podrían realizar estas operaciones los menores de edad.
+\item \textbf{Cédula de habitabilidad}: documento expedido por la Administración Pública a fin de controlar las condiciones de salubridad e higiene de los edificios destinados a vivienda y alojamiento.
+\item \textbf{Condominio}: expresión de origen latina utilizada para designar el hecho de que el derecho de propiedad sobre una determinada cosa es ejercido por más de una persona, mediante una distribución por cuotas ideales. en el caso de un matrimonio que ostente la propiedad de un inmueble, ambos son codueños, copropietarios o condominios del mismo.
+\item \textbf{Contrato}: pacto o convenio, oral o escrito, entre partes que se obligan sobre materia o cosa determinada, y a cuyo cumplimiento pueden ser compelidas.
+\item \textbf{Costas}: gastos generados en la tramitación de un procedimiento judicial. Las costas procesales están integradas por la minuta del abogado o perito, arancel de procuradores, gastos derivados de la publicación de edictos, publicación de depósitos, indemnización de testigos.
+\item \textbf{Cuota}: resultado de cuantificar la obligación tributaria que suele coincidir con la cantidad a ingresar por el obligado en la Hacienda Pública. Esta cuota puede ser:
+\begin{itemize}
+\item Cuota fija o constante: ésta es más frecuente y consiste en que el importe de los intereses se van reduciendo en una cuantía proporcional a la amortización del capital.
+\item Cuota creciente: en este caso va aumentando cada año un porcentaje prefijado. Tiene la ventaja de que se paga menos al principio, pero lógicamente la carga aumenta en el futuro. Su inconveniente es que pagan más intereses.
+\end{itemize}
+\item \textbf{Derecho de usufructo}: derecho real de uso, por el que el propietario de una cosa, mueble, inmueble o semoviente, cede a un tercero el uso y disfrute de la misma, con la condición de salvaguardar su conservación y custodia.
+\item \textbf{Derecho real}: son derechos que atribuyen a su titular una facultad sobre los bienes o intereses patrimoniales frente a otras personas. Se establecen como limitaciones a la propiedad o dominio de una cosa, y por tanto, el valor económico de ésta.
+\item \textbf{Dominio}: expresión empleada para referirse al derecho de propiedad sobre las cosas.
+\item \textbf{Enfiteusis}: contrato en virtud del cual, una de las partes contratantes (propietario) cede a la otra (enfiteuta), el dominio útil del inmueble, por un largo plazo de tiempo, reteniendo el dominio directo, y todo ello a cambio de un censo o canon que debe ser abonado por el enfiteuta.
+\item \textbf{IVA (Impuesto sobre el Valor Añadido)}: impuesto indirecto estatal que graba las diferentes fases de la producción de un bien o la prestación de un servicio por el valor incorporado en cada una de esas fases.
+\item \textbf{Impuesto}: tributo exigido sin contraprestación, cuyo hecho imponible está causado por hechos de naturaleza jurídica o económica que revelan la capacidad económica del sujeto que los realiza.
+\item \textbf{Incidencia}: daño, rotura o fallo que impide o perjudica el funcionamiento del mecanismo de una máquina, una red de distribución u otra cosa.
+\item \textbf{Informe urbanístico}: en el caso de un inmueble es el que define su arquitectura, emplazamiento, entorno, trazado y definición de viales, accesos, aparcamientos, jardines, monumentos y mobiliario urbano; comunicaciones de superficie y subterráneas, servicios de agua-gas-electricidad y teléfono; proximidad a colegios, centros hospitalarios y bomberos; comercio, áreas de cultura, expansión o recreo.
+\item \textbf{Inmuebles}: los inmuebles son aquellos que tienen una situación fija y no pueden ser desplazados sin ocasionar daños a los mismos. Pueden serlo por naturaleza, por incorporación, por accesión, etc.
+\item \textbf{Mejoras útiles}: las mejoras útiles son aquellas que se realizan en la finca por el arrendatario, al objeto de mejorar las condiciones de disfrute de la misma. No son necesarias en el sentido de imprescindibles, ni de mero lujo o recreo, sino meramente útiles, al favorecer la forma de disfrutar la cosa arrendada.
+\item \textbf{Moroso}: que se retrasa en el pago de una deuda o en la devolución de una cosa.
+\item \textbf{NIF (Número de Identificación Fiscal)}: código que identifica a una empresa ante la administración de hacienda para el pago de sus obligaciones tributarias.
+\item \textbf{Partes}: las personas que intervienen en el contrato y firman el mismo.
+\item \textbf{Periodicidad}: es la frecuencia con la que pagará las deudas. Es recomendable que coincida con la periodicidad de los ingresos.
+\item \textbf{Permuta}: la permuta es la cesión de cosa por cosa. Es la translación de un sujeto a otro de una cosa por otra. No hay dinero o precio en el intercambio, sino simplemente un cambio de un objeto por otro.
+\item \textbf{Registro de la propiedad}: oficina pública que tiene la obligación de llevar los libros oficiales en los que consten todas las circunstancias que afectan a las fincas de su demarcación: cargas, transmisiones, notas marginales, etc.
+\item \textbf{Responsabilidad}: obligación de hacer frente a la deuda o a sus consecuencias en el caso de impago.
+\item \textbf{Subarrendar}: acción de ceder la vivienda que se ocupa. Si el subarriendo es parcial implica la cesión de una parte de las habitaciones de la vivienda a un tercero, con derecho a uso de los servicios comunes de la casa o inmueble.
+\item \textbf{Superficie construida}: suma de las diferentes superficies contando el grosor de las paredes, y a veces los balcones, galerías y/o patios y los conductos de ventilación.
+\item \textbf{Superficie útil}: suma de las diferentes superficies de la vivienda sin tener en cuenta el grosor de las paredes. Tampoco se cuentan balcones o galerías.
+\item \textbf{Vencimiento}: fecha a partir de la cual es exigible el pago de una cantidad de dinero.
+
+\end{itemize}
+\end{document}

@@ -1,0 +1,24 @@
+Tema 1:
+
+24-9-2020
+
+El canal de comunicación probablemente de problemas tales como:
+->ruido, interferencias, (en general, cualquier ruido de distorsión que introduzca el canal).
+
+Ejemplo:
+Tenemos un PC
+
+PC->módem->red telefónica conmutada(RTC)->módem->PC
+PC-> cable de serie (RS232)-> PC
+
+Este sería un sistema de comunicación simple.
+
+Buscar HUB, router, switch.
+
+El hub se comporta como un bus lo que implica que al conectar más dispositivos al mismo aumentan la probabilidad de colisiones dando lugar a una menor escalabilidad.
+
+El router tiene menos bocas que un switch y un hub ya que cada boca da lugar a una red (capa de red). Este a diferencia de switches y hub no sirve para interconectar equipos. Lo que nosotros llamamos router en nuestra casa realmente es router, modem y switch. La conexión entre central y la entrada de etherned de nuestro router sería lo que realmente es el router. Luego este tiene un switch que nos permite conectar nuestros ordenadores por cable a la red.
+
+Ethernet: tecnología de red que te permite conectar un pc con otro pc con un cable.
+
+Meterse en la configuración del router y ver LAN (donde estarán nuestros equipos) y la WAN (wide area network).

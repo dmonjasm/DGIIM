@@ -1,0 +1,7 @@
+nslookup <url>
+
+-servidor al que se pregunta
+-respuesta indicando su autoridad
+
+dig <url>
+como nslookup pero con más info

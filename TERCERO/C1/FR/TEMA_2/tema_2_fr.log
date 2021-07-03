@@ -1,0 +1,1096 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.26)  28 JAN 2021 14:31
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**tema_2_fr.tex
+(./tema_2_fr.tex
+LaTeX2e <2020-02-02> patch level 2
+L3 programming layer <2020-02-14>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2020/02/14 3.40 The Babel package
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2020/02/14 3.40 Babel switching mechanism
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel-spanish/spanish.ldf
+Language: spanish.ldf 2016/03/03 v5.0p Spanish support from the babel system
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2020/02/14 3.40 Babel common definitions
+\babel@savecnt=\count175
+\U@D=\dimen135
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count176
+)
+\es@quottoks=\toks14
+\es@quotdepth=\count177
+Package babel Info: Making " an active character on input line 561.
+Package babel Info: Making . an active character on input line 662.
+Package babel Info: Making < an active character on input line 707.
+Package babel Info: Making > an active character on input line 707.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2019/11/07 v1.0c TeX engine tests
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+)
+\@linkdim=\dimen136
+\Hy@linkcounter=\count178
+\Hy@pagecounter=\count179
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count180
+\pdfmajorversion=\count181
+Package hyperref Info: Hyper figures OFF on input line 4547.
+Package hyperref Info: Link nesting OFF on input line 4552.
+Package hyperref Info: Hyper index ON on input line 4555.
+Package hyperref Info: Plain pages OFF on input line 4562.
+Package hyperref Info: Backreferencing OFF on input line 4567.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4800.
+\c@Hy@tempcnt=\count182
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5159.
+\XeTeXLinkMargin=\dimen137
+
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count183
+\Field@Width=\dimen138
+\Fld@charsize=\dimen139
+Package hyperref Info: Hyper figures OFF on input line 6430.
+Package hyperref Info: Link nesting OFF on input line 6435.
+Package hyperref Info: Hyper index ON on input line 6438.
+Package hyperref Info: backreferencing OFF on input line 6445.
+Package hyperref Info: Link coloring OFF on input line 6450.
+Package hyperref Info: Link coloring with OCG OFF on input line 6455.
+Package hyperref Info: PDF/A mode OFF on input line 6460.
+LaTeX Info: Redefining \ref on input line 6500.
+LaTeX Info: Redefining \pageref on input line 6504.
+
+(/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty
+Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
+)
+\Hy@abspage=\count184
+\c@Item=\count185
+\c@Hfootnote=\count186
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty
+Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+)
+\Fld@listcount=\count187
+\c@bookmark@seq@number=\count188
+
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+)
+\Hy@SectionHShift=\skip49
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen140
+\Gin@req@width=\dimen141
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip50
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen142
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen143
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count189
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count190
+\leftroot@=\count191
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count192
+\DOTSCASE@=\count193
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box45
+\strutbox@=\box46
+\big@size=\dimen144
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count194
+\c@MaxMatrixCols=\count195
+\dotsspace@=\muskip17
+\c@parentequation=\count196
+\dspbrk@lvl=\count197
+\tag@help=\toks19
+\row@=\count198
+\column@=\count199
+\maxfields@=\count266
+\andhelp@=\toks20
+\eqnshift@=\dimen145
+\alignsep@=\dimen146
+\tagshift@=\dimen147
+\tagwidth@=\dimen148
+\totwidth@=\dimen149
+\lineht@=\dimen150
+\@envbody=\toks21
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count267
+\l__pdf_internal_box=\box47
+)
+(./tema_2_fr.aux
+LaTeX Info: Redefining \. on input line 24.
+LaTeX Info: Redefining \% on input line 24.
+)
+\openout1 = `tema_2_fr.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Info: Redefining \. on input line 14.
+LaTeX Info: Redefining \% on input line 14.
+\AtBeginShipoutBox=\box48
+Package hyperref Info: Link coloring OFF on input line 14.
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count268
+)
+LaTeX Info: Redefining \ref on input line 14.
+LaTeX Info: Redefining \pageref on input line 14.
+LaTeX Info: Redefining \nameref on input line 14.
+
+(./tema_2_fr.out) (./tema_2_fr.out)
+\@outlinefile=\write3
+\openout3 = `tema_2_fr.out'.
+
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count269
+\scratchdimen=\dimen151
+\scratchbox=\box49
+\nofMPsegments=\count270
+\nofMParguments=\count271
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count272
+\MPscratchDim=\dimen152
+\MPnumerator=\count273
+\makeMPintoPDFobject=\count274
+\everyMPtoPDFconversion=\toks24
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+<images/redes.jpg, id=40, 246.6816pt x 103.8279pt>
+File: images/redes.jpg Graphic file (type jpg)
+<use images/redes.jpg>
+Package pdftex.def Info: images/redes.jpg  used on input line 26.
+(pdftex.def)             Requested size: 426.79134pt x 179.65305pt.
+
+Overfull \hbox (66.79134pt too wide) in paragraph at lines 26--27
+ [][] 
+ []
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/redes.jpg>]
+(./tema_2_fr.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+)
+\tf@toc=\write4
+\openout4 = `tema_2_fr.toc'.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.33 \newpage
+              [1]
+<images/protocolos.png, id=62, 651.43375pt x 422.57875pt>
+File: images/protocolos.png Graphic file (type png)
+<use images/protocolos.png>
+Package pdftex.def Info: images/protocolos.png  used on input line 40.
+(pdftex.def)             Requested size: 651.43214pt x 422.57771pt.
+
+Overfull \hbox (8.37666pt too wide) in paragraph at lines 51--52
+\OT1/cmr/m/n/10.95 ca-ci^^Son uti-li-za-do pa-ra el in-ter-cam-bio de men-sa-je
+s de co-rreo electr^^Soni-
+ []
+
+[2 <./images/protocolos.png>] [3] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 102--103
+
+ []
+
+
+Overfull \hbox (31.9881pt too wide) in paragraph at lines 110--111
+[]\OT1/cmr/m/n/10.95 Servicio (SOCK[]STREAM = TCP, SOCK[]DGRAM=UDP, SOCK[]RAW=I
+P
+ []
+
+[5]
+<images/sockets.png, id=83, 402.50375pt x 318.18875pt>
+File: images/sockets.png Graphic file (type png)
+<use images/sockets.png>
+Package pdftex.def Info: images/sockets.png  used on input line 119.
+(pdftex.def)             Requested size: 402.50276pt x 318.18796pt.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 125
+.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 125
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
+
+ []
+
+[6 <./images/sockets.png>]
+<images/protocolos_aplicacion.png, id=95, 628.3475pt x 313.17pt>
+File: images/protocolos_aplicacion.png Graphic file (type png)
+<use images/protocolos_aplicacion.png>
+Package pdftex.def Info: images/protocolos_aplicacion.png  used on input line 1
+67.
+(pdftex.def)             Requested size: 628.34596pt x 313.16922pt.
+
+Overfull \hbox (71.99744pt too wide) in paragraph at lines 167--168
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/trozo_protocolo.png, id=96, 413.545pt x 116.435pt>
+File: images/trozo_protocolo.png Graphic file (type png)
+<use images/trozo_protocolo.png>
+Package pdftex.def Info: images/trozo_protocolo.png  used on input line 173.
+(pdftex.def)             Requested size: 413.54398pt x 116.43471pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 187--188
+
+ []
+
+[8 <./images/protocolos_aplicacion.png> <./images/trozo_protocolo.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 197--198
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 203--204
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--218
+
+ []
+
+[10]
+Overfull \hbox (21.89847pt too wide) in paragraph at lines 232--233
+\OML/cmm/m/it/10.95 coast:enterprise:com$ \OT1/cmr/m/n/10.95 podr^^S^^Pa te-ner
+, di-ga-mos, dos alias co-mo $\OML/cmm/m/it/10.95 enterprise:com$
+ []
+
+
+Overfull \hbox (6.94957pt too wide) in paragraph at lines 232--233
+\OT1/cmr/m/n/10.95 alias de nom-bres de host, cuan-do exis-te, nor-mal-men-te s
+on m^^Sas mnem^^Soni-
+ []
+
+[11]
+Overfull \hbox (42.31636pt too wide) in paragraph at lines 239--240
+[]\OT1/cmr/m/n/10.95 Estructura jer^^Sarqui-ca en do-mi-nos: Par-te[]local.domi
+nio[]niveln.....dominio[]nivel1..
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 239--240
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 255--256
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 272--273
+
+ []
+
+[13] [14] [15]
+<images/formato_dns.png, id=144, 620.3175pt x 356.33125pt>
+File: images/formato_dns.png Graphic file (type png)
+<use images/formato_dns.png>
+Package pdftex.def Info: images/formato_dns.png  used on input line 326.
+(pdftex.def)             Requested size: 620.316pt x 356.33037pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 335--336
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 337--338
+
+ []
+
+[16 <./images/formato_dns.png>]
+<images/tabla_navegacion_web.png, id=151, 503.8825pt x 222.8325pt>
+File: images/tabla_navegacion_web.png Graphic file (type png)
+<use images/tabla_navegacion_web.png>
+Package pdftex.def Info: images/tabla_navegacion_web.png  used on input line 34
+6.
+(pdftex.def)             Requested size: 503.88127pt x 222.83195pt.
+ [17 <./images/tabla_navegacion_web.png>]
+<images/mensaje_request.png, id=158, 976.64874pt x 393.47pt>
+File: images/mensaje_request.png Graphic file (type png)
+<use images/mensaje_request.png>
+Package pdftex.def Info: images/mensaje_request.png  used on input line 392.
+(pdftex.def)             Requested size: 976.64636pt x 393.46902pt.
+
+[18]
+<images/mensaje_respuesta.png, id=175, 1047.915pt x 490.83376pt>
+File: images/mensaje_respuesta.png Graphic file (type png)
+<use images/mensaje_respuesta.png>
+Package pdftex.def Info: images/mensaje_respuesta.png  used on input line 399.
+(pdftex.def)             Requested size: 1047.91243pt x 490.83255pt.
+ [19 <./images/mensaje_request.png>] [20 <./images/mensaje_respuesta.png>]
+[21] [22]
+<images/web_cache.png, id=201, 479.7925pt x 349.305pt>
+File: images/web_cache.png Graphic file (type png)
+<use images/web_cache.png>
+Package pdftex.def Info: images/web_cache.png  used on input line 483.
+(pdftex.def)             Requested size: 479.7913pt x 349.30414pt.
+ [23 <./images/web_cache.png>]
+<images/ejemplo_mensajes_web_cache.png, id=210, 611.28375pt x 626.34pt>
+File: images/ejemplo_mensajes_web_cache.png Graphic file (type png)
+<use images/ejemplo_mensajes_web_cache.png>
+Package pdftex.def Info: images/ejemplo_mensajes_web_cache.png  used on input l
+ine 523.
+(pdftex.def)             Requested size: 611.28226pt x 626.33846pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 528--529
+
+ []
+
+[24 <./images/ejemplo_mensajes_web_cache.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 530--531
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 532--533
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 534--535
+
+ []
+
+<images/paso_mensajes_cookie.png, id=218, 739.76375pt x 716.6775pt>
+File: images/paso_mensajes_cookie.png Graphic file (type png)
+<use images/paso_mensajes_cookie.png>
+Package pdftex.def Info: images/paso_mensajes_cookie.png  used on input line 55
+1.
+(pdftex.def)             Requested size: 739.76193pt x 716.67577pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/diagrama_cliente_servidor.png, id=219, 684.5575pt x 328.22626pt>
+File: images/diagrama_cliente_servidor.png Graphic file (type png)
+<use images/diagrama_cliente_servidor.png>
+Package pdftex.def Info: images/diagrama_cliente_servidor.png  used on input li
+ne 561.
+(pdftex.def)             Requested size: 684.55582pt x 328.22545pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[25] [26 <./images/paso_mensajes_cookie.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 589--590
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 591--592
+
+ []
+
+<images/ejemplo_smtp.png, id=231, 480.79625pt x 637.38126pt>
+File: images/ejemplo_smtp.png Graphic file (type png)
+<use images/ejemplo_smtp.png>
+Package pdftex.def Info: images/ejemplo_smtp.png  used on input line 598.
+(pdftex.def)             Requested size: 480.79506pt x 637.3797pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 608--609
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 610--611
+
+ []
+
+[27 <./images/diagrama_cliente_servidor.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 612--613
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 614--615
+
+ []
+
+[28 <./images/ejemplo_smtp.png>]
+<images/envio-recepcion.jpg, id=245, 642.4pt x 155.58125pt>
+File: images/envio-recepcion.jpg Graphic file (type jpg)
+<use images/envio-recepcion.jpg>
+Package pdftex.def Info: images/envio-recepcion.jpg  used on input line 635.
+(pdftex.def)             Requested size: 642.39844pt x 155.58086pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 638--639
+
+ []
+
+<images/comando_smtp_cliente.png, id=246, 1038.88126pt x 592.2125pt>
+File: images/comando_smtp_cliente.png Graphic file (type png)
+<use images/comando_smtp_cliente.png>
+Package pdftex.def Info: images/comando_smtp_cliente.png  used on input line 64
+3.
+(pdftex.def)             Requested size: 1038.87872pt x 592.21104pt.
+
+Overfull \hbox (35.99959pt too wide) in paragraph at lines 643--644
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[29 <./images/envio-recepcion.jpg>]
+<images/codigo_smtp_servidor.png, id=257, 842.14626pt x 572.1375pt>
+File: images/codigo_smtp_servidor.png Graphic file (type png)
+<use images/codigo_smtp_servidor.png>
+Package pdftex.def Info: images/codigo_smtp_servidor.png  used on input line 66
+9.
+(pdftex.def)             Requested size: 842.14421pt x 572.1361pt.
+
+Overfull \hbox (36.00156pt too wide) in paragraph at lines 669--670
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[30 <./images/comando_smtp_cliente.png>]
+Overfull \hbox (19.41339pt too wide) in paragraph at lines 685--685
+[]\OT1/cmtt/m/n/10.95 Content-Transfer-Encoding: base64 ##########M^^Setodo de 
+codificaci^^Son[] 
+ []
+
+
+Overfull \hbox (65.4029pt too wide) in paragraph at lines 685--685
+[]\OT1/cmtt/m/n/10.95 Content-Type: image/jpeg ##########Datos multimedia, tipo
+, subtipo, \ldots[] 
+ []
+
+
+Overfull \hbox (32.08195pt too wide) in paragraph at lines 687--688
+[]\OT1/cmr/bx/n/10.95 MIME (Mul-ti-pur-po-se In-ter-net Mail Ex-ten-sions): Con
+tent-Type:tipos
+ []
+
+<images/tipos_subtipos_mime.png, id=265, 679.53876pt x 316.18124pt>
+File: images/tipos_subtipos_mime.png Graphic file (type png)
+<use images/tipos_subtipos_mime.png>
+Package pdftex.def Info: images/tipos_subtipos_mime.png  used on input line 692
+.
+(pdftex.def)             Requested size: 679.53711pt x 316.18047pt.
+
+Overfull \hbox (35.99916pt too wide) in paragraph at lines 692--693
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 695--696
+
+ []
+
+[31 <./images/codigo_smtp_servidor.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 697--698
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 699--700
+
+ []
+
+<images/ejemplo_multipart_fixed.png, id=272, 544.0325pt x 404.51125pt>
+File: images/ejemplo_multipart_fixed.png Graphic file (type png)
+<use images/ejemplo_multipart_fixed.png>
+Package pdftex.def Info: images/ejemplo_multipart_fixed.png  used on input line
+ 704.
+(pdftex.def)             Requested size: 544.03117pt x 404.51025pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[32 <./images/tipos_subtipos_mime.png>] [33 <./images/ejemplo_multipart_fixed.p
+ng>]
+<images/comando_pop3.png, id=285, 759.83875pt x 409.53pt>
+File: images/comando_pop3.png Graphic file (type png)
+<use images/comando_pop3.png>
+Package pdftex.def Info: images/comando_pop3.png  used on input line 726.
+(pdftex.def)             Requested size: 759.83688pt x 409.52899pt.
+
+Overfull \hbox (36.01117pt too wide) in paragraph at lines 726--727
+ [][] 
+ []
+
+[34 <./images/comando_pop3.png>]
+<images/pop3.png, id=292, 774.895pt x 497.86pt>
+File: images/pop3.png Graphic file (type png)
+<use images/pop3.png>
+Package pdftex.def Info: images/pop3.png  used on input line 755.
+(pdftex.def)             Requested size: 774.89311pt x 497.85878pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 758--759
+
+ []
+
+
+Overfull \hbox (14.12422pt too wide) in paragraph at lines 764--765
+[]\OT1/cmr/m/n/10.95 A $\OMS/cmsy/m/n/10.95 !$ \OT1/cmr/m/n/10.95 SE-LECT, CREA
+-TE, DE-LE-TE, LIST, AP-PEND, UN/SUBSCRIBE,
+ []
+
+[35 <./images/pop3.png>]
+Overfull \hbox (117.14108pt too wide) in paragraph at lines 812--812
+[]\OT1/cmtt/m/n/10.95 * OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Dra
+ft \Seen)] Permanent flags[] 
+ []
+
+
+Overfull \hbox (25.16208pt too wide) in paragraph at lines 812--812
+[]\OT1/cmtt/m/n/10.95 * 12 FETCH (FLAGS (\Seen) INTERNALDATE "14-Jul-1993 02:44
+:25 -0700"[] 
+ []
+
+
+Overfull \hbox (19.41339pt too wide) in paragraph at lines 812--812
+[]\OT1/cmtt/m/n/10.95 RFC822.SIZE 4282 ENVELOPE ("Wed, 14 Jul 1993 02:23:25 -07
+00 (PDT)"[] 
+ []
+
+
+Overfull \hbox (30.91077pt too wide) in paragraph at lines 812--812
+[]\OT1/cmtt/m/n/10.95 BODY ("TEXT" "PLAIN" ("CHARSET" "US-ASCII") NIL NIL "7BIT
+" 3028 92))[] 
+ []
+
+
+Overfull \hbox (36.65945pt too wide) in paragraph at lines 812--812
+[]\OT1/cmtt/m/n/10.95 cc: minutes@CNRI.Reston.VA.US, John Klensin <KLENSIN@INFO
+ODS.MIT.EDU>[] 
+ []
+
+[36]
+Overfull \hbox (111.3924pt too wide) in paragraph at lines 865--865
+[]\OT1/cmtt/m/n/10.95 * OK [CAPABILITY IMAP4REV1 LOGIN-REFERRALS STARTTLS AUTH=
+LOGIN] capone.rutgers.edu[] 
+ []
+
+
+Overfull \hbox (65.4029pt too wide) in paragraph at lines 865--865
+[]\OT1/cmtt/m/n/10.95 Server A1 OK [CAPABILITY IMAP4REV1 IDLE NAMESPACE MAILBOX
+-REFERRALS BINARY[] 
+ []
+
+
+Overfull \hbox (48.15683pt too wide) in paragraph at lines 865--865
+[]\OT1/cmtt/m/n/10.95 UNSELECT SCAN SORT THREAD=REFERENCES THREAD=ORDEREDSUBJEC
+T MULTIAPPEND][] 
+ []
+
+
+Overfull \hbox (25.16208pt too wide) in paragraph at lines 865--865
+[]\OT1/cmtt/m/n/10.95 * OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Dra
+ft \Seen)][] 
+ []
+
+
+Overfull \hbox (36.65945pt too wide) in paragraph at lines 865--865
+[]\OT1/cmtt/m/n/10.95 The "To:" and "From:" are non-existent, but you still get
+ the e-mail.[] 
+ []
+
+[37]
+Overfull \hbox (7.91602pt too wide) in paragraph at lines 865--865
+[]\OT1/cmtt/m/n/10.95 * BYE capone.rutgers.edu IMAP4rev1 server terminating con
+nection[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--868
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 869--870
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 871--872
+
+ []
+
+[38]
+Underfull \hbox (badness 10000) in paragraph at lines 904--905
+
+ []
+
+[39] [40]
+<images/ejemplo_cifrado_datos.png, id=321, 692.5875pt x 128.48pt>
+File: images/ejemplo_cifrado_datos.png Graphic file (type png)
+<use images/ejemplo_cifrado_datos.png>
+Package pdftex.def Info: images/ejemplo_cifrado_datos.png  used on input line 9
+58.
+(pdftex.def)             Requested size: 692.5858pt x 128.47968pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 961--962
+
+ []
+
+[41 <./images/ejemplo_cifrado_datos.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 963--964
+
+ []
+
+<images/esquema_DES.png, id=330, 1020.81375pt x 418.56375pt>
+File: images/esquema_DES.png Graphic file (type png)
+<use images/esquema_DES.png>
+Package pdftex.def Info: images/esquema_DES.png  used on input line 970.
+(pdftex.def)             Requested size: 1020.81126pt x 418.56271pt.
+[42 <./images/esquema_DES.png>]
+<images/esquema_feistel.png, id=338, 250.9375pt x 255.95625pt>
+File: images/esquema_feistel.png Graphic file (type png)
+<use images/esquema_feistel.png>
+Package pdftex.def Info: images/esquema_feistel.png  used on input line 986.
+(pdftex.def)             Requested size: 250.93687pt x 255.95561pt.
+<images/encaminamiento_des.png, id=339, 849.1725pt x 288.07625pt>
+File: images/encaminamiento_des.png Graphic file (type png)
+<use images/encaminamiento_des.png>
+Package pdftex.def Info: images/encaminamiento_des.png  used on input line 994.
+
+(pdftex.def)             Requested size: 849.17043pt x 288.07553pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 997--998
+
+ []
+
+<images/ejemplo_des_doble.png, id=340, 865.2325pt x 132.495pt>
+File: images/ejemplo_des_doble.png Graphic file (type png)
+<use images/ejemplo_des_doble.png>
+Package pdftex.def Info: images/ejemplo_des_doble.png  used on input line 1002.
+
+(pdftex.def)             Requested size: 865.2304pt x 132.49466pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1005--1006
+
+ []
+
+[43 <./images/esquema_feistel.png>]
+<images/esquema_IDEA.png, id=346, 842.14626pt x 450.68375pt>
+File: images/esquema_IDEA.png Graphic file (type png)
+<use images/esquema_IDEA.png>
+Package pdftex.def Info: images/esquema_IDEA.png  used on input line 1010.
+(pdftex.def)             Requested size: 842.14421pt x 450.68263pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1013--1014
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1015--1016
+
+ []
+
+[44 <./images/encaminamiento_des.png> <./images/ejemplo_des_doble.png> <./image
+s/esquema_IDEA.png>] [45]
+<images/ejemplo_rsa.png, id=367, 687.56876pt x 385.44pt>
+File: images/ejemplo_rsa.png Graphic file (type png)
+<use images/ejemplo_rsa.png>
+Package pdftex.def Info: images/ejemplo_rsa.png  used on input line 1056.
+(pdftex.def)             Requested size: 687.56708pt x 385.43906pt.
+<images/esquema_reto_respuesta.png, id=368, 318.18875pt x 173.64874pt>
+File: images/esquema_reto_respuesta.png Graphic file (type png)
+<use images/esquema_reto_respuesta.png>
+Package pdftex.def Info: images/esquema_reto_respuesta.png  used on input line 
+1064.
+(pdftex.def)             Requested size: 318.18796pt x 173.64832pt.
+ [46 <./images/ejemplo_rsa.png> <./images/esquema_reto_respuesta.png>]
+<images/esquema_diffie_hellman.png, id=379, 344.28625pt x 204.765pt>
+File: images/esquema_diffie_hellman.png Graphic file (type png)
+<use images/esquema_diffie_hellman.png>
+Package pdftex.def Info: images/esquema_diffie_hellman.png  used on input line 
+1094.
+(pdftex.def)             Requested size: 344.2854pt x 204.76448pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1097--1098
+
+ []
+
+[47 <./images/esquema_diffie_hellman.png>]
+<images/esquema_man-in-the-middle.png, id=388, 853.1875pt x 424.58624pt>
+File: images/esquema_man-in-the-middle.png Graphic file (type png)
+<use images/esquema_man-in-the-middle.png>
+Package pdftex.def Info: images/esquema_man-in-the-middle.png  used on input li
+ne 1104.
+(pdftex.def)             Requested size: 853.18542pt x 424.5852pt.
+ [48 <./images/esquema_man-in-the-middle.png>]
+<images/ejemplo_md5.png, id=396, 686.565pt x 354.32375pt>
+File: images/ejemplo_md5.png Graphic file (type png)
+<use images/ejemplo_md5.png>
+Package pdftex.def Info: images/ejemplo_md5.png  used on input line 1149.
+(pdftex.def)             Requested size: 686.56332pt x 354.32288pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1152--1153
+
+ []
+
+[49 <./images/ejemplo_md5.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1154--1155
+
+ []
+
+<images/esquema_sha-1.png, id=403, 654.445pt x 355.3275pt>
+File: images/esquema_sha-1.png Graphic file (type png)
+<use images/esquema_sha-1.png>
+Package pdftex.def Info: images/esquema_sha-1.png  used on input line 1161.
+(pdftex.def)             Requested size: 654.4434pt x 355.32661pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1172--1173
+
+ []
+
+<images/firma_big_brother.png, id=404, 572.1375pt x 178.6675pt>
+File: images/firma_big_brother.png Graphic file (type png)
+<use images/firma_big_brother.png>
+Package pdftex.def Info: images/firma_big_brother.png  used on input line 1177.
+
+(pdftex.def)             Requested size: 572.1361pt x 178.66705pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[50 <./images/esquema_sha-1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1189--1190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1191--1192
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1205--1206
+
+ []
+
+[51 <./images/firma_big_brother.png>]
+Overfull \hbox (31.03532pt too wide) in paragraph at lines 1219--1239
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1219--1239
+
+ []
+
+
+Overfull \hbox (25.16208pt too wide) in paragraph at lines 1277--1277
+[]\OT1/cmtt/m/n/10.95 Issuer: C=ZA, ST=Western Cape, L=Cape Town, O=Thawte Cons
+ulting cc,[] 
+ []
+
+[52]
+Underfull \hbox (badness 10000) in paragraph at lines 1282--1283
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1304--1305
+
+ []
+
+[53]
+<images/router_qos.png, id=429, 895.345pt x 586.19pt>
+File: images/router_qos.png Graphic file (type png)
+<use images/router_qos.png>
+Package pdftex.def Info: images/router_qos.png  used on input line 1327.
+(pdftex.def)             Requested size: 895.34282pt x 586.18857pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1331--1332
+
+ []
+
+[54] [55 <./images/router_qos.png>]
+<images/esquema_dhcp.png, id=441, 220.825pt x 287.0725pt>
+File: images/esquema_dhcp.png Graphic file (type png)
+<use images/esquema_dhcp.png>
+Package pdftex.def Info: images/esquema_dhcp.png  used on input line 1355.
+(pdftex.def)             Requested size: 220.82445pt x 287.0718pt.
+ [56 <./images/esquema_dhcp.png>] [57]
+[58] [59]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1437.
+ [60]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1437.
+ (./tema_2_fr.aux
+LaTeX Info: Redefining \. on input line 24.
+LaTeX Info: Redefining \% on input line 24.
+)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1437.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1437.
+
+Package rerunfilecheck Info: File `tema_2_fr.out' has not changed.
+(rerunfilecheck)             Checksum: 7D67CD98E1BDBCFA232EA3C1A8B1D666;567.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1437.
+ ) 
+Here is how much of TeX's memory you used:
+ 7279 strings out of 481239
+ 109605 string characters out of 5920377
+ 379555 words of memory out of 5000000
+ 22229 multiletter control sequences out of 15000+600000
+ 539113 words of font info for 49 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 34i,7n,35p,1324b,481s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/font
+s/type1/public/cm-super/sfrm1095.pfb>
+Output written on tema_2_fr.pdf (61 pages, 2231973 bytes).
+PDF statistics:
+ 574 PDF objects out of 1000 (max. 8388607)
+ 422 compressed objects within 5 object streams
+ 153 named destinations out of 1000 (max. 500000)
+ 253 words of extra memory for PDF output out of 10000 (max. 10000000)
+

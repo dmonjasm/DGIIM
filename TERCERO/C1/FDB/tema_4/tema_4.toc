@@ -1,0 +1,14 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Introducción}{2}{section.1}%
+\contentsline {section}{\numberline {2}Método de acceso a la BD}{4}{section.2}%
+\contentsline {section}{\numberline {3}Representación de la BD en el nivel interno}{6}{section.3}%
+\contentsline {section}{\numberline {4}Organización y Métodos de Acceso}{7}{section.4}%
+\contentsline {section}{\numberline {5}Organización Secuencial}{7}{section.5}%
+\contentsline {section}{\numberline {6}Fichero indexados}{9}{section.6}%
+\contentsline {section}{\numberline {7}Acceso Directo}{17}{section.7}%
+\contentsline {section}{\numberline {8}Hashing}{19}{section.8}%
+\contentsline {section}{\numberline {9}Seminario 4}{22}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Introducción}{22}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Álgebra relacional}{22}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Otros lenguajes de consultas formales}{26}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Relación de Álgebra Relacional}{27}{subsection.9.4}%

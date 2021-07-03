@@ -1,0 +1,4 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Abstracción de la PC}{2}{section.1}%
+\contentsline {section}{\numberline {2}Exclusión mutua y sincronización}{4}{section.2}%
+\contentsline {section}{\numberline {3}Glosario}{5}{section.3}%

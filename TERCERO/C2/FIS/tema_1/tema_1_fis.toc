@@ -1,0 +1,13 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}El producto Software}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Naturaleza del software}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Definición de software}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Características del software.}{3}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Tipos y dominios de aplicación del software}{4}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Proceso de producción}{7}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Efuerzo requerido por etapas}{7}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}Problemas}{7}{subsection.1.7}%
+\contentsline {section}{\numberline {2}El concepto de ingeniería del software}{9}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Definición de Ingeniería del software}{9}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Terminología usada en ingeniería del software}{9}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Resumen}{10}{subsection.2.3}%

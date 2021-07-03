@@ -1,0 +1,31 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\graphicspath{{images/}} 
+
+\author{Daniel Monjas Miguélez}
+\title{Modelos de Computación: Relación 1}
+
+\begin{document}
+\maketitle
+\newpage
+
+Calcule una gramática que genere el siguiente lenguaje $\{u1^n \in \{0,1\}^*$ donde $|u| = n\}$ \\
+
+Defino la gramática generativa G=(V,T,P,S) donde $V=\{S,X,Y\}$, $T=\{0,1\}$ , $P$ es el conjunto de las reglas de producción y $S$ es el estado inicial. Y en el conjunto P se incluyen las siguientes reglas de producción,
+
+\begin{align*}
+S \rightarrow XSY|\epsilon  \\
+X \rightarrow 0|1 \\
+Y \rightarrow 1 \\
+\end{align*}
+
+La regla de producción sobre S nos permite colocar tantos símbolos no terminales ,X a la izquierda e Y a la derecha del símbolo no terminal S, como queramos dando lugar a $X^nSY^n$, o bien la palabra vacía. Con esto nos aseguramos que la palabra tenga longitud par pues las regla de producción sobre X e Y solo permiten generar símbolos no terminales, no la palabra vacía. La regla de producción sobre X nos permite sustuir todas la X por 1 o 0, según nos convenga generando una subcadena cualquiera u de $\{0,1\}^*$ de longitud n. Por otro lado la regla de producción sobre Y nos permite únicamente sustituir las Y por 1, dando lugar a $1^n$. Si lo juntamos todo llegamos a $uS1^n$. Finalmente se aplica la regla de producción sobre $S \rightarrow \epsilon$ obteniendo una palabra con la forma $u1^n$ donde u tiene longitud n. \\
+
+Ahora tomemos una palabra $w \in L$. Esta palabra tendrá la forma $u1^n$, donde u tiene longitud n. Aplico la regla de producción $S \rightarrow XSY$ n veces con lo que llegaremos a $X^nSY^n$. Seguidamente usamos la regla de producción $S \rightarrow \epsilon$ obteniendo así $X^nY^n$. Como la regla de producción sobre Y únicamente nos permite generar unos llegamos a $X^n1^n$. Ahora finalmente usamos la regla de producción $X \rightarrow 0|1$ sustituyendo cada símbolo terminal X por el símbolo no terminal que más convenga hasta obtener la subcadena u, con lo que tendremos finalmente la palabra $u.1^n$ que es una palabra aleatoria tomada del lenguaje. Si n=0 simplemente se aplica al principio $S \rightarrow \epsilon$.
+
+\end{document}

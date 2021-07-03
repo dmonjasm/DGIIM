@@ -1,0 +1,17 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Introducción}{2}{section.1}%
+\contentsline {section}{\numberline {2}Protocolo de datagrama de usuario (UDP).}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Estructura de los segmentos UDP.}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Suma de comprobación de UDP.}{4}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Protocolo de control de transmisión (TCP)}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Estructura del segmento TCP}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Gestión de la conexión TCP}{9}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Estimación del tiempo de ida y vuelta y fin de temporización.}{13}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Control de flujo.}{17}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Control de congestión}{17}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Escenario 1: dos emisores, un router con buffers de capacidad ilimitada}{17}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Escenario 2: dos emisores y un router con buffers finitos.}{20}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Escenario 3: cuatro emisores, routers con buffers de capacidad finita y rutas con múltiples saltos.}{21}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Métodos para controlar la congestión de TCP}{22}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Extensiones TCP}{27}{section.5}%
+\contentsline {section}{\numberline {6}Glosario:}{30}{section.6}%

@@ -1,0 +1,5 @@
+Hugo:azules
+Antonio:verdes
+Manuel:marrones
+Carlos:negros
+Daniel:marrones

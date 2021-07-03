@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<!-- Regla 1 
+<category>
+<pattern>Hola ^</pattern>
+<template><srai>HOLA</srai></template>
+</category>
+-->
+
+<!-- Ejercicio 1 -->
+<!-- Regal 2 
+<category>
+<pattern>^ que tal tu</pattern>
+<template>Estoy genial!!! Me encanta conocer gente nueva</template>
+</category>
+-->
+
+<!-- Regla 3 -->
+<category>
+<pattern>Genial Como te llamas</pattern>
+<template>Mi nombre es HALfonso</template>
+</category>
+
+<!-- Ejercicio 2 -->
+<!-- Regla 3.1 
+<category>
+<pattern>^ me llamo *</pattern>
+<template>Que casualidad <star index="2"/> yo tambien tengo nombre, me llamo HALberto</template>
+</category>
+-->
+
+<!-- Regla 3.2-->
+<category>
+<pattern>^ me llamo *</pattern>
+<template>
+    <set name="nombre"><star index="2"/></set>
+    <get name="nombre"/> es un bonito nombre.
+</template>
+</category>
+
+<!-- Regla 4
+<category>
+<pattern>Hola</pattern>
+<template>Hola de nuevo, que tal?</template>
+</category>
+-->
+
+<!-- Regla 5 -->
+<category>
+<pattern>Cual es tu edad</pattern>
+<template>Tengo <bot name="age"/> anios</template>
+</category>
+
+<!-- Regla 6
+<category>
+<pattern>Cual es mi nombre</pattern>
+<template>Tu nombre es <get name="nombre"/></template>
+</category>
+ -->
+
+<!-- Regla 6.1 -->
+<category>
+<pattern>Cual es mi nombre</pattern>
+<template>
+    <condition name="nombre">
+        <li value="unknown"> Aun no me has dicho tu nombre</li>
+        <li>Tu nombre es <get name="nombre"/></li>
+    </condition>
+</template>
+</category>
+
+<!-- Regla 7 -->
+<category>
+<pattern>mi color favorito es el *</pattern>
+<template>
+    <think><set var="color"><star/></set></think>
+    El <get var="color"/> es un color que no me gusta
+</template>
+</category>
+
+<!-- Regla 8 -->
+<category>
+<pattern>* mi nombre</pattern>
+<template><srai>CUAL ES MI nombre</srai></template>
+</category>
+
+<!-- Regla 9 -->
+<category>
+<pattern>^ como me llamo</pattern>
+<template><srai>CUAL ES MI NOMBRE</srai></template>
+</category>
+
+<!-- Ejercicio 3 -->
+<category>
+<pattern>Buenos ^</pattern>
+<template><srai>HOLA</srai></template>
+</category>
+
+<category>
+<pattern>Buenas ^</pattern>
+<template><srai>HOLA</srai></template>
+</category>
+
+<!-- Regla 10 -->
+<category>
+<pattern>es <set>color</set> un color</pattern>
+<template>Si, <star/> es un color.</template>
+</category>
+
+<!-- Regla 11 -->
+<category>
+<pattern>es * un color</pattern>
+<template>No, <star/> no es un color.</template>
+</category>
+
+<!-- Regla 12 -->
+<category>
+<pattern>Cual es la capital de <set>pais</set></pattern>
+<template>La capital de <star/> es <map name="capital"><star/></map></template>
+</category>
+
+<!-- Regla 13 -->
+<category>
+<pattern>Cual es la capital de *</pattern>
+<template>No lo se</template>
+</category>
+
+<!-- Ejercicio 4 -->
+<category>
+<pattern>Cual es el color de ojos de <set>compi</set></pattern>
+<template>El color de ojos de <star/> es <map name="ojos"><star/></map>.
+<think>
+    <set name="ojos"><map name="ojos"><star/></map></set>
+</think>
+
+<condition name="ojos">
+    <li value="verdes">
+        <condition name="verdes">
+            <li value="unknown">
+                <think><set name="verdes"><star/></set></think>
+            </li>
+            <li>
+                <think><set name="verdes"><star/>, <get name="verdes"/></set></think>
+            </li>
+        </condition>
+    </li>
+    <li value="azules">
+        <condition name="azules">
+            <li value="unknown">
+                <think><set name="azules"><star/></set></think>
+            </li>
+            <li>
+                <think><set name="azules"><star/>, <get name="azules"/></set></think>
+            </li>
+        </condition>
+    </li>
+    <li value="marrones">
+        <condition name="marrones">
+            <li value="unknown">
+                <think><set name="marrones"><star/></set></think>
+            </li>
+            <li>
+                <think><set name="marrones"><star/>, <get name="marrones"/></set></think>
+            </li>
+        </condition>
+    </li>
+    <li value="negros">
+        <condition name="negros">
+            <li value="unknown">
+                <think><set name="negros"><star/></set></think>
+            </li>
+            <li>
+                <think><set name="negros"><star/>, <get name="negros"/></set></think>
+            </li>
+        </condition>
+    </li>
+</condition>
+</template>
+</category>
+
+<category>
+<pattern>Cual es el color de ojos de *</pattern>
+<template>No lo se</template>
+</category>
+
+<category>
+<pattern>Cual es el color de pelo de <set>compi</set></pattern>
+<template>El color de pelo de <star/> es <map name="pelo"><star/></map>.
+    <think>
+        <set name="pelo"><map name="pelo"><star/></map></set>
+    </think>
+
+<condition name="pelo">
+    <li value="rubio">
+        <condition name="rubio">
+            <li value="unknown">
+                <think><set name="rubio"><star/></set></think>
+            </li>
+            <li>
+                <think><set name="rubio"><star/>, <get name="rubio"/></set></think>
+            </li>
+        </condition>
+    </li>
+    <li value="pelirrojo">
+        <condition name="pelirrojo">
+            <li value="unknown">
+                <think><set name="pelirrojo"><star/></set></think>
+            </li>
+            <li>
+                <think><set name="pelirrojo"><star/>, <get name="pelirrojo"/></set></think>
+            </li>
+        </condition>
+    </li>
+    <li value="castaño">
+        <condition name="castaño">
+            <li value="unknown">
+                <think><set name="castaño"><star/></set></think>
+            </li>
+            <li>
+                <think><set name="castaño"><star/>, <get name="castaño"/></set></think>
+            </li>
+        </condition>
+    </li>
+    <li value="moreno">
+        <condition name="moreno">
+            <li value="unknown">
+                <think><set name="moreno"><star/></set></think>
+            </li>
+            <li>
+                <think><set name="moreno"><star/>, <get name="moreno"/></set></think>
+            </li>
+        </condition>
+    </li>
+</condition>
+</template>
+</category>
+
+<category>
+<pattern>Cual es el color de pelo de *</pattern>
+<template>No lo se</template>
+</category>
+
+<!-- Regla 14 -->
+<category>
+<pattern>^ cafe ^</pattern>
+<template>Te gusta el cafe</template>
+</category>
+
+<!-- Regal 15 -->
+<category>
+<pattern>Si</pattern>
+<that>TE GUSTA EL CAFE</that>
+<template>Lo prefieres solo o con leche?</template>
+</category>
+
+<!-- Regla 16 -->
+<category>
+<pattern>Cuenta hasta <set>number</set></pattern>
+<template>
+<think>
+    <set var="contador">1</set>
+    <set var="salida">1</set>
+</think>
+<condition var="contador">
+    <li><value><star/></value><get var="salida"/></li>
+    <li>
+        <think>
+            <set var="contador">
+                <map name="successor"><get var="contador"/></map>
+            </set>
+            <set var="salida"><get var="salida"/> <get var="contador"/></set>
+        </think>
+        <loop/>
+    </li>
+</condition>
+</template>
+</category>
+
+<!-- Regla 17 -->
+<category>
+<pattern> la capital de * es *</pattern>
+<template>
+    <think>
+    <set var="cap"><srai>CUAL ES LA CAPITAL DE <star/></srai></set>
+    </think>
+    <condition var="cap">
+        <li value="NO LO SE">
+        <learn>
+            <category>
+            <pattern>CUAL ES LA CAPITAL DE <eval><star/></eval></pattern>
+            <template>
+                La capital de <eval><star/></eval> es <eval><star index="2"/></eval>
+            </template>
+            </category>
+        </learn>
+        Recordare que la capital de <star/> es <star index="2"/>.
+        </li>
+        <li><value>La capital de <star/> es <star index="2"/></value>
+        Ya lo sabía
+        </li>
+        <li>
+        Eso no es lo que tengo entendido.
+        </li>
+    </condition>
+</template>
+</category>
+
+<!-- Ejercicio 5 -->
+<category>
+<pattern>* tienen los ojos *</pattern>
+<template><think><set name="ojos"><star index="2"/></set></think>
+<condition name="ojos">
+    <li value="azules">
+        <condition name="azules">
+            <li value="unknown">
+                No recuerdo a ningun compañero con los ojos azules
+            </li>
+            <li>
+                Tienen los ojos azules: <get name="azules"/>
+            </li>
+        </condition>
+    </li>
+    <li value="marrones">
+        <condition name="marrones">
+            <li value="unknown">
+                No recuerdo a ningun compañero con los ojos marrones
+            </li>
+            <li>
+                Tienen los ojos marrones: <get name="marrones"/>
+            </li>
+        </condition>
+    </li>
+    <li value="verdes">
+        <condition name="verdes">
+            <li value="unknown">
+                No recuerdo a ningun compañero con los ojos verdes
+            </li>
+            <li>
+                Tienen los ojos verdes: <get name="verdes"/>
+            </li>
+        </condition>
+    </li>
+    <li value="negros">
+        <condition name="negros">
+            <li value="unknown">
+                No recuerdo a ningun compañero con los ojos negros
+            </li>
+            <li>
+                Tienen los ojos negros: <get name="negros"/>
+            </li>
+        </condition>
+    </li>
+</condition>
+</template>
+</category>
+
+<category>
+<pattern>* tienen el pelo *</pattern>
+<template><think><set name="pelo"><star index="2"/></set></think>
+<condition name="pelo">
+    <li value="castaño">
+        <condition name="castaño">
+            <li value="unknown">
+                No recuerdo a ningun compañero con el pelo castaño
+            </li>
+            <li>
+                Tienen el pelo castaño: <get name="castaño"/>
+            </li>
+        </condition>
+    </li>
+    <li value="moreno">
+        <condition name="moreno">
+            <li value="unknown">
+                No recuerdo a ningun compañero con el pelo moreno
+            </li>
+            <li>
+                Tienen el pelo moreno: <get name="moreno"/>
+            </li>
+        </condition>
+    </li>
+    <li value="pelirrojo">
+        <condition name="pelirrojo">
+            <li value="unknown">
+                No recuerdo a ningun compañero pelirrojo
+            </li>
+            <li>
+                Tienen el pelo pelirrojo: <get name="pelirrojo"/>
+            </li>
+        </condition>
+    </li>
+    <li value="rubio">
+        <condition name="rubio">
+            <li value="unknown">
+                No recuerdo a ningun compañero rubio
+            </li>
+            <li>
+                Tienen el pelo rubio: <get name="rubio"/>
+            </li>
+        </condition>
+    </li>
+</condition>
+</template>
+</category>
+
+<!-- Ejercicio 6 -->
+<category>
+<pattern>* tiene los ojos * y el pelo *</pattern>
+<template>
+    <think>
+    <set var="pelo"><srai>CUAL ES EL COLOR DE PELO DE <star/></srai></set>
+    <set var="ojos"><srai>CUAL ES EL COLOR DE OJOS DE <star/></srai></set>
+    </think>
+
+    <condition var="pelo">
+        <li value="NO LO SE">
+            <learn>
+                <category>
+                <pattern>
+                    CUAL ES EL COLOR DE PELO DE <eval><star/></eval>
+                </pattern>
+                <template>
+                    El color de pelo de <eval><star/></eval> es <eval><star index="3"/></eval>
+                </template>
+                </category>
+            </learn>
+        Recordare que el color de pelo de <star/> es <star index="3"/>.
+        </li>
+        <li>
+        Ya lo sabía.
+        </li>
+    </condition>
+
+    <condition var="ojos">
+        <li value="NO LO SE">
+            <learn>
+                <category>
+                <pattern>
+                    CUAL ES EL COLOR DE OJOS DE <eval><star/></eval>
+                </pattern>
+                <template>
+                    El color de ojos de <eval><star/></eval> es <eval><star index="2"/></eval>
+                </template>
+                </category>
+            </learn>
+        Recordare que el color de ojos de <star/> es <star index="2"/>.
+        </li>
+        <li>
+        Ya lo sabía.
+        </li>
+    </condition>
+</template>
+</category>
+
+
+</aiml>

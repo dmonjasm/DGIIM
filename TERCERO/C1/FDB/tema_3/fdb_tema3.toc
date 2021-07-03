@@ -1,0 +1,4 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Definición de modelo de datos}{2}{section.1}%
+\contentsline {section}{\numberline {2}Modelo de datos relacional}{4}{section.2}%
+\contentsline {section}{\numberline {3}Otros modelos de datos}{9}{section.3}%

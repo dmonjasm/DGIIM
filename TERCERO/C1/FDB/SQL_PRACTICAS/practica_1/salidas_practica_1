@@ -1,0 +1,119 @@
+
+Table PRUEBA1 creado.
+
+
+Error que empieza en la línea: 7 del comando :
+afidiet.buf
+Informe de error -
+Comando desconocido
+
+
+Error que empieza en la línea: 7 del comando :
+C:\Users\Daniel\Desktop\DANIEL\SQL_PRACTICAS\practica_1\practica_1.sql
+Informe de error -
+Comando desconocido
+
+
+Error que empieza en la línea: 7 del comando :
+OPEN pp.sql
+Informe de error -
+Comando desconocido
+
+Nombre ¿Nulo? Tipo       
+------ ------ ---------- 
+CAD           CHAR(3)    
+N             NUMBER(38) 
+X             FLOAT(126) 
+Nombre ¿Nulo? Tipo       
+------ ------ ---------- 
+CAD1          CHAR(8)    
+NUM           NUMBER(38) 
+
+Table PLANTILLA creado.
+
+Nombre      ¿Nulo?   Tipo         
+----------- -------- ------------ 
+DNI         NOT NULL VARCHAR2(9)  
+NOMBRE               VARCHAR2(15) 
+ESTADOCIVIL          VARCHAR2(10) 
+FECHAALTA            DATE         
+
+Table SERJEFE creado.
+
+Nombre        ¿Nulo?   Tipo        
+------------- -------- ----------- 
+DNIJEFE                VARCHAR2(9) 
+DNITRABAJADOR NOT NULL VARCHAR2(9) 
+
+Table PRUEBA1 borrado.
+
+
+ERROR:
+ORA-04043: el objeto PRUEBA1 no existe
+
+Table PLANTILLA alterado.
+
+Nombre      ¿Nulo?   Tipo         
+----------- -------- ------------ 
+DNI         NOT NULL VARCHAR2(9)  
+NOMBRE               VARCHAR2(15) 
+ESTADOCIVIL          VARCHAR2(10) 
+FECHAALTA            DATE         
+FECHABAJA            DATE         
+
+Error que empieza en la línea : 1 Archivo @ C:\Users\Daniel\Desktop\DANIEL\SQL_PRACTICAS\practica_1\proveedor.sql
+del comando -
+CREATE TABLE proveedor(
+    codpro VARCHAR2(3) CONSTRAINT codpro_no_nulo NOT NULL
+        CONSTRAINT codpro_clave_primaria PRIMARY KEY,
+    nompro VARCHAR2(30) CONSTRAINT nompro_no_nulo NOT NULL,
+    status NUMBER CONSTRAINT status_entre_1_y_10
+        CHECK (status>=1 and status<=10),
+    ciudad VARCHAR2(15))
+Informe de error -
+ORA-00955: este nombre ya lo está utilizando otro objeto existente
+00955. 00000 -  "name is already used by an existing object"
+*Cause:    
+*Action:
+Nombre ¿Nulo?   Tipo         
+------ -------- ------------ 
+CODPRO NOT NULL VARCHAR2(3)  
+NOMPRO NOT NULL VARCHAR2(30) 
+STATUS          NUMBER       
+CIUDAD          VARCHAR2(15) 
+
+Table PIEZA creado.
+
+Nombre ¿Nulo?   Tipo         
+------ -------- ------------ 
+CODPIE NOT NULL VARCHAR2(3)  
+NOMPIE NOT NULL VARCHAR2(10) 
+COLOR           VARCHAR2(10) 
+PESO            NUMBER(5,2)  
+CIUDAD          VARCHAR2(15) 
+
+Table PROYECTO creado.
+
+Nombre ¿Nulo?   Tipo         
+------ -------- ------------ 
+CODPJ  NOT NULL VARCHAR2(3)  
+NOMPJ  NOT NULL VARCHAR2(20) 
+CIUDAD          VARCHAR2(15) 
+
+Table VENTAS creado.
+
+Nombre   ¿Nulo?   Tipo        
+-------- -------- ----------- 
+CODPRO   NOT NULL VARCHAR2(3) 
+CODPIE   NOT NULL VARCHAR2(3) 
+CODPJ    NOT NULL VARCHAR2(3) 
+CANTIDAD          NUMBER(4)   
+
+Error que empieza en la línea: 39 del comando :
+TABLE_NAME
+Informe de error -
+Comando desconocido
+
+SP2-0044: Para obtener una lista de comandos conocidos, introduzca HELP
+y para salir, EXIT.
+Confirmación terminada.

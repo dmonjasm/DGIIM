@@ -1,0 +1,16 @@
+\BOOKMARK [1][-]{section.1}{Introducci\363n}{}% 1
+\BOOKMARK [1][-]{section.2}{Protocolo de datagrama de usuario \(UDP\).}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Estructura de los segmentos UDP.}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Suma de comprobaci\363n de UDP.}{section.2}% 4
+\BOOKMARK [1][-]{section.3}{Protocolo de control de transmisi\363n \(TCP\)}{}% 5
+\BOOKMARK [2][-]{subsection.3.1}{Estructura del segmento TCP}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.2}{Gesti\363n de la conexi\363n TCP}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.3}{Estimaci\363n del tiempo de ida y vuelta y fin de temporizaci\363n.}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.4}{Control de flujo.}{section.3}% 9
+\BOOKMARK [1][-]{section.4}{Control de congesti\363n}{}% 10
+\BOOKMARK [2][-]{subsection.4.1}{Escenario 1: dos emisores, un router con buffers de capacidad ilimitada}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.2}{Escenario 2: dos emisores y un router con buffers finitos.}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.3}{Escenario 3: cuatro emisores, routers con buffers de capacidad finita y rutas con m\372ltiples saltos.}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.4}{M\351todos para controlar la congesti\363n de TCP}{section.4}% 14
+\BOOKMARK [1][-]{section.5}{Extensiones TCP}{}% 15
+\BOOKMARK [1][-]{section.6}{Glosario:}{}% 16

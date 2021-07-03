@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<!-- Comprueba si el día dado está completamente libres, es decir, no hay ninguna hora marcada como no libre entre las 08:00 y las 20:00-->
+<!-- EJEMPLO: libre 21 de marzo de/del 21 -->
+<category>
+<pattern>LIBRE <set>number</set> (de) <set>month_es</set> ([de del]) <set>number</set></pattern>
+<template>
+
+<think>
+<!-- Primero creo una variable que contendrá la fecha en el formato del fichero eventos.txt-->
+<set var="fecha"><srai>DAY2TWODIGITS <star index="1"/></srai>_<map name="month_es"><star index="2"/></map>_<star index="3"/></set>
+<!-- Con la fecha creada en la línea anterior recogemos la ocupación de todas las horas correspondientes a dicho dia en la variable lista-->
+<set var="lista"><srai>SUBLIST FROM 9 TO 21 OF <map name="eventos"><get var="fecha"/></map></srai></set>
+<!-- Inicializamos la variable encontrado con el resultado devuelto al buscar el elemento NOLIBRE en la lista-->
+<set var="encontrado"><srai>FINDITEM LIBRE IN <get var="lista"/></srai></set>
+</think>
+
+<!-- Primero evaluamos sobre lista para ver si la fecha introducida es correcta-->
+<condition var="lista">
+    <li value="unknown">
+        Lo siento, no se dispone de esa fecha en el libro de reservas
+    </li>
+
+    <li>
+        <!-- Si es correcta evaluamos sobre encontado si existe algún NOLIBRE en nuestra lista. Si existe el día no esta libre, sino si lo está-->
+        <condition var="encontrado">
+        <li value="0">
+            NOLIBRE
+        </li>
+
+        <li>
+            LIBRE
+        </li>
+        </condition>
+    </li>
+
+</condition>
+
+</template>
+</category>
+
+<!-- Devuelve una lista con las horas libres de un determinado día dado -->
+<!-- EJEMPLO: HORASLIBRES 21 de marzo de/del 21 -->
+<category>
+<pattern>HORASLIBRES <set>number</set> (de) <set>month_es</set> ([de del]) <set>number</set></pattern>
+<template>
+<think>
+<!-- Primero creo una variable que contendrá la fecha en el formato del fichero eventos.txt-->
+<set var="fecha"><srai>DAY2TWODIGITS <star index="1"/></srai>_<map name="month_es"><star index="2"/></map>_<star index="3"/></set>
+</think>
+
+<srai>FREE <get var="fecha"/> FROM 8 TO 20 </srai>
+
+</template>
+</category>
+
+<!-- Devuelve una lista con las horas libres en la franja de la mañana (08:00-12:00, ambas inclusive) -->
+<!-- EJEMPLO: HLMANYANA 21 de marzo de/del 21 -->
+<category>
+<pattern>HLMANYANA <set>number</set> (de) <set>month_es</set> ([de del]) <set>number</set></pattern>
+<template>
+<think>
+<!-- Primero creo una variable que contendrá la fecha en el formato del fichero eventos.txt-->
+<set var="fecha"><srai>DAY2TWODIGITS <star index="1"/></srai>_<map name="month_es"><star index="2"/></map>_<star index="3"/></set>
+</think>
+
+<srai>FREE <get var="fecha"/> FROM 8 TO 12 </srai>
+
+</template>
+</category>
+
+<!-- Devuelve una lista con las horas libres en la franja de la tarde (13:00-20:00, ambas inclusive) -->
+<!-- EJEMPLO: HLTARDE 21 de marzo de/del 21 -->
+<category>
+<pattern>HLTARDE <set>number</set> (de) <set>month_es</set> ([de del]) <set>number</set></pattern>
+<template>
+<think>
+<!-- Primero creo una variable que contendrá la fecha en el formato del fichero eventos.txt-->
+<set var="fecha"><srai>DAY2TWODIGITS <star index="1"/></srai>_<map name="month_es"><star index="2"/></map>_<star index="3"/></set>
+</think>
+
+<srai>FREE <get var="fecha"/> FROM 13 TO 20 </srai>
+
+</template>
+</category>
+
+<!-- Regla 1 Conversación-->
+<category>
+<pattern># [cita reserva+] (hora) para el <set>number</set> de <set>month_es</set> [de del] <set>number</set></pattern>
+<template>
+
+<think>
+<set name="fecha_larga"><star index="2"/> de <star index="3"/> de <star index="4"/></set>
+<set var="libre"><srai>LIBRE <star index="2"/> de <star index="3"/> de <star index="4"/></srai></set>
+<set name="fecha_reserva"><srai>DAY2TWODIGITS <star index="2"/></srai>_<map name="month_es"><star index="3"/></map>_<star index="4"/></set>
+</think>
+
+Muy bien voy a comprobarlo, un momento, por favor.
+
+<condition var="libre">
+    <li value="LIBRE">
+        <think>
+        <set var="libres_manyana"><srai>HLMANYANA <star index="2"/> de <star index="3"/> de <star index="4"/></srai></set>
+        <set var="libres_tarde"><srai>HLTARDE <star index="2"/> de <star index="3"/> de <star index="4"/></srai></set>
+        </think>
+ 
+        <condition var="libres_manyana">
+            <li value="EMPTYLIST">
+        Tengo huecos libres solo por la tarde
+        Tengo toda la manyana ocupada y por la tarde tengo libres <get var="libres_tarde"/>
+            </li>
+
+            <li>
+                <condition var="libres_tarde">
+                <li value="EMPTYLIST">
+        Tengo huecos libres solo por la manyana
+        Por la manyana tengo libres <get var="libres_manyana"/> y toda la tarde ocupada.
+        ¿Qué hora prefiere?
+                </li>
+
+                <li>
+        Tengo huecos libres tanto por la mañana como por la tarde
+        Por la manyana tengo libres <get var="libres_manyana"/> y por la tarde tengo <get var="libres_tarde"/>
+        ¿Qué hora prefiere?
+                </li>
+                </condition> 
+            </li>
+        </condition>  
+
+        <think>
+        <set name="topic">empty_day</set>
+        </think>
+    </li>
+
+    <li value="NOLIBRE">
+        Lo siento, tengo el día completamente ocupado, ¿desea otro día?
+
+        <think>
+        <set name="topic">busy_day</set>
+        </think>
+
+    </li>
+</condition>
+</template>
+</category>
+
+<topic name="busy_day">
+<category>
+<pattern>Si ^</pattern>
+<template>¿Que día desea?
+<think>
+<set name="topic">choose_day</set>
+</think>
+</template>
+</category>
+
+<category>
+<pattern>No ^</pattern>
+<template>Gracias de todas formas, esperamos volver a verle.
+<think>
+<set name="topic">unknown</set>
+</think>
+</template>
+</category>
+</topic>
+
+<topic name="choose_day">
+<category>
+<pattern>El <set>number</set> de <set>month_es</set> [de del] <set>number</set> ^</pattern>
+<template>
+<srai>BUENAS QUISIERA UNA CITA PARA EL <star index="1"/> DE <star index="2"/> DE <star index="3"/></srai>
+</template>
+</category>
+
+<category>
+<pattern>Que tal el <set>number</set> de <set>month_es</set> [de del] <set>number</set></pattern>
+<template>
+<srai>BUENAS QUISIERA UNA CITA PARA EL <star index="1"/> DE <star index="2"/> DE <star index="3"/></srai>
+</template>
+</category>
+
+<category>
+<pattern>Si el <set>number</set> de <set>month_es</set> [de del] <set>number</set> ^</pattern>
+<template>
+<srai>BUENAS QUISIERA UNA CITA PARA EL <star index="1"/> DE <star index="2"/> DE <star index="3"/></srai>
+</template>
+</category>
+</topic>
+
+<topic name="empty_day">
+
+<category>
+<pattern>* (hora) a las <set>horas_disponibles</set></pattern>
+<template>
+
+<think>
+<set var="estado_hora"><srai>IS BUSY DAY <get name="fecha_reserva"/> AT <star index="2"/></srai></set>
+</think>
+
+<condition var="estado_hora">
+    <li value="TRUE">
+        Lo siento, pero esa hora ya está reservada. 
+        Le recuerdo que las horas libres para ese día son: <srai>HORASLIBRES <get name="fecha_larga"/></srai>
+        ¿Le interesa alguna?
+    </li>
+    <li>
+        De acuerdo, le apunto para el <get name="fecha_larga"/> a las <star index="2"/>
+        <srai>MARK NOLIBRE AT <star index="2"/> ON <get name="fecha_reserva"/></srai>
+    </li>
+</condition>
+</template>
+</category>
+
+<category>
+<pattern>Si reservame a las <set>horas_disponibles</set></pattern>
+<template>
+<star/>
+<srai>PUES RESERVAME HORA A LAS <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>Me da igual ^</pattern>
+<template>
+
+<think>
+<set var="horas_libres"><srai>HORASLIBRES <get name="fecha_larga"/></srai></set>
+</think>
+
+
+De acuerdo, le apunto para el <get name="fecha_larga"/> a las <srai>TOP <get var="horas_libres"/></srai>
+<srai>MARK NOLIBRE AT <srai>TOP <get var="horas_libres"/></srai> ON <get name="fecha_reserva"/></srai>
+
+</template>
+</category>
+
+</topic>
+
+<category>
+<pattern>Gracias *</pattern>
+<template>A usted, vuelva pronto</template>
+</category>
+
+
+</aiml>

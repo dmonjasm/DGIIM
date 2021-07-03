@@ -1,0 +1,73 @@
+\documentclass[a4paper,10pt]{article}
+\title{FDB:Seminario 1 }
+\author{Daniel Monjas Miguélez}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+\begin{document}
+\maketitle
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Etapas de la creación de una BD}
+\begin{itemize}
+\item Datos generales sobre una organizació concreta.
+
+\item Datos operativos que se manejan en la organización.
+
+\item Esquema conceptual de la base de datos.
+
+\item Modelo lógico de la base de datos.
+
+\item Implementación de la base de datos en un DBMS.
+\end{itemize}
+
+\textbf{Esquema conceptual de la base de datos:} organizar los datos relevantes para el funcionamiento de una empresa.
+
+\section{Modelo Entidad/Relación}
+Es un mecanismo formal para representar y manipular información de manera general y sistemática. \\
+
+Claves de este modelo
+\begin{itemize}
+\item Datos:hay que analizarlos con detenimiento y realizar control de datos.
+
+\item Convenciones:notación rigurosa y normalizada, y seguir una línea de actuación sistemática.
+
+\item Redundancia mínima: cualquier dato o concepto debe ser modelado de manera única.
+\end{itemize}
+
+Requisitos:
+
+\begin{itemize}
+\item Reflejar fielmente las necesidades de información de una organización.
+
+\item Ofrecer un diseño independiente del posterior almacenamiento de los datos y sus métodos de acceso.
+\end{itemize}
+
+\section{Elementos básicos del modelo}
+El enfoque E-R se basa en la clasificación de los datos en:
+
+\begin{itemize}
+\item \textbf{Entidades:} objetos de nuestro interés agrupados por tipo.
+
+\item \textbf{Relaciones:} representan las conexiones existentes entre objetos.
+
+\item \textbf{Atributos:} características de interés de las entidades y relaciones consideradas.
+
+\item \textbf{Dependencia existencial:} no se puede identificar un dato sin otro previo, por ejemplo, no se pueden identificar los movimientos de una cuenta bancaria sin conocer dicha cuenta.Entidad debil-> dependientes, entidad fuerte-> entidad de la que depende la debil.
+
+\item Asociaciones o relaciones: conexión semántica entre dos o más conjuntos de entidades.
+
+\item Cardinalidad: número máximo de entidades de un conjunto que se conecta o relaciona con una entidad de otro y vicecersa.
+\end{itemize}
+
+
+\end{document}

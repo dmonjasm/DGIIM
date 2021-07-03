@@ -1,0 +1,9 @@
+name:botForIA
+email:nobody@nowhere.com
+gender:male
+botmaster:theBoss	
+organization:ugr
+age:20
+ocupation:Profesor Universitario
+address:Camino de Ronda, 95, 6º B
+version:0.0.4

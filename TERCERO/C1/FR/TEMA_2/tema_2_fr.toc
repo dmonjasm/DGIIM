@@ -1,0 +1,10 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Introducción a las aplicaciones de red:}{2}{section.1}%
+\contentsline {section}{\numberline {2}Servicio de Nombres de Dominio (DNS)}{10}{section.2}%
+\contentsline {section}{\numberline {3}La navegación web}{16}{section.3}%
+\contentsline {section}{\numberline {4}El correo electrónico}{26}{section.4}%
+\contentsline {section}{\numberline {5}Seguridad y protocolos seguros}{39}{section.5}%
+\contentsline {section}{\numberline {6}Aplicaciones multimedia}{54}{section.6}%
+\contentsline {section}{\numberline {7}Aplicaciones para interconectividad de redes locales}{54}{section.7}%
+\contentsline {section}{\numberline {8}Glosario}{56}{section.8}%
+\contentsline {section}{\numberline {9}Bibliografía}{60}{section.9}%
